@@ -1,0 +1,10 @@
+project new //my.files.iastate.edu/users/mdavies/Cpre488/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xise;
+project set family zynq;
+project set device xc7z020;
+project set package clg484;
+project set speed -1;
+project set top_level_module_type HDL;
+project set synthesis_tool "XST (VHDL/Verilog)";
+lib_vhdl new conware_v1_00_a;
+xfile add U:/Cpre488/conware/xps/system//pcores/conware_v1_00_a/hdl/verilog/conware.v;
+project close;
