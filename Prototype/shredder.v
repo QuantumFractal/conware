@@ -1,12 +1,12 @@
-module shredder(din, clk, rst, nsum0, nsum1, sum_out, next_state);
-    input din;
-    input clk;
-    input rst;
-    input[2:0] nsum0;
-    input[2:0] nsum1;
-
-    output[2:0] sum_out;
-    output next_state;
+module shredder(
+    input clk, 
+    input rst, 
+    input din, 
+    input[2:0] nsum0, 
+    input[2:0] nsum1, 
+    output[2:0] sum_out, 
+    output next_state
+);
 
     reg[2:0] shift_reg;
     wire[2:0] nsum;
