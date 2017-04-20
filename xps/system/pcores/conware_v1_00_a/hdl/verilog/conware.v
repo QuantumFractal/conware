@@ -77,8 +77,11 @@
 //----------------------------------------
 // Module Section
 //----------------------------------------
-module conware 
-	(
+module conware #(
+    parameter DWIDTH = 32,
+    parameter WIDTH = 8,
+    parameter HEIGHT = 8
+)(
 		// ADD USER PORTS BELOW THIS LINE 
 		// -- USER ports added here 
 		// ADD USER PORTS ABOVE THIS LINE 
@@ -98,116 +101,39 @@ module conware
 		// DO NOT EDIT ABOVE THIS LINE ////////////////////
 	);
 
-// ADD USER PORTS BELOW THIS LINE 
-// -- USER ports added here 
-// ADD USER PORTS ABOVE THIS LINE 
+	// ADD USER PORTS BELOW THIS LINE 
+	// -- USER ports added here 
+	// ADD USER PORTS ABOVE THIS LINE 
 
-input                                     ACLK;
-input                                     ARESETN;
-output                                    S_AXIS_TREADY;
-input      [31 : 0]                       S_AXIS_TDATA;
-input                                     S_AXIS_TLAST;
-input                                     S_AXIS_TVALID;
-output                                    M_AXIS_TVALID;
-output     [31 : 0]                       M_AXIS_TDATA;
-output                                    M_AXIS_TLAST;
-input                                     M_AXIS_TREADY;
+	input                                     ACLK;
+	input                                     ARESETN;
+	output                                    S_AXIS_TREADY;
+	input      [31 : 0]                       S_AXIS_TDATA;
+	input                                     S_AXIS_TLAST;
+	input                                     S_AXIS_TVALID;
+	output                                    M_AXIS_TVALID;
+	output     [31 : 0]                       M_AXIS_TDATA;
+	output                                    M_AXIS_TLAST;
+	input                                     M_AXIS_TREADY;
+   
+	
+	wire [WIDTH*HEIGHT-1:0] in_states;
+	wire in_valid;
+	wire int_ready; // Internal ready signal
+	
+   axis2buffer #(DWIDTH, WIDTH, HEIGHT) a2b(
+        .clk(ACLK),
+        .rstn(ARESETN),
+		  .alive_color(32'h00FFFFFFFF),
+		  .dead_color(32'h0000000000),
+        .S_AXIS_TVALID(S_AXIS_TVALID),
+        .S_AXIS_TREADY(S_AXIS_TREADY),
+        .S_AXIS_TDATA(S_AXIS_TDATA),
+        .S_AXIS_TLAST(S_AXIS_TLAST),
+        .out_data(in_states),
+		  .out_valid(in_valid),
+		  .out_ready(int_ready)
+    );
 
-// ADD USER PARAMETERS BELOW THIS LINE 
-// --USER parameters added here 
-// ADD USER PARAMETERS ABOVE THIS LINE
-
-
-//----------------------------------------
-// Implementation Section
-//----------------------------------------
-// In this section, we povide an example implementation of MODULE conware
-// that does the following:
-//
-// 1. Read all inputs
-// 2. Add each input to the contents of register 'sum' which
-//    acts as an accumulator
-// 3. After all the inputs have been read, write out the
-//    content of 'sum' into the output stream NUMBER_OF_OUTPUT_WORDS times
-//
-// You will need to modify this example for
-// MODULE conware to implement your coprocessor
-
-   // Total number of input data.
-   localparam NUMBER_OF_INPUT_WORDS  = 8;
-
-   // Total number of output data
-   localparam NUMBER_OF_OUTPUT_WORDS = 8;
-
-   // Define the states of state machine
-   localparam Idle  = 3'b100;
-   localparam Read_Inputs = 3'b010;
-   localparam Write_Outputs  = 3'b001;
-
-   reg [2:0] state;
-
-   // Accumulator to hold sum of inputs read at any point in time
-   reg [31:0] sum;
-
-   // Counters to store the number inputs read & outputs written
-   reg [NUMBER_OF_INPUT_WORDS - 1:0] nr_of_reads;
-   reg [NUMBER_OF_OUTPUT_WORDS - 1:0] nr_of_writes;
-
-   // CAUTION:
-   // The sequence in which data are read in should be
-   // consistent with the sequence they are written in the
-   // driver's conware.c file
-
-   assign S_AXIS_TREADY  = (state == Read_Inputs);
-   assign M_AXIS_TVALID = (state == Write_Outputs);
-
-   assign M_AXIS_TDATA = sum;
-   assign M_AXIS_TLAST = 1'b0;
-
-   always @(posedge ACLK) 
-   begin  // process The_SW_accelerator
-      if (!ARESETN)               // Synchronous reset (active low)
-        begin
-           // CAUTION: make sure your reset polarity is consistent with the
-           // system reset polarity
-           state        <= Idle;
-           nr_of_reads  <= 0;
-           nr_of_writes <= 0;
-           sum          <= 0;
-        end
-      else
-        case (state)
-          Idle: 
-            if (S_AXIS_TVALID == 1)
-            begin
-              state       <= Read_Inputs;
-              nr_of_reads <= NUMBER_OF_INPUT_WORDS - 1;
-              sum         <= 0;
-            end
-
-          Read_Inputs: 
-            if (S_AXIS_TVALID == 1) 
-            begin
-              // Coprocessor function (Adding) happens here
-              sum         <= sum + S_AXIS_TDATA;
-              if (nr_of_reads == 0)
-                begin
-                  state        <= Write_Outputs;
-                  nr_of_writes <= NUMBER_OF_OUTPUT_WORDS - 1;
-                end
-              else
-                nr_of_reads <= nr_of_reads - 1;
-            end
-
-          Write_Outputs: 
-            if (M_AXIS_TREADY == 1) 
-            begin
-              if (nr_of_writes == 0) 
-                 state <= Idle;
-               else
-                 nr_of_writes <= nr_of_writes - 1;
-            end
-        endcase
-   end
 
 endmodule

@@ -6,6 +6,10 @@ module axis2buffer #(
     // Control signals
     clk,
     rstn,
+
+    // Color conversion signals
+    alive_color,
+    dead_color,
     
     // AXIS Connection
     S_AXIS_TDATA,
@@ -23,12 +27,15 @@ module axis2buffer #(
     input clk;
     input rstn;
 
+    input [DWIDTH-1:0] alive_color;
+    input [DWIDTH-1:0] dead_color;
+
     input [DWIDTH-1:0] S_AXIS_TDATA;
     input S_AXIS_TVALID;
     input S_AXIS_TLAST;
     output S_AXIS_TREADY;
 
-    output reg [DWIDTH - 1:0] out_data [WIDTH*HEIGHT-1:0];
+    output [WIDTH*HEIGHT-1:0] out_data;
     output out_valid;
     input out_ready;
 
@@ -38,10 +45,12 @@ module axis2buffer #(
     localparam Read = 1;
 
     // Internal values
+    reg [DWIDTH - 1:0] buffer [WIDTH*HEIGHT-1:0];
     reg [31:0] counter;
 
     assign S_AXIS_TREADY = (state == Read);
 
+    // Read state machine
     always @(posedge clk) begin
         if (!rstn) begin
             counter <= 32'h00000000;
@@ -59,7 +68,7 @@ module axis2buffer #(
             Read: begin
                 
                 if (S_AXIS_TVALID == 1) begin
-                    out_data[counter] <= S_AXIS_TDATA;
+                    buffer[counter] <= S_AXIS_TDATA;
                     if (counter == WIDTH*HEIGHT-1) begin
                         counter <= 0;
                         state <= Wait;
@@ -75,4 +84,12 @@ module axis2buffer #(
             endcase
         end
     end
+
+    // Color conversion to binary values because Veriloc can't pass 2D arrays as I/O
+    genvar i;
+    generate 
+        for (i = 0; i < WIDTH*HEIGHT; i=i+1) begin : converter_block
+            assign out_data[i] = (buffer[i] == alive_color)? 1'b1 : 1'b0;
+        end
+    endgenerate
 endmodule

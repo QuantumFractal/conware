@@ -1,0 +1,31 @@
+add wave -position insertpoint  sim:/axis2buffer/DWIDTH sim:/axis2buffer/WIDTH sim:/axis2buffer/HEIGHT sim:/axis2buffer/Wait sim:/axis2buffer/Read sim:/axis2buffer/clk sim:/axis2buffer/rstn sim:/axis2buffer/alive_color sim:/axis2buffer/dead_color sim:/axis2buffer/S_AXIS_TDATA sim:/axis2buffer/S_AXIS_TVALID sim:/axis2buffer/S_AXIS_TLAST sim:/axis2buffer/S_AXIS_TREADY sim:/axis2buffer/out_data sim:/axis2buffer/out_valid sim:/axis2buffer/out_ready sim:/axis2buffer/state sim:/axis2buffer/buffer sim:/axis2buffer/counter
+force -freeze sim:/axis2buffer/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/axis2buffer/rstn 0 0
+
+force -freeze sim:/axis2buffer/alive_color 'h00FFFFFF 0
+force -freeze sim:/axis2buffer/dead_color 'h00000000 0
+force -freeze sim:/axis2buffer/out_ready 1 0
+force -freeze sim:/axis2buffer/S_AXIS_TLAST 0 0
+force -freeze sim:/axis2buffer/S_AXIS_TVALID 1 0
+run 100
+force -freeze sim:/axis2buffer/rstn 1 0
+
+
+force -freeze sim:/axis2buffer/S_AXIS_TDATA 'h00000000 0
+run 102500
+force -freeze sim:/axis2buffer/out_ready 0 0
+run 100
+force -freeze sim:/axis2buffer/S_AXIS_TVALID 0 0
+run 100
+force -freeze sim:/axis2buffer/out_ready 1 0
+run 100
+run 100
+force -freeze sim:/axis2buffer/rstn 0 0
+run 100
+run 100
+run 100
+run 100
+force -freeze sim:/axis2buffer/rstn 1 0
+run 500
+force -freeze sim:/axis2buffer/S_AXIS_TVALID 1 0
+run 1000

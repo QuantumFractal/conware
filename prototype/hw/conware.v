@@ -42,13 +42,6 @@ module conware #(
         .data(in_data)
     );
 
-    color2state #(DWIDTH, WIDTH, HEIGHT) c2s(
-        .in_data(in_data),
-        .out_data(in_states),
-        .alive_color(alive_color),
-        .dead_color(dead_color)
-    );
-
     conway_block #(WIDTH, HEIGHT) conway(
         .in_states(in_states),
         .out_states(out_states)
