@@ -1,8 +1,7 @@
-`timescale 1ns / 1ps
 module axis2buffer #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 32,
-    parameter HEIGHT = 32
+    parameter WIDTH = 4,
+    parameter HEIGHT = 4
 )( 
     // Control signals
     clk,
@@ -37,7 +36,7 @@ module axis2buffer #(
     output S_AXIS_TREADY;
 
     output [WIDTH*HEIGHT-1:0] out_data;
-    output out_valid;
+    output reg out_valid;
     input out_ready;
 
     // State params
@@ -61,9 +60,9 @@ module axis2buffer #(
             Wait: begin
                 if (out_ready) begin
                     state <= Read;
+                    out_valid <= 0;
                 end else begin
                     state <= Wait;
-
                 end
             end
             Read: begin
@@ -72,6 +71,7 @@ module axis2buffer #(
                     buffer[counter] <= S_AXIS_TDATA;
                     if (counter == WIDTH*HEIGHT-1) begin
                         counter <= 0;
+                        out_valid <= 1;
                         state <= Wait;
                     end else begin
                         counter <= counter + 1;

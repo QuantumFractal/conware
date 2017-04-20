@@ -96,12 +96,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1492662541" xil_pn:in_ck="3650754361076654592" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-4472435009178832813" xil_pn:start_ts="1492662512">
+    <transform xil_pn:end_ts="1492715411" xil_pn:in_ck="5633934204151118818" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-4472435009178832813" xil_pn:start_ts="1492715393">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="conware.lso"/>
       <outfile xil_pn:name="conware.ngc"/>
@@ -121,46 +119,40 @@
     <transform xil_pn:end_ts="1492662547" xil_pn:in_ck="156937900707900213" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1920777160903268519" xil_pn:start_ts="1492662541">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_ngo"/>
-      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
-      <outfile xil_pn:name="conware.bld"/>
-      <outfile xil_pn:name="conware.ngd"/>
-      <outfile xil_pn:name="conware_ngdbuild.xrpt"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1492662566" xil_pn:in_ck="156937900707900214" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="6343818628637911857" xil_pn:start_ts="1492662547">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
-      <outfile xil_pn:name="conware.pcf"/>
-      <outfile xil_pn:name="conware_map.map"/>
-      <outfile xil_pn:name="conware_map.mrp"/>
-      <outfile xil_pn:name="conware_map.ncd"/>
-      <outfile xil_pn:name="conware_map.ngm"/>
-      <outfile xil_pn:name="conware_map.xrpt"/>
-      <outfile xil_pn:name="conware_summary.xml"/>
-      <outfile xil_pn:name="conware_usage.xml"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1492662598" xil_pn:in_ck="6751187844856866127" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="378965794422880756" xil_pn:start_ts="1492662566">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
-      <outfile xil_pn:name="conware.ncd"/>
-      <outfile xil_pn:name="conware.pad"/>
-      <outfile xil_pn:name="conware.par"/>
-      <outfile xil_pn:name="conware.ptwx"/>
-      <outfile xil_pn:name="conware.unroutes"/>
-      <outfile xil_pn:name="conware.xpi"/>
-      <outfile xil_pn:name="conware_pad.csv"/>
-      <outfile xil_pn:name="conware_pad.txt"/>
-      <outfile xil_pn:name="conware_par.xrpt"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1492662598" xil_pn:in_ck="156937900707900082" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416183" xil_pn:start_ts="1492662584">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
-      <outfile xil_pn:name="conware.twr"/>
-      <outfile xil_pn:name="conware.twx"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
   </transforms>
 
