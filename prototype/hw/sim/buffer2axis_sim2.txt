@@ -1,0 +1,22 @@
+add wave -position insertpoint  sim:/conware/ACLK sim:/conware/ARESETN sim:/conware/S_AXIS_TDATA sim:/conware/S_AXIS_TVALID sim:/conware/S_AXIS_TLAST sim:/conware/S_AXIS_TREADY sim:/conware/M_AXIS_TDATA sim:/conware/M_AXIS_TVALID sim:/conware/M_AXIS_TLAST sim:/conware/M_AXIS_TREADY sim:/conware/in_states sim:/conware/out_states sim:/conware/pvalid sim:/conware/pready
+add wave -position insertpoint  sim:/conware/b2a/counter
+add wave -position insertpoint  sim:/conware/b2a/buffer
+force -freeze sim:/conware/ACLK 1 0, 0 {50 ps} -r 100
+force -freeze sim:/conware/ARESETN 0 0
+noforce sim:/conware/S_AXIS_TDATA
+force -freeze sim:/conware/S_AXIS_TDATA 'h00FF00FF 0
+force -freeze sim:/conware/S_AXIS_TDATA 'h00FFFFFF 0
+force -freeze sim:/conware/S_AXIS_TVALID 1 0
+force -freeze sim:/conware/S_AXIS_TLAST 0 0
+force -freeze sim:/conware/M_AXIS_TREADY 0 0
+run 100
+run 100
+force -freeze sim:/conware/ARESETN 1 0
+run 2000
+force -freeze sim:/conware/M_AXIS_TREADY 1 0
+run 100
+run 100
+run 100
+run 100
+run 100
+

@@ -33,7 +33,7 @@ module axis2buffer #(
     input [DWIDTH-1:0] S_AXIS_TDATA;
     input S_AXIS_TVALID;
     input S_AXIS_TLAST;
-    output S_AXIS_TREADY;
+    output reg S_AXIS_TREADY;
 
     output [WIDTH*HEIGHT-1:0] out_data;
     output reg out_valid;
@@ -41,56 +41,78 @@ module axis2buffer #(
 
     // State params
     reg state;
+    reg next_state;
     localparam Wait = 0;
     localparam Read = 1;
 
     // Internal values
     reg [DWIDTH - 1:0] buffer [WIDTH*HEIGHT-1:0];
     reg [31:0] counter;
+    reg [31:0] next_counter;
 
-    assign S_AXIS_TREADY = (state == Read);
+    // Combinational Logic
+    always @* begin
+        case (state)
 
-    // Read state machine
+        Wait: begin
+            S_AXIS_TREADY <= 0;
+            out_valid <= 1;
+
+            if (out_ready) begin
+                next_state <= Read;
+            end else begin
+                next_state <= Wait;
+            end
+        end
+
+        Read: begin
+            S_AXIS_TREADY <= 1;
+            next_state <= Read;
+            out_valid <= 0;
+
+            if (S_AXIS_TVALID == 1) begin
+                if (counter == WIDTH*HEIGHT-1) begin
+                    next_counter <= 0;
+                    next_state <= Wait;
+                end else begin
+                    next_counter <= counter + 1;
+                end
+
+            end else begin
+                // Data source stalled
+                next_counter <= counter;
+            end
+        end
+
+        endcase
+    end
+
+    // Clocked Logic
     always @(posedge clk) begin
         if (!rstn) begin
             counter <= 32'h00000000;
-            state <= Wait;
+            state <= Read;
         end else begin
-            case (state)
-            Wait: begin
-                if (out_ready) begin
-                    state <= Read;
-                    out_valid <= 0;
-                end else begin
-                    state <= Wait;
-                end
-            end
-            Read: begin
-                
-                if (S_AXIS_TVALID == 1) begin
-                    buffer[counter] <= S_AXIS_TDATA;
-                    if (counter == WIDTH*HEIGHT-1) begin
-                        counter <= 0;
-                        out_valid <= 1;
-                        state <= Wait;
-                    end else begin
-                        counter <= counter + 1;
-                    end
+            state <= next_state;
+            counter <= next_counter;
 
-                end else begin
-                    counter <= counter;
-                end
-
+            if (state == Read && S_AXIS_TVALID == 1) begin
+                buffer[counter] <= S_AXIS_TDATA;
             end
-            endcase
         end
     end
 
-    // Color conversion to binary values because Veriloc can't pass 2D arrays as I/O
+    // Color conversion and buffer reset
     genvar i;
     generate 
         for (i = 0; i < WIDTH*HEIGHT; i=i+1) begin : converter_block
             assign out_data[i] = (buffer[i] == alive_color)? 1'b1 : 1'b0;
+
+            always @(posedge clk) begin
+                if (!rstn) begin
+                    buffer[i] <= 'h00000000;
+                end
+            end
         end
     endgenerate
 endmodule

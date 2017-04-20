@@ -30,68 +30,88 @@ module buffer2axis #(
     input [DWIDTH-1:0] alive_color;
     input [DWIDTH-1:0] dead_color;
 
-    output [DWIDTH-1:0] M_AXIS_TDATA;
-    output M_AXIS_TVALID;
-    output M_AXIS_TLAST;
+    output reg [DWIDTH-1:0] M_AXIS_TDATA;
+    output reg M_AXIS_TVALID;
+    output reg M_AXIS_TLAST;
     input M_AXIS_TREADY;
 
     input [WIDTH*HEIGHT-1:0] in_data;
     input in_valid;
-    output in_ready;
+    output reg in_ready;
 
     // State params
     reg state;
+    reg next_state;
     localparam Wait = 0;
     localparam Write = 1;
 
     // Internal values
     reg [DWIDTH - 1:0] buffer [WIDTH*HEIGHT-1:0];
     reg [31:0] counter;
+    reg [31:0] next_counter;
 
-    assign M_AXIS_TVALID = (state == Write);
-    assign M_AXIS_TDATA = buffer[counter];
-    assign in_ready = (state == Wait);
+    // Combinational Logic
+    always @* begin
+        M_AXIS_TLAST <= 0;
+        M_AXIS_TDATA <= buffer[counter];
 
-    // Write state machine
+        case (state)
+
+        Wait: begin
+            next_counter <= 0;
+            M_AXIS_TVALID <= 0;
+            in_ready <= 1;
+
+            if (in_valid == 1) begin
+                next_state <= Write;
+            end else begin
+                next_state <= Wait;
+            end
+        end
+
+        Write: begin
+            M_AXIS_TVALID <= 1;
+            in_ready <= 0;
+
+            if (counter == WIDTH*HEIGHT-1) begin
+                M_AXIS_TLAST <= 1;
+            end
+
+            if (M_AXIS_TREADY == 1) begin
+                if (counter == WIDTH*HEIGHT-1) begin
+                    next_counter <= 0;
+                    next_state <= Wait;
+                end else begin
+                    next_counter <= counter + 1;
+                end
+
+            end else begin
+                next_counter <= counter;
+            end
+        end
+
+        endcase
+    end
+
+    // Clocked Logic
     always @(posedge clk) begin
         if (!rstn) begin
             counter <= 32'h00000000;
             state <= Wait;
         end else begin
-            case (state)
-            Wait: begin
-                if (in_valid == 1) begin
-                    state <= Write;
-                end else begin
-                    state <= Wait;
-
-                end
-            end
-            Write: begin
-                
-                if (M_AXIS_TREADY == 1) begin
-                    if (counter == WIDTH*HEIGHT-1) begin
-                        counter <= 0;
-                        state <= Wait;
-                    end else begin
-                        counter <= counter + 1;
-                    end
-
-                end else begin
-                    counter <= counter;
-                end
-
-            end
-            endcase
+            state <= next_state;
+            counter <= next_counter;
         end
     end
 
-    // Color conversion to binary values because Veriloc can't pass 2D arrays as I/O
+    // Handle resetting buffer and color conversion
     genvar i;
     generate 
         for (i = 0; i < WIDTH*HEIGHT; i=i+1) begin : converter_block
             always @(posedge clk) begin
-                if (state == Wait && in_valid == 1) begin
+                if (!rstn) begin
+                    buffer[i] <= 'h00000000;
+                end else if (state == Wait && in_valid == 1) begin
                     buffer[i] <= (in_data[i] == 1)? alive_color : dead_color;
                 end
             end
