@@ -1,7 +1,7 @@
 module axis2buffer #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 32,
-    parameter HEIGHT = 32
+    parameter WIDTH = 4,
+    parameter HEIGHT = 4
 )( 
     // Control signals
     clk,

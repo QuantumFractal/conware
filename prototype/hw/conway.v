@@ -1,9 +1,9 @@
-module conway_block #(
+module conway #(
     parameter WIDTH = 32,
     parameter HEIGHT = 32
 )(
     in_states,
-    out_states,
+    out_states
 );
     input [WIDTH*HEIGHT-1:0] in_states;
     output [WIDTH*HEIGHT-1:0] out_states;

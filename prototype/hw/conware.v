@@ -1,10 +1,12 @@
 module conware #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 32,
-    parameter HEIGHT = 32
+    parameter WIDTH = 4,
+    parameter HEIGHT = 4
 )(
     clk, 
-    rst, 
+    rstn, 
+
+    // Color conversion signals
     alive_color,
     dead_color,
     
@@ -22,46 +24,66 @@ module conware #(
     
 );
     input clk;
-    input rst;
+    input rstn;
     
-    input alive_color[DWIDTH-1:0];
-    input dead_color[DWIDTH-1:0];
-    
-    wire [DWIDTH-1:0] in_data [WIDTH*HEIGHT-1:0]; 
-    wire in_states [WIDTH*HEIGHT-1:0];
-    wire out_states [WIDTH*HEIGHT-1:0];
-    wire [DWIDTH-1:0] out_data [WIDTH*HEIGHT-1:0]; 
+    input [DWIDTH-1:0] alive_color;
+    input [DWIDTH-1:0] dead_color;
 
-    axis2buffer #(DWITDH, WIDTH, HEIGHT) a2b(
+    input [DWIDTH-1:0] S_AXIS_TDATA;
+    input S_AXIS_TVALID;
+    input S_AXIS_TLAST;
+    output S_AXIS_TREADY;
+
+    output [DWIDTH-1:0] M_AXIS_TDATA;
+    output M_AXIS_TVALID;
+    output M_AXIS_TLAST;
+    input M_AXIS_TREADY;
+
+    wire [WIDTH*HEIGHT-1:0] in_states;
+    wire [WIDTH*HEIGHT-1:0] out_states;
+
+    // Signals to handle internal handshake between in-buffer and out-buffer
+    wire pvalid;
+    wire pready;
+
+
+    axis2buffer #(DWIDTH, WIDTH, HEIGHT) a2b(
         .clk(clk),
-        .rst(rst),
+        .rstn(rstn),
+
+        .alive_color(alive_color),
+        .dead_color(dead_color),
+
         .S_AXIS_TVALID(S_AXIS_TVALID),
         .S_AXIS_TREADY(S_AXIS_TREADY),
         .S_AXIS_TDATA(S_AXIS_TDATA),
-        .S_AXIS_TLAST(S_AXIS_TLAST)
-        .data(in_data)
+        .S_AXIS_TLAST(S_AXIS_TLAST),
+
+        .out_data(in_states),
+        .out_valid(pvalid),
+        .out_ready(pready)
     );
 
-    conway_block #(WIDTH, HEIGHT) conway(
+    conway #(WIDTH, HEIGHT) conway_block(
         .in_states(in_states),
         .out_states(out_states)
     );
 
-    state2color #(DWIDTH, WIDTH, HEIGHT) s2c(
-        .in_data(out_states),
-        .out_data(out_data),
-        .alive_color(alive_color),
-        .dead_color(dead_color)
-    );
-
     buffer2axis #(DWIDTH, WIDTH, HEIGHT) b2a(
         .clk(clk),
-        .rst(rst),
+        .rstn(rstn),
+
+        .alive_color(alive_color),
+        .dead_color(dead_color),
+
         .M_AXIS_TVALID(M_AXIS_TVALID),
         .M_AXIS_TREADY(M_AXIS_TREADY),
         .M_AXIS_TDATA(M_AXIS_TDATA),
         .M_AXIS_TLAST(M_AXIS_TLAST),
-        .data(out_data)
-    )
+
+        .in_data(out_states),
+        .in_valid(pvalid),
+        .in_ready(pready)
+    );
 
 endmodule

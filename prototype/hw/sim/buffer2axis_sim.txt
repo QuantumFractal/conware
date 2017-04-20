@@ -1,0 +1,17 @@
+
+add wave -position insertpoint  sim:/buffer2axis/DWIDTH sim:/buffer2axis/WIDTH sim:/buffer2axis/HEIGHT sim:/buffer2axis/Wait sim:/buffer2axis/Write sim:/buffer2axis/clk sim:/buffer2axis/rstn sim:/buffer2axis/alive_color sim:/buffer2axis/dead_color sim:/buffer2axis/M_AXIS_TDATA sim:/buffer2axis/M_AXIS_TVALID sim:/buffer2axis/M_AXIS_TLAST sim:/buffer2axis/M_AXIS_TREADY sim:/buffer2axis/in_data sim:/buffer2axis/in_valid sim:/buffer2axis/in_ready sim:/buffer2axis/state sim:/buffer2axis/in_color sim:/buffer2axis/buffer sim:/buffer2axis/counter
+force -freeze sim:/buffer2axis/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/buffer2axis/rstn 1 0
+force -freeze sim:/buffer2axis/rstn 0 0
+force -freeze sim:/buffer2axis/alive_color 'h00FFFFFFFF 0
+force -freeze sim:/buffer2axis/dead_color 'h00000000 0
+force -freeze sim:/buffer2axis/M_AXIS_TREADY 1 0
+force -freeze sim:/buffer2axis/in_data 1010010110100101 0
+force -freeze sim:/buffer2axis/in_valid 1 0
+run 100
+run 100
+force -freeze sim:/buffer2axis/rstn 1 0
+run 100
+run 100
+run 100
+run 100
