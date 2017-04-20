@@ -1,0 +1,2869 @@
+15:19:18 **** Build of project conware_bsp ****
+make -k all 
+libgen -hw ../system_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../system_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling standalone"
+"Compiling axidma"
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling ttcps"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling xadcps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+15:20:45 **** Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22872	   1096	  29780	  53748	   d1f4	conware.elf
+'Finished building: conware.elf.size'
+' '
+15:25:34 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22872	   1096	  29780	  53748	   d1f4	conware.elf
+'Finished building: conware.elf.size'
+' '
+15:25:38 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+15:26:17 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22872	   1096	  29780	  53748	   d1f4	conware.elf
+'Finished building: conware.elf.size'
+' '
+15:26:20 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+15:28:20 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22872	   1096	  29780	  53748	   d1f4	conware.elf
+'Finished building: conware.elf.size'
+' '
+15:29:31 **** Auto Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+15:30:30 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:38:21: fatal error: axi_dma.h: No such file or directory
+compilation terminated.
+make: *** [src/helloworld.o] Error 1
+15:30:59 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:38:22: fatal error: xaxi_dma.h: No such file or directory
+compilation terminated.
+make: *** [src/helloworld.o] Error 1
+15:31:11 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:42:6: error: conflicting types for 'print'
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xil_io.h:74:0,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_hw.h:72,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:122,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xil_printf.h:39:6: note: previous declaration of 'print' was here
+make: *** [src/helloworld.o] Error 1
+15:31:28 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24880	   1096	  29780	  55756	   d9cc	conware.elf
+'Finished building: conware.elf.size'
+' '
+15:59:12 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25736	   1096	  29796	  56628	   dd34	conware.elf
+'Finished building: conware.elf.size'
+' '
+15:59:20 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25736	   1096	  29780	  56612	   dd24	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:01:07 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:67:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:67:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:67:36: error: 'width' undeclared (first use in this function)
+../src/helloworld.c:67:36: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:67:42: error: 'height' undeclared (first use in this function)
+../src/helloworld.c:68:5: error: too few arguments to function 'memset'
+../src/helloworld.c:70:5: error: expected ';' before 'xil_printf'
+../src/helloworld.c:71:5: error: too few arguments to function 'init_checkers'
+../src/helloworld.c:40:6: note: declared here
+../src/helloworld.c:73:5: error: expected ';' before 'return'
+../src/helloworld.c:65:9: warning: unused variable 'HEIGHT' [-Wunused-variable]
+../src/helloworld.c:64:9: warning: unused variable 'WIDTH' [-Wunused-variable]
+../src/helloworld.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [src/helloworld.o] Error 1
+16:01:37 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:67:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:67:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29064	   2136	  29844	  61044	   ee74	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:01:55 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:67:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:67:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29080	   2136	  29844	  61060	   ee84	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:01:57 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:02:20 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:67:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:67:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29080	   2136	  29844	  61060	   ee84	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:02:22 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:02:58 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:67:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:67:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29080	   2136	  29844	  61060	   ee84	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:03:06 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:67:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:67:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29080	   2136	  29844	  61060	   ee84	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:03:09 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:04:23 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:05:17 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29092	   2136	  29844	  61072	   ee90	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:05:29 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29092	   2136	  29844	  61072	   ee90	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:05:31 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:06:36 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28536	   2136	  29844	  60516	   ec64	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:06:39 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:07:08 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28536	   2136	  29844	  60516	   ec64	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:07:20 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28540	   2136	  29844	  60520	   ec68	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:07:22 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:07:43 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28540	   2136	  29844	  60520	   ec68	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:07:47 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:19:07 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28540	   2136	  29844	  60520	   ec68	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:21:12 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:78:31: error: expected expression before 'XAxiDma_BdRing'
+../src/helloworld.c:76:22: warning: unused variable 'ring' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+16:21:28 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:81:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:81:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32308	   2136	  29844	  64288	   fb20	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:25:02 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:77:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:77:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:82:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:82:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: unused variable 'error' [-Wunused-variable]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32332	   2136	  29844	  64312	   fb38	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:26:09 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:77:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:77:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:83:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:83:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:26:13 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:28:31 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:28:31 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:77:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:77:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:83:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:83:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:28:35 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:28:35 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:77:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:77:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:83:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:83:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:28:40 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:29:57 **** Auto Build of project conware_bsp ****
+make -k all 
+'Finished building libraries'
+16:29:58 **** Auto Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:30:08 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:32:01 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:35:51 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xdebug.h:58:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:77:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:77:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:83:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:83:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:36:02 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xdebug.h:58:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:78:15: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:78:15: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:84:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:84:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:36:54 **** Auto Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:36:56 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+rm: cannot remove `conware.elf': Permission denied
+make: [clean] Error 1 (ignored)
+' '
+16:36:56 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:36:58 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:37:14 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:37:45 **** Auto Build of project conware_bsp ****
+make -k all 
+'Finished building libraries'
+16:37:45 **** Auto Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:38:19 **** Clean-only build of project conware_bsp ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+rm: cannot remove directory `ps7_cortexa9_0/libsrc': Directory not empty
+make: *** [clean] Error 1
+16:38:39 **** Build of project conware_bsp ****
+make -k all 
+libgen -hw ../system_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../system_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+ERROR:EDK:3428 - Failed to remove existing directory:
+   \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\software\conware_bsp\
+   ps7_cortexa9_0\libsrc\.
+ERROR:EDK:1278 - Failed to create directory
+   \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\software\conware_bsp\
+   ps7_cortexa9_0\libsrc\.
+make: *** [ps7_cortexa9_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+16:38:40 **** Auto Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:38:50 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:39:07 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:41:06 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:41:06 **** Clean-only build of project conware_bsp ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+rm: reading directory `ps7_cortexa9_0/libsrc': Permission denied
+rm: cannot remove directory `ps7_cortexa9_0': Directory not empty
+make: *** [clean] Error 1
+16:41:06 **** Build of project conware_bsp ****
+make -k all 
+libgen -hw ../system_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../system_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+ERROR:EDK:3428 - Failed to remove existing directory:
+   \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\software\conware_bsp\
+   ps7_cortexa9_0\libsrc\.
+ERROR:EDK:1278 - Failed to create directory
+   \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\software\conware_bsp\
+   ps7_cortexa9_0\libsrc\.
+make: *** [ps7_cortexa9_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+16:41:08 **** Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:36:25: fatal error: xparameters.h: No such file or directory
+compilation terminated.
+make: *** [src/helloworld.o] Error 1
+16:41:32 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:36:25: fatal error: xparameters.h: No such file or directory
+compilation terminated.
+make: *** [src/helloworld.o] Error 1
+16:42:07 **** Build of project conware_bsp_0 ****
+make -k all 
+libgen -hw ../system_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../system_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling standalone"
+"Compiling axidma"
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling ttcps"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling xadcps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+16:43:30 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:43:30 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:78:15: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:78:15: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:84:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:84:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32356	   2136	  29844	  64336	   fb50	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:43:59 **** Clean-only build of project conware_bsp_0 ****
+make -k clean 
+rm -rf ps7_cortexa9_0
+16:44:12 **** Build of project conware_bsp_0 ****
+make -k all 
+libgen -hw ../system_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../system_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-DDEBUG"'.
+
+Running libs - 'make -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-DDEBUG"'.
+"Compiling common"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Compiling standalone"
+"Compiling axidma"
+In file included from xaxidma_bd.h:124:0,
+                 from xaxidma_bdring.h:93,
+                 from xaxidma.h:462,
+                 from xaxidma.c:85:
+xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+In file included from xaxidma_bd.h:124:0,
+                 from xaxidma_bd.c:68:
+xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+In file included from xaxidma_bd.h:124:0,
+                 from xaxidma_bdring.h:93,
+                 from xaxidma_bdring.c:83:
+xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+In file included from xaxidma_bd.h:124:0,
+                 from xaxidma_bdring.h:93,
+                 from xaxidma.h:462,
+                 from xaxidma_g.c:16:
+xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+In file included from xaxidma_bd.h:124:0,
+                 from xaxidma_bdring.h:93,
+                 from xaxidma.h:462,
+                 from xaxidma_sinit.c:68:
+xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+"Compiling gpio"
+"Compiling devcfg"
+"Compiling dmaps"
+"Compiling emacps"
+"Compiling gpiops"
+"Compiling qspips"
+"Compiling scugic"
+"Compiling scutimer"
+"Compiling scuwdt"
+"Compiling ttcps"
+"Compiling uartps"
+"Compiling usbps"
+"Compiling xadcps"
+"Compiling cpu_cortexa9"
+Running execs_generate.
+'Finished building libraries'
+16:45:35 **** Auto Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:46:26 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+16:47:05 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:47:05 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:78:15: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:78:15: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:84:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:84:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70480	   2264	  29852	 102596	  190c4	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:47:15 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:47:15 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:78:15: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:78:15: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:84:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:84:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70480	   2264	  29852	 102596	  190c4	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:47:19 **** Clean-only build of configuration Debug for project conware ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  conware.elf.size  conware.elf
+' '
+16:47:20 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:68:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:68:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:78:15: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:78:15: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:84:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:84:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:77:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70480	   2264	  29852	 102596	  190c4	conware.elf
+'Finished building: conware.elf.size'
+' '
+16:47:30 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:00:59 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:70:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:85:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:85:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:91:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:91:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:80:13: warning: unused variable 'AxiDma' [-Wunused-variable]
+../src/helloworld.c:79:21: warning: unused variable 'CfgPtr' [-Wunused-variable]
+../src/helloworld.c:85:9: warning: 'ring' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70488	   2264	  29852	 102604	  190cc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:01:35 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:70:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:82:5: error: 'Status' undeclared (first use in this function)
+../src/helloworld.c:82:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:90:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:90:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:96:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:96:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+make: *** [src/helloworld.o] Error 1
+17:01:42 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:70:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:83:6: error: 'Status' undeclared (first use in this function)
+../src/helloworld.c:83:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:90:9: error: redefinition of 'status'
+../src/helloworld.c:82:9: note: previous definition of 'status' was here
+../src/helloworld.c:90:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:90:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:96:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:96:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+make: *** [src/helloworld.o] Error 1
+17:01:55 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:70:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:90:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:90:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:96:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:96:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:82:9: warning: 'CfgPtr' is used uninitialized in this function [-Wuninitialized]
+../src/helloworld.c:90:12: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73448	   2264	  29852	 105564	  19c5c	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:01:59 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:04:07 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:70:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:85:36: error: 'DMA_DEV_ID' undeclared (first use in this function)
+../src/helloworld.c:85:36: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:93:38: error: 'AxiDma' undeclared (first use in this function)
+../src/helloworld.c:97:5: error: 'status' undeclared (first use in this function)
+../src/helloworld.c:97:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:97:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:103:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:103:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:81:10: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:79:9: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+make: *** [src/helloworld.o] Error 1
+17:04:23 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:70:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:85:32: error: 'DMA_DEV_ID' undeclared (first use in this function)
+../src/helloworld.c:85:32: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:93:34: error: 'AxiDma' undeclared (first use in this function)
+../src/helloworld.c:97:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:97:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:103:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:103:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:79:9: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+make: *** [src/helloworld.o] Error 1
+17:04:37 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:87:32: error: 'DMA_DEV_ID' undeclared (first use in this function)
+../src/helloworld.c:87:32: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:99:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:99:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:105:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:83:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:81:9: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+make: *** [src/helloworld.o] Error 1
+17:04:53 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:89:44: error: 'DMA_DEV_ID' undeclared (first use in this function)
+../src/helloworld.c:89:44: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:99:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:99:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:105:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:83:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:81:9: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+make: *** [src/helloworld.o] Error 1
+17:04:57 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:99:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:99:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:105:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:83:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:81:9: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../src/helloworld.c:99:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73520	   2312	  31516	 107348	  1a354	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:05:01 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:06:18 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:115:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:115:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:83:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:109:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73664	   2312	  31516	 107492	  1a3e4	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:06:21 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:06:32 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:113:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:113:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:83:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:109:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73624	   2312	  31516	 107452	  1a3bc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:06:59 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:107:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:107:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:111:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:111:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:107:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:107:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73584	   2312	  31516	 107412	  1a394	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:07:02 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:107:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:107:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:111:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:111:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:107:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:107:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73584	   2312	  31516	 107412	  1a394	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:07:07 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:106:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:106:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:110:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:110:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:106:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:106:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73584	   2312	  31516	 107412	  1a394	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:08:50 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:105:2: warning: implicit declaration of function 'SetupIntrSystem' [-Wimplicit-function-declaration]
+../src/helloworld.c:105:28: error: 'Intc' undeclared (first use in this function)
+../src/helloworld.c:105:28: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:105:43: error: 'TX_INTR_ID' undeclared (first use in this function)
+../src/helloworld.c:105:55: error: 'RX_INTR_ID' undeclared (first use in this function)
+../src/helloworld.c:114:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:114:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:118:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:118:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:114:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:08:51 **** Incremental Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:105:2: warning: implicit declaration of function 'SetupIntrSystem' [-Wimplicit-function-declaration]
+../src/helloworld.c:105:28: error: 'Intc' undeclared (first use in this function)
+../src/helloworld.c:105:28: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:105:43: error: 'TX_INTR_ID' undeclared (first use in this function)
+../src/helloworld.c:105:55: error: 'RX_INTR_ID' undeclared (first use in this function)
+../src/helloworld.c:114:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:114:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:118:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:118:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:114:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:09:20 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:3:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77848	   3088	  31948	 112884	  1b8f4	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:09:25 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:10:22 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:11:11 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:106:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:106:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:110:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:110:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:106:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:106:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73584	   2312	  31516	 107412	  1a394	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:11:18 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:11:53 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:106:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:106:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:110:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:110:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:112:5: warning: implicit declaration of function 'xil_prinf' [-Wimplicit-function-declaration]
+../src/helloworld.c:106:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:106:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+U:\Cpre488\conware\xps\software\conware\Debug/../src/helloworld.c:112: undefined reference to `xil_prinf'
+collect2.exe: error: ld returned 1 exit status
+make: *** [conware.elf] Error 1
+17:12:02 **** Incremental Build of configuration Debug for project conware ****
+make all 
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+U:\Cpre488\conware\xps\software\conware\Debug/../src/helloworld.c:112: undefined reference to `xil_prinf'
+collect2.exe: error: ld returned 1 exit status
+make: *** [conware.elf] Error 1
+17:12:17 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:106:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:106:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:110:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:110:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:106:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:106:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73632	   2312	  31516	 107460	  1a3c4	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:12:20 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:12:45 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:105:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:109:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:105:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:105:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73624	   2312	  31516	 107452	  1a3bc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:12:48 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:13:33 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:105:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:109:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:105:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:105:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73624	   2312	  31516	 107452	  1a3bc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:13:36 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:21:05 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:105:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:109:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:105:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:105:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73624	   2312	  31516	 107452	  1a3bc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:21:08 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:21:27 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:72:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:105:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:105:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:109:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:105:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:82:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:105:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73624	   2312	  31516	 107452	  1a3bc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:21:30 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+17:29:08 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:108:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:108:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:112:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:112:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:108:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:108:9: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73624	   2312	  31516	 107452	  1a3bc	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:30:41 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:108:5: error: unknown type name 'uint32'
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:113:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:113:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:108:14: warning: unused variable 'aligned_grid' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:38:21 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:113:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:113:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:108:11: warning: unused variable 'aligned_grid' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:108:26: warning: 'ring' may be used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73664	   2312	  31516	 107492	  1a3e4	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:39:06 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'char *'
+../src/helloworld.c:113:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:113:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:108:11: warning: unused variable 'aligned_grid' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73672	   2312	  31516	 107500	  1a3ec	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:39:24 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:113:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+../src/helloworld.c:113:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73672	   2312	  31516	 107500	  1a3ec	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:39:54 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73664	   2312	  31516	 107492	  1a3e4	conware.elf
+'Finished building: conware.elf.size'
+' '
+17:39:59 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+18:05:54 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73656	   2312	  31516	 107484	  1a3dc	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:06:00 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:109:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73664	   2312	  31516	 107492	  1a3e4	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:19:38 **** Incremental Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:108:16: error: 'p_dma_inst' undeclared (first use in this function)
+../src/helloworld.c:108:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:116:39: error: 'ring' undeclared (first use in this function)
+../src/helloworld.c:116:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:116:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:116:9: warning: unused variable 'status' [-Wunused-variable]
+../src/helloworld.c:85:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:23:04 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:109:16: error: 'p_dma_inst' undeclared (first use in this function)
+../src/helloworld.c:109:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:117:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:117:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:122:31: error: 'ring' undeclared (first use in this function)
+../src/helloworld.c:130:37: error: 'num_bds_per_ring' undeclared (first use in this function)
+../src/helloworld.c:130:56: error: 'bd_ptr' undeclared (first use in this function)
+../src/helloworld.c:134:10: error: 'DMA_PASSTHROUGH_BD_SETUP_FAIL' undeclared (first use in this function)
+../src/helloworld.c:86:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:31:35 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:110:16: error: 'p_dma_inst' undeclared (first use in this function)
+../src/helloworld.c:110:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:118:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:118:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:135:10: error: 'DMA_PASSTHROUGH_BD_SETUP_FAIL' undeclared (first use in this function)
+../src/helloworld.c:87:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:31:44 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:110:16: error: 'p_dma_inst' undeclared (first use in this function)
+../src/helloworld.c:110:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:118:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:118:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:87:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:31:56 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:110:2: error: incompatible type for argument 1 of 'XAxiDma_Reset'
+In file included from ../src/helloworld.c:38:0:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:712:6: note: expected 'struct XAxiDma *' but argument is of type 'XAxiDma'
+../src/helloworld.c:111:30: error: 'p_dma_inst' undeclared (first use in this function)
+../src/helloworld.c:111:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:118:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:118:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:87:6: warning: unused variable 'i' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:32:10 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:118:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:118:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:87:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/dma_util.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/dma_util.d" -MT"src/dma_util.d" -o "src/dma_util.o" "../src/dma_util.c"
+'Finished building: ../src/dma_util.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/dma_util.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73960	   2312	  31516	 107788	  1a50c	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:32:27 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+18:32:41 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+18:33:00 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:118:5: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:118:5: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:87:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/dma_util.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73960	   2312	  31516	 107788	  1a50c	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:33:03 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.
+18:35:26 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:119:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:119:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:87:6: warning: unused variable 'i' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/dma_util.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73960	   2312	  31516	 107788	  1a50c	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:41:57 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:2: error: 'buf_addr' undeclared (first use in this function)
+../src/helloworld.c:144:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:151:6: error: conflicting types for 'i'
+../src/helloworld.c:88:6: note: previous declaration of 'i' was here
+../src/helloworld.c:157:11: error: 'DMA_PASSTHROUGH_BD_SETUP_FAIL' undeclared (first use in this function)
+../src/helloworld.c:161:44: error: 'num_samples_per_bd' undeclared (first use in this function)
+../src/helloworld.c:161:63: error: 'sample_size_bytes' undeclared (first use in this function)
+../src/helloworld.c:161:82: error: 'ring' undeclared (first use in this function)
+../src/helloworld.c:169:8: error: 'is_rx' undeclared (first use in this function)
+../src/helloworld.c:171:8: error: 'ii' undeclared (first use in this function)
+../src/helloworld.c:173:5: error: 'cr_bits' undeclared (first use in this function)
+make: *** [src/helloworld.o] Error 1
+18:42:44 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:2: error: 'buf_addr' undeclared (first use in this function)
+../src/helloworld.c:144:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:158:11: error: 'DMA_PASSTHROUGH_BD_SETUP_FAIL' undeclared (first use in this function)
+../src/helloworld.c:162:44: error: 'num_samples_per_bd' undeclared (first use in this function)
+../src/helloworld.c:162:63: error: 'sample_size_bytes' undeclared (first use in this function)
+../src/helloworld.c:162:82: error: 'ring' undeclared (first use in this function)
+make: *** [src/helloworld.o] Error 1
+18:43:02 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:17: warning: initialization makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:145:15: warning: comparison between pointer and integer [enabled by default]
+../src/helloworld.c:158:11: error: 'DMA_PASSTHROUGH_BD_SETUP_FAIL' undeclared (first use in this function)
+../src/helloworld.c:158:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:162:44: error: 'num_samples_per_bd' undeclared (first use in this function)
+../src/helloworld.c:162:63: error: 'sample_size_bytes' undeclared (first use in this function)
+../src/helloworld.c:162:82: error: 'ring' undeclared (first use in this function)
+make: *** [src/helloworld.o] Error 1
+18:43:28 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:17: warning: initialization makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:145:15: warning: comparison between pointer and integer [enabled by default]
+../src/helloworld.c:166:11: error: 'DMA_PASSTHROUGH_BD_SETUP_FAIL' undeclared (first use in this function)
+../src/helloworld.c:166:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:184:15: error: 'num_samples_per_bd' undeclared (first use in this function)
+../src/helloworld.c:184:34: error: 'sample_size_bytes' undeclared (first use in this function)
+../src/helloworld.c:187:16: error: 'ring' undeclared (first use in this function)
+make: *** [src/helloworld.o] Error 1
+18:43:44 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:17: warning: initialization makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:145:15: warning: comparison between pointer and integer [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/dma_util.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  75616	   2312	  31516	 109444	  1ab84	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:45:45 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:17: warning: initialization makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:145:15: warning: comparison between pointer and integer [enabled by default]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/dma_util.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  75832	   2312	  31516	 109660	  1ac5c	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:46:42 **** Auto Build of configuration Debug for project conware ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -DDEBUG -c -fmessage-length=0 -I../../conware_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bd.h:124:0,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:93,
+                 from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xdebug.h:57:2: warning: #warning DEBUG is enabled [-Wcpp]
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:5: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/helloworld.c:75:28: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/helloworld.c:120:7: warning: passing argument 2 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:120:7: warning: passing argument 3 of 'XAxiDma_BdRingCreate' makes integer from pointer without a cast [enabled by default]
+In file included from ../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma.h:462:0,
+                 from ../src/helloworld.c:38:
+../../conware_bsp_0/ps7_cortexa9_0/include/xaxidma_bdring.h:505:5: note: expected 'u32' but argument is of type 'int *'
+../src/helloworld.c:144:17: warning: initialization makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:145:15: warning: comparison between pointer and integer [enabled by default]
+../src/helloworld.c:207:2: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: conware.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf"  ./src/dma_util.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conware.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size conware.elf  |tee "conware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  75912	   2312	  31516	 109740	  1acac	conware.elf
+'Finished building: conware.elf.size'
+' '
+18:46:44 **** Incremental Build of configuration Debug for project conware ****
+make all 
+make: Nothing to be done for `all'.

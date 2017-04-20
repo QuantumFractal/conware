@@ -1,0 +1,72 @@
+15:09:55.795 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+15:20:09.792 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/software/system_hw_platform/system.bit" 
+15:25:41.534 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:25:41.644 INFO  - PS initialization will be done as it is not done before. 
+15:25:41.644 INFO  - Running PS initialization.... 
+15:25:42.064 INFO  - ps7_init is completed. 
+15:25:42.164 INFO  - ps7_post_config is completed. 
+15:25:42.274 INFO  - PS Initialization is complete. 
+15:26:23.657 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:02:00.508 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:02:25.298 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:03:12.096 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:04:26.681 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:05:33.937 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:06:42.062 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:07:24.947 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:07:50.018 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:26:16.307 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:28:40.902 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:28:45.511 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:30:09.438 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:30:12.037 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:32:02.458 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:32:04.040 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:36:59.640 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:37:01.743 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:37:15.477 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:37:17.055 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:38:19.516 INFO  - Settings changed on project conware_bsp. Triggering a rebuild... 
+16:38:39.074 INFO  - Refreshed build settings on project conware 
+16:38:50.687 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:38:52.481 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:39:08.926 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:39:13.429 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:41:29.722 INFO  - Project conware_bsp was a BSP project. Please update references. 
+16:41:29.722 ERROR - SDK has detected that project conware_bsp has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references. 
+16:43:59.365 INFO  - Settings changed on project conware_bsp_0. Triggering a rebuild... 
+16:44:11.968 INFO  - Refreshed build settings on project conware 
+16:46:29.407 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:47:31.611 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:47:33.301 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:02:00.614 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:02:07.562 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:05:04.657 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:06:24.194 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:08:54.279 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:09:28.733 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:10:15.942 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/software/system_hw_platform/system.bit" 
+17:10:24.202 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:10:24.312 INFO  - PS initialization will be done as it is not done before. 
+17:10:24.312 INFO  - Running PS initialization.... 
+17:10:24.732 INFO  - ps7_init is completed. 
+17:10:24.842 INFO  - ps7_post_config is completed. 
+17:10:24.952 INFO  - PS Initialization is complete. 
+17:11:21.668 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:12:05.560 ERROR - Unexpected error while launching program. java.lang.RuntimeException: The program file specified in the launch configuration does not exist
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(Unknown Source)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(Unknown Source)
+
+17:12:22.879 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:12:50.976 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:13:38.870 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:21:11.735 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:21:33.692 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:40:02.569 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:19:42.400 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:32:30.591 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:32:43.274 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:33:05.885 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:46:47.442 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:49:54.300 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

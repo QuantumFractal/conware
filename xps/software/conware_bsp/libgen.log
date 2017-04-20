@@ -1,0 +1,13 @@
+Release 14.7 - libgen Xilinx EDK 14.7 Build EDK_P.20131013
+ (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../system_hw_platform/system.xml -pe ps7_cortexa9_0
+-log libgen.log system.mss 
+
+ERROR:EDK:3428 - Failed to remove existing directory:
+   \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\software\conware_bsp\
+   ps7_cortexa9_0\libsrc\.
+ERROR:EDK:1278 - Failed to create directory
+   \\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\software\conware_bsp\
+   ps7_cortexa9_0\libsrc\.
