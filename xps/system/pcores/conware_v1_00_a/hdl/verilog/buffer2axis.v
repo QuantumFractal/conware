@@ -52,12 +52,13 @@ module buffer2axis #(
 
     // Combinational Logic
     always @* begin
-        M_AXIS_TLAST <= 0;
+        
         M_AXIS_TDATA <= buffer[counter];
 
         case (state)
 
         Wait: begin
+            M_AXIS_TLAST <= 0;
             next_counter <= 0;
             M_AXIS_TVALID <= 0;
             in_ready <= 1;
@@ -75,6 +76,8 @@ module buffer2axis #(
 
             if (counter == WIDTH*HEIGHT-1) begin
                 M_AXIS_TLAST <= 1;
+            end else begin
+                M_AXIS_TLAST <= 0;
             end
 
             if (M_AXIS_TREADY == 1) begin

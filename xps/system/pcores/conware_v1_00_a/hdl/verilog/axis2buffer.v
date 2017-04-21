@@ -95,10 +95,6 @@ module axis2buffer #(
         end else begin
             state <= next_state;
             counter <= next_counter;
-
-            if (state == Read && S_AXIS_TVALID == 1) begin
-                buffer[counter] <= S_AXIS_TDATA;
-            end
         end
     end
 
@@ -111,6 +107,10 @@ module axis2buffer #(
             always @(posedge clk) begin
                 if (!rstn) begin
                     buffer[i] <= 'h00000000;
+                end else begin
+                    if (state == Read && S_AXIS_TVALID == 1 && counter == i) begin
+                        buffer[i] <= S_AXIS_TDATA;
+                    end
                 end
             end
         end

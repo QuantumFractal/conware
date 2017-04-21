@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;conware_bsp&apos;" deleteContents="false" description="Delete resource &apos;conware_bsp&apos;" element1="/conware_bsp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1492119689732"/>
-</session>

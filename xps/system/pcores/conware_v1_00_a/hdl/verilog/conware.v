@@ -1,7 +1,7 @@
 module conware #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 4,
-    parameter HEIGHT = 4
+    parameter WIDTH = 32,
+    parameter HEIGHT = 32
 )(
     // Color conversion signals
     // alive_color,
