@@ -190,8 +190,8 @@ BEGIN axi_dma
  BUS_INTERFACE M_AXI_SG = axi_interconnect_1
  BUS_INTERFACE M_AXI_MM2S = axi_interconnect_1
  BUS_INTERFACE M_AXI_S2MM = axi_interconnect_1
- BUS_INTERFACE S_AXIS_S2MM = conware_0_M_AXIS
  BUS_INTERFACE M_AXIS_MM2S = axi_dma_0_M_AXIS_MM2S
+ BUS_INTERFACE S_AXIS_S2MM = axi_dma_0_M_AXIS_MM2S
  PORT m_axi_sg_aclk = processing_system7_0_FCLK_CLK0
  PORT m_axi_mm2s_aclk = processing_system7_0_FCLK_CLK0
  PORT m_axi_s2mm_aclk = processing_system7_0_FCLK_CLK0
@@ -206,12 +206,5 @@ BEGIN axi_interconnect
  PARAMETER C_INTERCONNECT_CONNECTIVITY_MODE = 1
  PORT INTERCONNECT_ACLK = processing_system7_0_FCLK_CLK0
  PORT INTERCONNECT_ARESETN = processing_system7_0_FCLK_RESET0_N_0
-END
-
-BEGIN conware
- PARAMETER INSTANCE = conware_0
- PARAMETER HW_VER = 1.00.a
- BUS_INTERFACE M_AXIS = conware_0_M_AXIS
- BUS_INTERFACE S_AXIS = axi_dma_0_M_AXIS_MM2S
 END
 
