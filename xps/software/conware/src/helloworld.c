@@ -32,60 +32,41 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "platform.h"
 #include "xparameters.h"
 #include "axi_dma_ftw.h"
 #include "xaxidma.h"
+#include "xvtc.h"
+#include "xaxivdma.h"
 
 #define ALIGN64(some_ptr) (int*)(some_ptr + XAXIDMA_BD_MINIMUM_ALIGNMENT-some_ptr%XAXIDMA_BD_MINIMUM_ALIGNMENT);
 
 static XAxiDma AxiDma;
 
 
-void init_checkers(char * grid, int width, int height){
-	int i;
-	for(i=0; i<width*height; i++){
-		if (i%4==0){
-			grid[i] = 'x';
-		} else {
-			grid[i] = 'o';
-		}
-	}
-}
-
-void print_grid(char * grid, int width, int height){
-	int i,j;
-	for(i=0; i<height; i++){
-		for(j=0; j<width; j++){
-			xil_printf("%c", grid[i*width+j]);
-		}
-		xil_printf("\n\r");
-	}
-	xil_printf("\n\r");
-}
-
 int main()
 {
+	xil_printf("\r\n--- Entering main() --- \r\n");
     init_platform();
 	xil_printf("\r\n--- Entering main() --- \r\n");
 
 	int WIDTH = 16;
     int HEIGHT = 8;
 
-    char * grid = (char *) malloc((WIDTH*HEIGHT*sizeof(char)));
+    int * grid = (int *) malloc((WIDTH*HEIGHT*sizeof(int)));
 
-    init_checkers(grid, WIDTH, HEIGHT);
-    //print_grid(grid, WIDTH, HEIGHT);
 
     // DMA STUFF
 
     // Init DMA
-    int Status;
+    int status;
 	XAxiDma_Config *Config;
 	XAxiDma_Bd      bd_template;
+	XAxiDma_Bd		rx_template;
 	XAxiDma_Bd*     bd_ptr;
-	XAxiDma_Bd*		cur_bd_ptr;
-	int i;
+	XAxiDma_Bd*		rx_bd_ptr;
+	XAxiDma_Bd*		tx_bd_ptr;
 
 	/*
 	 *	1. Init the DMA unit (init_dma)
@@ -97,10 +78,10 @@ int main()
 		return XST_FAILURE;
 	}
 
-	Status = XAxiDma_CfgInitialize(&AxiDma, Config);
+	status = XAxiDma_CfgInitialize(&AxiDma, Config);
 
-	if (Status != XST_SUCCESS) {
-		xil_printf("Initialization failed %d\r\n", Status);
+	if (status != XST_SUCCESS) {
+		xil_printf("Initialization failed %d\r\n", status);
 		return XST_FAILURE;
 	}
 
@@ -111,13 +92,22 @@ int main()
 	XAxiDma_Reset(&AxiDma);
 	while (!XAxiDma_ResetIsDone(&AxiDma)) {}
 
+
+	xil_printf("--- DMA Configured ---\n\r");
+
     /*
 	 *	2. Make a ring and update DMA (bd_ch_setup)
 	 */
     XAxiDma_BdRing * tx_ring = XAxiDma_GetTxRing(&AxiDma);
-    int * aligned_grid = ALIGN64((int)grid);
-    int status = XAxiDma_BdRingCreate(tx_ring, aligned_grid, aligned_grid, 64, 5
-    		);
+	int * tx_bd_mem = (int*) malloc((1+1)*XAXIDMA_BD_MINIMUM_ALIGNMENT); // +1 to account for worst case misalignment
+    tx_bd_mem = ALIGN64((int)tx_bd_mem);
+    status = XAxiDma_BdRingCreate(tx_ring, (int)tx_bd_mem, (int)tx_bd_mem, XAXIDMA_BD_MINIMUM_ALIGNMENT, 1);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to create Buffer.\r\n");
+		return -1;
+	}
+
     XAxiDma_UpdateBdRingCDesc(tx_ring);
 
 	// Allocate BDs from template
@@ -130,69 +120,127 @@ int main()
 	}
 
 	// Ring buffer allocate
-	status = XAxiDma_BdRingAlloc(tx_ring, 5, &bd_ptr);
+	status = XAxiDma_BdRingAlloc(tx_ring, 1, &tx_bd_ptr);
 	if (status != XST_SUCCESS)
 	{
 		xil_printf("ERROR! Failed to allocate locations in the buffer descriptor ring.\r\n");
 		return -1;
 	}
 
+	// DO IT AGAIN
+	// RX
+	// RX
+	// RX
+	//
+    XAxiDma_BdRing * rx_ring = XAxiDma_GetRxRing(&AxiDma);
+	int * rx_bd_mem = (int*) malloc((1+1)*XAXIDMA_BD_MINIMUM_ALIGNMENT); // +1 to account for worst case misalignment
+    rx_bd_mem = ALIGN64((int)rx_bd_mem);
+    status = XAxiDma_BdRingCreate(rx_ring, (int)rx_bd_mem, (int)rx_bd_mem, XAXIDMA_BD_MINIMUM_ALIGNMENT, 1);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! RX failed to create buffer ring\r\n");
+		return -1;
+	}
+
+    XAxiDma_UpdateBdRingCDesc(rx_ring);
+
+	// Allocate BDs from template
+	XAxiDma_BdClear(&rx_template);
+	status = XAxiDma_BdRingClone(rx_ring, &bd_template);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! RX Failed allocate buffer descriptors.\r\n");
+		return -1;
+	}
+
+	// Ring buffer allocate
+	int freebd = XAxiDma_BdRingGetFreeCnt(rx_ring);
+	status = XAxiDma_BdRingAlloc(rx_ring, freebd, &rx_bd_ptr);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to allocate locations in the buffer descriptor ring.\r\n");
+		return -1;
+	}
+
+	xil_printf("--- BD Allocated ---\n\r");
+
 	/*
 	 * 3. Populate BD's with commands
 	 */
-	cur_bd_ptr = bd_ptr;
-	int buf_addr = (int *) malloc((5+1)*XAXIDMA_BD_MINIMUM_ALIGNMENT);
-	if (buf_addr == NULL)
+	int tx_buf_addr = grid;
+
+	if (tx_buf_addr == NULL)
 	{
 		xil_printf("ERROR! Failed to allocate memory for S2MM BDs.\n\r");
 		return -1;
 	}
 
+	int rx_buf_addr = (int *) malloc((WIDTH*HEIGHT*sizeof(int)));
+	memset(rx_buf_addr, '#', WIDTH*HEIGHT*sizeof(int));
 
-	int   cr_bits        = 0;
-	for(i=0;i<5;i++){
-		status = XAxiDma_BdSetBufAddr(cur_bd_ptr, buf_addr);
-		if (status != XST_SUCCESS)
-		{
-			xil_printf("ERROR! Failed to set source address for this BD.\r\n");
-			return -1;
-		}
-
-		// Set length of buffer
-		status = XAxiDma_BdSetLength(cur_bd_ptr, 5, tx_ring->MaxTransferLen);
-		if (status != XST_SUCCESS)
-		{
-			xil_printf("ERROR! Failed to set buffer length for this BD.\r\n");
-			return -1;
-		}
-
-		// Set control bits for TX side
-		if (1)
-		{
-			if (i == 0)
-			{
-				cr_bits |= XAXIDMA_BD_CTRL_TXSOF_MASK; // Set SOF (tuser) for first BD
-			}
-
-			cr_bits |= XAXIDMA_BD_CTRL_TXEOF_MASK; // Sets tlast to generate an interrupt. Coalescing is set to interrupt once per ring
-		}
-
-		// Set control register
-		XAxiDma_BdSetCtrl(cur_bd_ptr, cr_bits);
-
-		// Increment pointer address to the next BD
-		buf_addr += 5;
-
-		// Advance current BD pointer for next iteration
-		cur_bd_ptr = XAxiDma_BdRingNext(tx_ring, cur_bd_ptr);
+	if (rx_buf_addr == NULL)
+	{
+		xil_printf("ERROR! Failed to allocate memory for S2MM BDs.\n\r");
+		return -1;
 	}
 
-	status = XAxiDma_BdRingToHw(tx_ring, 5, bd_ptr); // This function manages cache coherency for BDs
+	int   cr_bits = 0;
+
+	status = XAxiDma_BdSetBufAddr(tx_bd_ptr, tx_buf_addr);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to set source address for this BD.\r\n");
+		return -1;
+	}
+
+	status = XAxiDma_BdSetBufAddr(rx_bd_ptr, rx_buf_addr);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to set source address for this BD.\r\n");
+		return -1;
+	}
+
+
+	// Set length of buffer
+	status = XAxiDma_BdSetLength(tx_bd_ptr, WIDTH*HEIGHT*sizeof(int), tx_ring->MaxTransferLen);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to set buffer length for this BD.\r\n");
+		return -1;
+	}
+
+	// Set length of buffer
+	status = XAxiDma_BdSetLength(rx_bd_ptr, WIDTH*HEIGHT*sizeof(int), rx_ring->MaxTransferLen);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to set buffer length for this BD.\r\n");
+		return -1;
+	}
+
+	// Set control bits for start and end of file
+	cr_bits |= XAXIDMA_BD_CTRL_TXSOF_MASK; // Set SOF (tuser) for first BD
+	cr_bits |= XAXIDMA_BD_CTRL_TXEOF_MASK;
+
+	// Set control register
+	XAxiDma_BdSetCtrl(tx_bd_ptr, cr_bits);
+	XAxiDma_BdSetCtrl(rx_bd_ptr, 0);
+
+
+	status = XAxiDma_BdRingToHw(tx_ring, 1, tx_bd_ptr); // This function manages cache coherency for BDs
 	if (status != XST_SUCCESS)
 	{
 		xil_printf("ERROR! Failed to pass buffer descriptor ring to the hardware. \n\r");
 		return -1;
 	}
+
+	status = XAxiDma_BdRingToHw(rx_ring, 1, rx_bd_ptr); // This function manages cache coherency for BDs
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to pass buffer descriptor ring to the hardware. \n\r");
+		return -1;
+	}
+
+	Xil_DCacheFlush();
 
 	/*
 	 * 4. SEND IT
@@ -204,7 +252,76 @@ int main()
 		return -1;
 	}
 
-	sleep(5000);
+	status = XAxiDma_BdRingStart(rx_ring);
+	if (status != XST_SUCCESS)
+	{
+		xil_printf("ERROR! Failed to kick off S2MM transfer.\n\r");
+		return -1;
+	}
+
+	sleep(1);
+
+	int test_image[720][1280];
+
+	// VIEDO STFUD
+    Xil_DCacheFlush();
+
+    XVtc Vtc;
+	XVtc_Config *VtcCfgPtr;
+
+	int i, j;
+
+	print("Hello, World!\r\n");
+
+
+	// Enable the VTC module
+	print("XVtc_LookupConfig\r\n");
+	VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
+	printf("%x\r\n", (unsigned int) VtcCfgPtr->BaseAddress);
+	print("XVtc_CfgInitialize\r\n");
+	XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
+	print("XVtc_Enable\r\n");
+	XVtc_Enable(&Vtc, XVTC_EN_GENERATOR);
+
+	print("Filling frame...\r\n");
+
+	// Initialize Test image for VDMA transfer to VGA monitor
+	for (i = 2; i < 720; i++) {
+	  for (j = 2; j < 1280; j++) {
+
+		if (j < 213) {
+		  test_image[i][j] = 0x0FFF; // red pixels
+		}
+		else if(j < 426 ) {
+		  test_image[i][j] = 0x00F0; // green pixels
+		}
+		else {
+		  test_image[i][j] = 0x0F00; // blue pixels
+		}
+
+	  }
+	}
+
+	Xil_DCacheFlush();
+
+	// Set up VDMA config registers
+	#define CHANGE_ME 0
+
+	print("Configuring VDMA...\r\n");
+
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0x03);  // Circular Mode and Start bits set, VDMA MM2S Control (p. 34)
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x00);  // VDMA MM2S Reg_Index (P. 44)
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET, 0x01);  // VDMA MM2S Number FRM_Stores (p. 45)
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, test_image);  // VDMA MM2S Start Addr 1
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 1280);  // 1280 bytes, VDMA MM2S FRM_Delay, and Stride
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 1280);  // 1280 bytes, VDMA MM2S HSIZE
+	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 480);  // 480 lines, VDMA MM2S VSIZE  (Note: Starts VDMA transaction
+
+	print("Something should be happening!\r\n");
+
+	while(1) {
+
+	}
 
     xil_printf("---------[END]---------\n\r");
     return 0;
