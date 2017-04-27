@@ -54,16 +54,6 @@ typedef union __attribute__((packed)) {
 } DMASR, *PDMASR;
 
 typedef struct __attribute__((packed)) {
-    uint32_t reserved0    : 6;
-    uint32_t cur_desc_ptr : 26;
-} CURDESC, *PCURDESC;
-
-typedef struct __attribute__((packed)) {
-    uint32_t reserved0     : 6;
-    uint32_t tail_desc_ptr : 26;
-} TAILDESC, *PTAILDESC;
-
-typedef struct __attribute__((packed)) {
     uint32_t sg_cache  : 4;
     uint32_t reserved0 : 4;
     uint32_t sg_user   : 4;
@@ -73,16 +63,16 @@ typedef struct __attribute__((packed)) {
 typedef struct __attribute__((packed)) {
     DMACR mm2s_dmacr;
     DMASR mm2s_dmasr;
-    CURDESC mm2s_curdesc;
+    uint32_t mm2s_curdesc;
     uint32_t reserved0;
-    TAILDESC mm2s_taildesc;
+    uint32_t mm2s_taildesc;
     uint32_t reserved1[6];
     SG_CTL sg_ctl;
     DMACR s2mm_dmacr;
     DMASR s2mm_dmasr;
-    CURDESC s2mm_curdesc;
+    uint32_t s2mm_curdesc;
     uint32_t reserved2;
-    TAILDESC s2mm_taildesc;
+    uint32_t s2mm_taildesc;
 } AXI_DMA_SG_REGMAP, *PAXI_DMA_SG_REGMAP;
 
 typedef struct __attribute__((packed)) {
@@ -90,18 +80,17 @@ typedef struct __attribute__((packed)) {
     uint32_t reserved0;
     uint32_t buffer_address;
     uint32_t reserved1;
+    uint32_t reserved2;
+    uint32_t reserved3;
 
     union __attribute__((packed)) {
         struct __attribute__((packed)) {
             // TODO: These might be inverted
-            uint32_t tdest     : 5;
-            uint32_t reserved0 : 3;
-            uint32_t tid       : 5;
-            uint32_t reserved1 : 3;
-            uint32_t tuser     : 4;
-            uint32_t reserved2 : 4;
-            uint32_t arcache   : 4;
-            uint32_t aruser    : 4;
+            uint32_t buffer_length : 23;
+            uint32_t reserved0     : 3;
+            uint32_t tx_eof        : 1;
+            uint32_t tx_sof        : 1;
+            uint32_t reserved1     : 4;
         };
 
         uint32_t as_uint;
@@ -109,44 +98,16 @@ typedef struct __attribute__((packed)) {
 
     union __attribute__((packed)) {
         struct __attribute__((packed)) {
-            uint32_t stride : 16;
-            uint32_t reserved0 : 3;
-            uint32_t vsize : 13;
+            uint32_t transferred_bytes : 23;
+            uint32_t reserved0         : 5;
+            uint32_t int_err           : 1;
+            uint32_t slv_err           : 1;
+            uint32_t dec_err           : 1;
+            uint32_t cmplt             : 1;
         };
 
         uint32_t as_uint;
-    } stride_vsize;
-
-    union __attribute__((packed)) {
-        struct __attribute__((packed)) {
-            uint32_t hsize : 16;
-            uint32_t reserved0 : 10;
-            uint32_t tx_eop : 1;
-            uint32_t tx_sop : 1;
-            uint32_t reserved1 : 4;
-        };
-
-        uint32_t as_uint;
-    } hsize;
-
-    union __attribute__((packed)) {
-        struct __attribute__((packed)) {
-            uint32_t tdest : 5;
-            uint32_t reserved0 : 3;
-            uint32_t tid : 5;
-            uint32_t reserved1 : 3;
-            uint32_t tuser : 4;
-            uint32_t reserved2 : 6;
-            uint32_t rx_eop : 1;
-            uint32_t rx_sop : 1;
-            uint32_t ie : 1;
-            uint32_t se : 1;
-            uint32_t de : 1;
-            uint32_t cmp : 1;
-        };
-
-        uint32_t as_uint;
-    } mc_sts;
+    } status;
 
     uint32_t app0;
     uint32_t app1;
@@ -154,9 +115,10 @@ typedef struct __attribute__((packed)) {
     uint32_t app3;
     uint32_t app4;
 
-    uint32_t reserved2;
-    uint32_t reserved3;
+
     uint32_t reserved4;
+    uint32_t reserved5;
+    uint32_t reserved6;
 
 } DMA_SG_DESC, *PDMA_SG_DESC;
 
