@@ -68,7 +68,7 @@ void print_desc(PDMA_SG_DESC desc) {
 	}
 }
 
-#define SIZE 8
+#define SIZE 32
 
 
 int main() {
@@ -88,19 +88,17 @@ int main() {
     printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
 
 
-    uint32_t * arr_from = (uint32_t *) malloc(SIZE*SIZE*sizeof(uint32_t));
-    uint32_t * arr_to = (uint32_t *) malloc(SIZE*SIZE*sizeof(uint32_t));
+    uint32_t * arr_from = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
+    uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
-    memset(arr_from, '#', SIZE*SIZE*sizeof(uint32_t));
-    memset(arr_to, ' ', SIZE*SIZE*sizeof(uint32_t));
+    memset(arr_from, '#', SIZE*sizeof(uint32_t));
+    memset(arr_to, 'a', SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            printf("%c ", (char)arr_to[i* SIZE + j]);
-        }
-        printf("\r\n");
+		printf("%c ", (char)arr_to[i]);
     }
 
+	printf("\r\n");
     printf("arr_from: %x \r\n", (uint32_t) arr_from);
 	printf("arr_to: %x \r\n", (uint32_t) arr_to);
 
@@ -113,7 +111,7 @@ int main() {
 
     tx0->next_ptr = (uint32_t) tx0;
     tx0->buffer_address = (uint32_t)arr_from;
-    tx0->control.buffer_length = SIZE*SIZE*sizeof(uint32_t);
+    tx0->control.buffer_length = SIZE*sizeof(uint32_t);
     tx0->control.tx_sof = 1;
     tx0->control.tx_eof = 1;
 
@@ -124,7 +122,7 @@ int main() {
 
     rx0->next_ptr = (uint32_t)rx0;
     rx0->buffer_address = (uint32_t)arr_to;
-    rx0->control.buffer_length = SIZE*SIZE*sizeof(uint32_t);
+    rx0->control.buffer_length = 1*sizeof(uint32_t);
 
     Xil_DCacheFlushRange(tx0, 0x40);
     Xil_DCacheFlushRange(rx0, 0x40);
@@ -157,6 +155,11 @@ int main() {
 
     // Wait for the DMA to complete
     while (!dma_dev->mm2s_dmasr.idle || !dma_dev->s2mm_dmasr.idle) {
+    	sleep(2);
+    	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
+		printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
+		printf("Tx Status: %x \r\n", tx0->status.as_uint);
+		printf("Rx Status: %x \r\n", rx0->status.as_uint);
     	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
     }
 
@@ -168,14 +171,14 @@ int main() {
     printf("Tx Status: %x \r\n", tx0->status.as_uint);
     printf("Rx Status: %x \r\n", rx0->status.as_uint);
 
+    printf("%d ", arr_to[0]);
+
     // Print the result
     for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            printf("%c ", (char)arr_to[i* SIZE + j]);
-        }
-        printf("\r\n");
+        printf("%c ", (char)arr_to[i]);
     }
 
+    printf("\r\n");
     while(1);
 
 	return 0;

@@ -1,7 +1,7 @@
 module conware #(
     parameter DWIDTH = 32,
     parameter WIDTH = 32,
-    parameter HEIGHT = 32
+    parameter HEIGHT = 1
 )(
     // Color conversion signals
     // alive_color,
@@ -40,15 +40,15 @@ module conware #(
     output M_AXIS_TLAST;
     input M_AXIS_TREADY;
 
-    wire [WIDTH*HEIGHT-1:0] in_states;
-    wire [WIDTH*HEIGHT-1:0] out_states;
+    wire [WIDTH-1:0] in_states;
+    wire [WIDTH-1:0] out_states;
 
     // Signals to handle internal handshake between in-buffer and out-buffer
     wire pvalid;
     wire pready;
 
 
-    axis2buffer #(DWIDTH, WIDTH, HEIGHT) a2b(
+    axis2buffer #(DWIDTH, WIDTH) a2b(
         .clk(ACLK),
         .rstn(ARESETN),
 
@@ -65,12 +65,14 @@ module conware #(
         .out_ready(pready)
     );
 
-    conway #(WIDTH, HEIGHT) conway_block(
-        .in_states(in_states),
-        .out_states(out_states)
+    shredder_array #(WIDTH) shredders(
+        .clk(ACLK),
+        .rstn(ARESETN),
+        .in_data(in_states),
+        .out_data(out_states)
     );
 
-    buffer2axis #(DWIDTH, WIDTH, HEIGHT) b2a(
+    buffer2axis #(DWIDTH, WIDTH) b2a(
         .clk(ACLK),
         .rstn(ARESETN),
 

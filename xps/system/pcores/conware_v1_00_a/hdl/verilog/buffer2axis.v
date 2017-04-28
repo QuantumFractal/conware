@@ -1,7 +1,6 @@
 module buffer2axis #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 4,
-    parameter HEIGHT = 4
+    parameter WIDTH = 4
 )( 
     // Control signals
     clk,
@@ -30,12 +29,12 @@ module buffer2axis #(
     input [DWIDTH-1:0] alive_color;
     input [DWIDTH-1:0] dead_color;
 
-    output reg [DWIDTH-1:0] M_AXIS_TDATA;
+    output [DWIDTH-1:0] M_AXIS_TDATA;
     output reg M_AXIS_TVALID;
     output reg M_AXIS_TLAST;
     input M_AXIS_TREADY;
 
-    input [WIDTH*HEIGHT-1:0] in_data;
+    input [WIDTH-1:0] in_data;
     input in_valid;
     output reg in_ready;
 
@@ -46,14 +45,20 @@ module buffer2axis #(
     localparam Write = 1;
 
     // Internal values
-    reg [DWIDTH - 1:0] buffer [WIDTH*HEIGHT-1:0];
-    reg [31:0] counter;
-    reg [31:0] next_counter;
+    reg [DWIDTH - 1:0] buffer;
+    reg [7:0] counter;
+    reg [7:0] next_counter;
+
+    initial begin
+        buffer <= 0;
+        counter <= 0;
+    end
+
+    assign M_AXIS_TDATA = (buffer[counter] == alive_color)? 1'b1 : 1'b0;
 
     // Combinational Logic
     always @* begin
-        
-        M_AXIS_TDATA <= buffer[counter];
+        next_counter <= 0;
 
         case (state)
 
@@ -74,22 +79,24 @@ module buffer2axis #(
             M_AXIS_TVALID <= 1;
             in_ready <= 0;
 
-            if (counter == WIDTH*HEIGHT-1) begin
+            if (counter == WIDTH-1) begin
                 M_AXIS_TLAST <= 1;
             end else begin
                 M_AXIS_TLAST <= 0;
             end
 
             if (M_AXIS_TREADY == 1) begin
-                if (counter == WIDTH*HEIGHT-1) begin
+                if (counter == WIDTH-1) begin
                     next_counter <= 0;
                     next_state <= Wait;
                 end else begin
                     next_counter <= counter + 1;
+                    next_state <= Write;
                 end
 
             end else begin
                 next_counter <= counter;
+                next_state <= Write;
             end
         end
 
@@ -99,26 +106,15 @@ module buffer2axis #(
     // Clocked Logic
     always @(posedge clk) begin
         if (!rstn) begin
-            counter <= 32'h00000000;
+            counter <= 8'h00;
             state <= Wait;
         end else begin
+            if (state == Wait && next_state == Write) begin
+                buffer <= in_data;
+            end
+
             state <= next_state;
             counter <= next_counter;
         end
     end
-
-    // Handle resetting buffer and color conversion
-    genvar i;
-    generate 
-        for (i = 0; i < WIDTH*HEIGHT; i=i+1) begin : converter_block
-            always @(posedge clk) begin
-                if (!rstn) begin
-                    buffer[i] <= 'h00000000;
-                end else if (state == Wait && in_valid == 1) begin
-                    buffer[i] <= (in_data[i] == 1)? alive_color : dead_color;
-                end
-            end
-            
-        end
-    endgenerate
 endmodule

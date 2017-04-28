@@ -1,7 +1,6 @@
 module axis2buffer #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 4,
-    parameter HEIGHT = 4
+    parameter WIDTH = 4
 )( 
     // Control signals
     clk,
@@ -35,7 +34,7 @@ module axis2buffer #(
     input S_AXIS_TLAST;
     output reg S_AXIS_TREADY;
 
-    output [WIDTH*HEIGHT-1:0] out_data;
+    output reg [WIDTH-1:0] out_data;
     output reg out_valid;
     input out_ready;
 
@@ -46,15 +45,24 @@ module axis2buffer #(
     localparam Read = 1;
 
     // Internal values
-    reg [DWIDTH - 1:0] buffer [WIDTH*HEIGHT-1:0];
-    reg [31:0] counter;
-    reg [31:0] next_counter;
+    wire in_state;
+    reg [7:0] counter;
+    reg [7:0] next_counter;
+
+    initial begin
+        out_data <= 0;
+        counter <= 0;
+    end
+
+    assign in_state = (S_AXIS_TDATA == alive_color)? 1'b1 : 1'b0;
 
     // Combinational Logic
     always @* begin
+    
         case (state)
 
         Wait: begin
+            next_counter <= 0;
             S_AXIS_TREADY <= 0;
             out_valid <= 1;
 
@@ -71,7 +79,7 @@ module axis2buffer #(
             out_valid <= 0;
 
             if (S_AXIS_TVALID == 1) begin
-                if (counter == WIDTH*HEIGHT-1) begin
+                if (counter == WIDTH-1) begin
                     next_counter <= 0;
                     next_state <= Wait;
                 end else begin
@@ -90,29 +98,16 @@ module axis2buffer #(
     // Clocked Logic
     always @(posedge clk) begin
         if (!rstn) begin
-            counter <= 32'h00000000;
+            counter <= 8'h00;
             state <= Read;
         end else begin
+            if ((state == Read) && (S_AXIS_TVALID == 1)) begin
+                out_data[counter] <= in_state;
+            end
+
             state <= next_state;
             counter <= next_counter;
         end
     end
 
-    // Color conversion and buffer reset
-    genvar i;
-    generate 
-        for (i = 0; i < WIDTH*HEIGHT; i=i+1) begin : converter_block
-            assign out_data[i] = (buffer[i] == alive_color)? 1'b1 : 1'b0;
-
-            always @(posedge clk) begin
-                if (!rstn) begin
-                    buffer[i] <= 'h00000000;
-                end else begin
-                    if (state == Read && S_AXIS_TVALID == 1 && counter == i) begin
-                        buffer[i] <= S_AXIS_TDATA;
-                    end
-                end
-            end
-        end
-    endgenerate
 endmodule

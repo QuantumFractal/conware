@@ -1,7 +1,7 @@
 module conware #(
     parameter DWIDTH = 32,
     parameter WIDTH = 4,
-    parameter HEIGHT = 4
+    parameter HEIGHT = 1
 )(
     clk, 
     rstn, 
@@ -64,9 +64,9 @@ module conware #(
         .out_ready(pready)
     );
 
-    conway #(WIDTH, HEIGHT) conway_block(
-        .in_states(in_states),
-        .out_states(out_states)
+    shredder_array #(WIDTH) shredders(
+        .in_data(in_states),
+        .out_data(out_states)
     );
 
     buffer2axis #(DWIDTH, WIDTH, HEIGHT) b2a(

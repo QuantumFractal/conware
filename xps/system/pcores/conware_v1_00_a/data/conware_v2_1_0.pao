@@ -7,6 +7,8 @@
 lib conware_v1_00_a axis2buffer verilog
 lib conware_v1_00_a buffer2axis verilog
 lib conware_v1_00_a conway verilog
+lib conware_v1_00_a shredder verilog
+lib conware_v1_00_a shredder_array verilog
 lib conware_v1_00_a conware verilog
 
 
