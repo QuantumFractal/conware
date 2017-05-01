@@ -1,0 +1,11 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn C:\Users\micha\Documents\projects\conware\xps\system\pcores/conware_v2_00_a/devl/synthesis/conware_xst.prj
+-top conware
+-p virtex6
+-ofn C:\Users\micha\Documents\projects\conware\xps\system\pcores/conware_v2_00_a/devl/synthesis/conware_xst.ngc
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /

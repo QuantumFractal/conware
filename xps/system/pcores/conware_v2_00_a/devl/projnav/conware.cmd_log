@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v2_00_a/devl/projnav/conware.xst" -ofn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v2_00_a/devl/projnav/conware.syr" 

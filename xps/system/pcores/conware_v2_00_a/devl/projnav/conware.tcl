@@ -1,0 +1,10 @@
+project new C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v2_00_a/devl/projnav/conware.xise;
+project set family zynq;
+project set device xc7z020;
+project set package clg484;
+project set speed -1;
+project set top_level_module_type HDL;
+project set synthesis_tool "XST (VHDL/Verilog)";
+lib_vhdl new conware_v2_00_a;
+xfile add C:/Users/micha/Documents/projects/conware/xps/system//pcores/conware_v2_00_a/hdl/verilog/conware.v;
+project close;

@@ -45,7 +45,7 @@ module axis2buffer #(
     localparam Read = 1;
 
     // Internal values
-    wire in_state;
+    reg in_state;
     reg [7:0] counter;
     reg [7:0] next_counter;
 
@@ -54,10 +54,14 @@ module axis2buffer #(
         counter <= 0;
     end
 
-    assign in_state = (S_AXIS_TDATA == alive_color)? 1'b1 : 1'b0;
-
     // Combinational Logic
     always @* begin
+
+        if ((state == Read) && (S_AXIS_TVALID == 1)) begin
+            in_state <= (S_AXIS_TDATA == alive_color)? 1'b1 : 1'b0;
+        end else begin
+            in_state <= out_data[counter];
+        end
     
         case (state)
 
@@ -101,10 +105,7 @@ module axis2buffer #(
             counter <= 8'h00;
             state <= Read;
         end else begin
-            if ((state == Read) && (S_AXIS_TVALID == 1)) begin
-                out_data[counter] <= in_state;
-            end
-
+            out_data[counter] <= in_state;
             state <= next_state;
             counter <= next_counter;
         end

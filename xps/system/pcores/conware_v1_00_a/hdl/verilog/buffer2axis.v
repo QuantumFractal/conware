@@ -19,7 +19,9 @@ module buffer2axis #(
     // Output to conware computation
     in_data,
     in_valid,
-    in_ready
+    in_ready,
+
+    buffer
 );
 
     // Port descriptions
@@ -29,7 +31,7 @@ module buffer2axis #(
     input [DWIDTH-1:0] alive_color;
     input [DWIDTH-1:0] dead_color;
 
-    output [DWIDTH-1:0] M_AXIS_TDATA;
+    output reg [DWIDTH-1:0] M_AXIS_TDATA;
     output reg M_AXIS_TVALID;
     output reg M_AXIS_TLAST;
     input M_AXIS_TREADY;
@@ -45,7 +47,8 @@ module buffer2axis #(
     localparam Write = 1;
 
     // Internal values
-    reg [DWIDTH - 1:0] buffer;
+    output reg [WIDTH - 1:0] buffer;
+    reg [WIDTH - 1:0] next_buffer;
     reg [7:0] counter;
     reg [7:0] next_counter;
 
@@ -53,12 +56,22 @@ module buffer2axis #(
         buffer <= 0;
         counter <= 0;
     end
-
-    assign M_AXIS_TDATA = (buffer[counter] == alive_color)? 1'b1 : 1'b0;
-
+    
     // Combinational Logic
     always @* begin
         next_counter <= 0;
+
+        if (buffer[counter]) begin
+            M_AXIS_TDATA <= alive_color;
+        end else begin
+            M_AXIS_TDATA <= dead_color;
+        end
+          
+        if (state == Wait && next_state == Write) begin
+            next_buffer <= in_data;
+        end else begin
+            next_buffer <= buffer;
+        end
 
         case (state)
 
@@ -109,10 +122,7 @@ module buffer2axis #(
             counter <= 8'h00;
             state <= Wait;
         end else begin
-            if (state == Wait && next_state == Write) begin
-                buffer <= in_data;
-            end
-
+            buffer <= next_buffer;
             state <= next_state;
             counter <= next_counter;
         end

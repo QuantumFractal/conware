@@ -1,0 +1,46 @@
+
+----------------------------------------------------------------------------
+--                            File Generation                             --
+----------------------------------------------------------------------------
+Start Creating ISE project 
+Start Creating drver source 
+
+----------------------------------------------------------------------------
+--                              Final Report                              --
+----------------------------------------------------------------------------
+Thank you for using Create and Import Peripheral Wizard!
+
+Peripheral summary
+
+  top name       : conware
+  version        : 2.00.a
+  type           : AXI4STREAM master slave
+  features       : 
+
+File Summary
+
+  - HDL source -
+C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v2_00_a\hdl\
+vhdl
+  top level      : conware.vhd
+
+  - ISE project -
+C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v2_00_a\devl
+\projnav
+  ise project    : conware.xise
+  tcl script     : conware.tcl
+
+
+  - XST synthesis -
+C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v2_00_a\devl
+\synthesis
+  xst script     : conware_xst.scr
+  xst project    : conware_xst.prj
+
+  - Misc file -
+C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v2_00_a\devl
+  help           : README.txt
+  option         : ipwiz.opt
+  log            : ipwiz.log
+
+
