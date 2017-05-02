@@ -5,16 +5,16 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" Line 75: Port <arg fmt="%s" index="1">buffer</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" Line 75: Port <arg fmt="%s" index="1">buffer</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 90: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 90: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 106: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 106: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v</arg>&quot; line <arg fmt="%s" index="2">75</arg>: Output port &lt;<arg fmt="%s" index="3">buffer</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">b2a</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v</arg>&quot; line <arg fmt="%s" index="2">75</arg>: Output port &lt;<arg fmt="%s" index="3">buffer</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">b2a</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">dead_color</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.

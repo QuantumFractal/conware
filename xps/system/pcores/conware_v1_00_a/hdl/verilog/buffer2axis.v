@@ -1,6 +1,6 @@
 module buffer2axis #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 4
+    parameter WIDTH = 8
 )( 
     // Control signals
     clk,
@@ -100,21 +100,24 @@ module buffer2axis #(
             M_AXIS_TVALID <= 1;
             in_ready <= 0;
 
+            if (counter == WIDTH-1) begin
+                M_AXIS_TLAST <= 1;
+            end else begin
+                M_AXIS_TLAST <= 0;
+            end
+
             if (M_AXIS_TREADY == 1) begin
                 if (counter == WIDTH-1) begin
                     next_counter <= 0;
                     next_state <= Wait;
-                    M_AXIS_TLAST <= 1;
                 end else begin
                     next_counter <= counter + 1;
                     next_state <= Write;
-                    M_AXIS_TLAST <= 0;
                 end
 
             end else begin
                 next_counter <= counter;
                 next_state <= Write;
-                M_AXIS_TLAST <= 0;
             end
         end
 

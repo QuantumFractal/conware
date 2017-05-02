@@ -18,3 +18,4 @@ xst -intstyle ise -ifn "C:/Users/micha/Documents/projects/conware/xps/system/pco
 xst -intstyle ise -ifn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xst" -ofn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.syr" 
 xst -intstyle ise -ifn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xst" -ofn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.syr" 
 xst -intstyle ise -ifn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xst" -ofn "C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.syr" 
+xst -intstyle ise -ifn "U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xst" -ofn "U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.syr" 

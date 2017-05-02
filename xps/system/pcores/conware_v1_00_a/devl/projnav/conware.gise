@@ -28,8 +28,11 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="axis2buffer.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="buffer2axis.fdo"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="conware.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="conware.cmd_log"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="conware.fdo"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="conware.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="conware.ncd" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="conware.ngc"/>
@@ -63,14 +66,59 @@
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="conware_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="conware_xst.xrpt"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
-    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/conware_synthesis.nlf"/>
-    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/conware_synthesis.v"/>
+    <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/conware_synthesis.nlf"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/conware_synthesis.v"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1493673105" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1493673105">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493751805" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1493751805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../hdl/verilog/axis2buffer.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/buffer2axis.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/conware.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/conway.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/shredder.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/shredder_array.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1493751588" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2729166553955613114" xil_pn:start_ts="1493751588">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493751588" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4512160539332665014" xil_pn:start_ts="1493751588">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493673105" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="2267541617752059235" xil_pn:start_ts="1493673105">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493751805" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1493751805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../hdl/verilog/axis2buffer.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/buffer2axis.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/conware.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/conway.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/shredder.v"/>
+      <outfile xil_pn:name="../../hdl/verilog/shredder_array.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1493751806" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-3735012481952913813" xil_pn:start_ts="1493751805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="conware.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
     <transform xil_pn:end_ts="1492662104" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1492662104">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -99,15 +147,18 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493442971" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-4472435009178832813" xil_pn:start_ts="1493442929">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1493670284" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-4472435009178832813" xil_pn:start_ts="1493670267">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="conware.lso"/>
       <outfile xil_pn:name="conware.ngc"/>
       <outfile xil_pn:name="conware.ngr"/>
       <outfile xil_pn:name="conware.prj"/>
+      <outfile xil_pn:name="conware.stx"/>
       <outfile xil_pn:name="conware.syr"/>
       <outfile xil_pn:name="conware.xst"/>
       <outfile xil_pn:name="conware_xst.xrpt"/>

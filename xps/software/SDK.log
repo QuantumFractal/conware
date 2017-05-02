@@ -70,3 +70,446 @@ If this project was a BSP referenced by other C/C++ applications, then those app
 18:33:05.885 INFO  - Processor reset is completed for ps7_cortexa9_0 
 18:46:47.442 INFO  - Processor reset is completed for ps7_cortexa9_0 
 18:49:54.300 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:44:19.035 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+15:44:24.535 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+15:44:24.676 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+15:44:25.986 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+15:44:26.356 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+15:44:26.624 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+15:44:27.005 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+15:44:28.845 INFO  - Updating hardware inferred compiler options for conware. 
+15:44:29.595 INFO  - Updating hardware inferred compiler options for conware_test. 
+15:44:30.345 INFO  - Updating hardware inferred compiler options for dma_test. 
+15:44:30.355 INFO  - Clearing existing target manager status. 
+15:46:08.724 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:46:13.192 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+15:56:14.408 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/software/system_hw_platform/system.bit" 
+15:59:24.252 INFO  - Successfully generated U:\Cpre488\conware\xps\software\dma_test\src\lscript.ld. 
+15:59:24.252 INFO  - Applying linker script to all configurations of project dma_test. 
+15:59:24.252 INFO  - Setting rebuild state to true for all configurations of project dma_test. 
+15:59:33.280 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:59:33.383 INFO  - PS initialization will be done as it is not done before. 
+15:59:33.385 INFO  - Running PS initialization.... 
+15:59:33.842 INFO  - ps7_init is completed. 
+15:59:33.943 INFO  - ps7_post_config is completed. 
+15:59:34.045 INFO  - PS Initialization is complete. 
+16:02:08.887 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:02:11.269 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:02:53.567 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:02:57.563 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:04:53.242 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:04:55.270 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:05:25.176 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:05:27.071 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:07:05.466 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:07:10.833 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:08:18.990 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:08:20.999 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:09:01.684 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:09:37.793 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:09:37.900 INFO  - PS initialization will be done as it is not done before. 
+16:09:37.900 INFO  - Running PS initialization.... 
+16:09:38.367 INFO  - ps7_init is completed. 
+16:09:38.377 INFO  - ps7_post_config is completed. 
+16:09:38.478 INFO  - PS Initialization is complete. 
+16:22:18.176 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+16:28:40.002 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+16:28:45.068 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+16:28:45.072 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:28:49.461 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+16:28:51.756 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+16:28:52.452 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+16:28:53.154 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+16:28:54.182 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+16:28:54.222 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+16:28:54.365 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+16:28:55.468 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+16:28:55.658 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+16:28:57.754 INFO  - Updating hardware inferred compiler options for conware. 
+16:28:58.510 INFO  - Updating hardware inferred compiler options for conware_test. 
+16:28:59.268 INFO  - Updating hardware inferred compiler options for dma_test. 
+16:28:59.278 INFO  - Clearing existing target manager status. 
+16:29:16.267 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:29:22.428 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:29:51.602 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:30:38.924 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:31:06.325 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:32:26.109 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:32:30.477 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:32:32.495 ERROR - Unexpected error while launching program. java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(Unknown Source)
+
+16:32:36.472 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:33:06.047 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:33:12.013 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:33:12.121 INFO  - PS initialization will be done as it is not done before. 
+16:33:12.121 INFO  - Running PS initialization.... 
+16:33:12.587 INFO  - ps7_init is completed. 
+16:33:12.690 INFO  - ps7_post_config is completed. 
+16:33:12.792 INFO  - PS Initialization is complete. 
+16:34:32.252 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:35:17.711 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:35:23.393 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:35:23.494 INFO  - PS initialization will be done as it is not done before. 
+16:35:23.496 INFO  - Running PS initialization.... 
+16:35:23.947 INFO  - ps7_init is completed. 
+16:35:24.047 INFO  - ps7_post_config is completed. 
+16:35:24.151 INFO  - PS Initialization is complete. 
+16:36:11.389 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:36:16.723 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:36:16.823 INFO  - PS initialization will be done as it is not done before. 
+16:36:16.823 INFO  - Running PS initialization.... 
+16:36:17.284 INFO  - ps7_init is completed. 
+16:36:17.392 INFO  - ps7_post_config is completed. 
+16:36:17.502 INFO  - PS Initialization is complete. 
+16:46:26.870 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+16:46:30.310 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+16:52:21.243 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+16:52:21.250 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:52:25.213 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+16:52:27.363 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+16:52:28.153 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+16:52:28.745 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+16:54:05.505 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+16:54:05.525 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+16:54:05.665 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+16:54:05.885 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+16:54:06.075 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+16:54:08.165 INFO  - Updating hardware inferred compiler options for conware. 
+16:54:08.915 INFO  - Updating hardware inferred compiler options for conware_test. 
+16:54:09.665 INFO  - Updating hardware inferred compiler options for dma_test. 
+16:54:10.485 INFO  - Clearing existing target manager status. 
+16:54:34.923 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:54:51.299 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:54:51.399 INFO  - PS initialization will be done as it is not done before. 
+16:54:51.399 INFO  - Running PS initialization.... 
+16:54:51.859 INFO  - ps7_init is completed. 
+16:54:51.959 INFO  - ps7_post_config is completed. 
+16:54:52.059 INFO  - PS Initialization is complete. 
+16:56:01.372 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:56:09.396 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:56:09.496 INFO  - PS initialization will be done as it is not done before. 
+16:56:09.496 INFO  - Running PS initialization.... 
+16:56:09.956 INFO  - ps7_init is completed. 
+16:56:10.056 INFO  - ps7_post_config is completed. 
+16:56:10.156 INFO  - PS Initialization is complete. 
+16:57:07.890 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:58:01.511 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:00:26.952 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:00:35.323 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:00:35.423 INFO  - PS initialization will be done as it is not done before. 
+17:00:35.423 INFO  - Running PS initialization.... 
+17:00:35.883 INFO  - ps7_init is completed. 
+17:00:35.983 INFO  - ps7_post_config is completed. 
+17:00:36.083 INFO  - PS Initialization is complete. 
+17:01:23.725 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:13:12.345 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+17:13:12.357 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:27:55.220 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+17:43:44.959 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+17:43:47.118 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+17:43:47.845 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+17:43:48.535 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+17:45:20.492 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+17:45:20.722 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+17:45:20.891 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+17:45:21.131 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+17:45:21.311 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+17:45:23.455 INFO  - Updating hardware inferred compiler options for conware. 
+17:45:24.205 INFO  - Updating hardware inferred compiler options for conware_test. 
+17:45:24.955 INFO  - Updating hardware inferred compiler options for dma_test. 
+17:45:24.965 INFO  - Clearing existing target manager status. 
+17:45:49.675 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:45:57.646 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:45:57.746 INFO  - PS initialization will be done as it is not done before. 
+17:45:57.746 INFO  - Running PS initialization.... 
+17:45:58.206 INFO  - ps7_init is completed. 
+17:45:58.306 INFO  - ps7_post_config is completed. 
+17:45:58.406 INFO  - PS Initialization is complete. 
+17:47:18.213 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:47:22.560 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:47:22.660 INFO  - PS initialization will be done as it is not done before. 
+17:47:22.660 INFO  - Running PS initialization.... 
+17:47:23.122 INFO  - ps7_init is completed. 
+17:47:23.222 INFO  - ps7_post_config is completed. 
+17:47:23.322 INFO  - PS Initialization is complete. 
+17:48:00.688 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:49:32.484 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:50:01.746 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:56:26.114 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:56:37.635 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+17:57:38.373 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:57:43.829 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:58:07.163 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:18:45.596 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:21:25.166 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+18:22:18.031 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+18:22:25.020 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:22:25.020 INFO  - PS initialization will be done as it is not done before. 
+18:22:25.020 INFO  - Running PS initialization.... 
+18:22:25.488 INFO  - ps7_init is completed. 
+18:22:25.588 INFO  - ps7_post_config is completed. 
+18:22:25.689 INFO  - PS Initialization is complete. 
+18:25:21.717 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+18:25:23.625 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+18:40:08.397 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:42:33.275 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:43:40.847 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:44:24.378 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:44:52.599 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:45:35.081 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:45:37.330 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:47:01.013 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:47:29.773 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:48:26.115 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:52:37.234 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:52:46.462 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+18:52:48.624 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+18:52:49.520 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+18:52:50.304 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+18:54:21.983 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+18:54:22.224 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+18:54:22.411 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+18:54:22.666 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+18:54:22.839 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+18:54:24.977 INFO  - Updating hardware inferred compiler options for conware. 
+18:54:25.736 INFO  - Updating hardware inferred compiler options for conware_test. 
+18:54:26.487 INFO  - Updating hardware inferred compiler options for dma_test. 
+18:54:26.507 INFO  - Clearing existing target manager status. 
+18:54:55.317 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+18:55:00.665 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:55:00.765 INFO  - PS initialization will be done as it is not done before. 
+18:55:00.765 INFO  - Running PS initialization.... 
+18:55:01.225 INFO  - ps7_init is completed. 
+18:55:01.325 INFO  - ps7_post_config is completed. 
+18:55:01.425 INFO  - PS Initialization is complete. 
+18:57:45.839 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:58:14.230 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:59:26.463 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:02:25.857 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+19:10:09.994 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+19:10:13.838 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+19:13:42.093 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:13:44.310 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:13:45.180 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+19:13:45.930 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+19:15:13.461 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+19:15:13.721 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+19:15:13.871 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+19:15:14.121 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+19:15:14.311 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+19:15:16.705 INFO  - Updating hardware inferred compiler options for conware. 
+19:15:17.465 INFO  - Updating hardware inferred compiler options for conware_test. 
+19:15:18.225 INFO  - Updating hardware inferred compiler options for dma_test. 
+19:15:18.235 INFO  - Clearing existing target manager status. 
+19:16:23.352 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+19:16:27.594 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:16:27.694 INFO  - PS initialization will be done as it is not done before. 
+19:16:27.694 INFO  - Running PS initialization.... 
+19:16:28.154 INFO  - ps7_init is completed. 
+19:16:28.254 INFO  - ps7_post_config is completed. 
+19:16:28.354 INFO  - PS Initialization is complete. 
+19:17:17.182 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:17:51.535 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:18:13.811 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:20:25.595 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+19:20:27.994 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+19:20:56.752 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:32:43.014 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+19:32:46.777 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:32:49.017 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:32:49.678 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+19:32:50.258 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+19:34:12.905 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+19:34:12.926 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+19:34:13.103 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+19:34:13.329 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+19:34:13.516 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+19:34:15.593 INFO  - Updating hardware inferred compiler options for conware. 
+19:34:16.352 INFO  - Updating hardware inferred compiler options for conware_test. 
+19:34:17.109 INFO  - Updating hardware inferred compiler options for dma_test. 
+19:34:17.128 INFO  - Clearing existing target manager status. 
+19:34:45.377 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+19:34:56.253 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:34:56.353 INFO  - PS initialization will be done as it is not done before. 
+19:34:56.353 INFO  - Running PS initialization.... 
+19:34:56.813 INFO  - ps7_init is completed. 
+19:34:56.913 INFO  - ps7_post_config is completed. 
+19:34:57.018 INFO  - PS Initialization is complete. 
+19:36:49.021 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+19:49:31.709 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+19:49:36.351 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+19:51:00.023 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:51:02.182 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:51:02.976 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+19:51:03.562 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+19:52:34.936 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+19:52:34.966 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+19:52:35.135 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+19:52:37.125 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+19:52:37.297 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+19:54:04.657 INFO  - Updating hardware inferred compiler options for conware. 
+19:54:05.408 INFO  - Updating hardware inferred compiler options for conware_test. 
+19:54:06.167 INFO  - Updating hardware inferred compiler options for dma_test. 
+19:54:06.177 INFO  - Clearing existing target manager status. 
+19:54:28.168 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+19:54:32.819 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:54:32.919 INFO  - PS initialization will be done as it is not done before. 
+19:54:32.919 INFO  - Running PS initialization.... 
+19:54:33.377 INFO  - ps7_init is completed. 
+19:54:33.477 INFO  - ps7_post_config is completed. 
+19:54:33.577 INFO  - PS Initialization is complete. 
+19:58:04.053 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+19:58:06.483 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+19:59:20.469 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:11:28.758 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+20:13:01.107 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+20:13:03.275 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+20:13:03.955 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+20:13:04.630 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+20:13:05.717 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+20:13:05.947 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+20:13:06.106 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+20:13:07.043 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+20:13:07.188 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+20:14:36.069 INFO  - Updating hardware inferred compiler options for conware. 
+20:14:36.829 INFO  - Updating hardware inferred compiler options for conware_test. 
+20:14:37.581 INFO  - Updating hardware inferred compiler options for dma_test. 
+20:14:37.591 INFO  - Clearing existing target manager status. 
+20:15:05.628 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+20:15:10.090 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:15:10.190 INFO  - PS initialization will be done as it is not done before. 
+20:15:10.190 INFO  - Running PS initialization.... 
+20:15:10.660 INFO  - ps7_init is completed. 
+20:15:10.760 INFO  - ps7_post_config is completed. 
+20:15:10.860 INFO  - PS Initialization is complete. 
+20:15:58.351 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:16:00.182 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:16:32.015 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:16:36.373 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:18:45.500 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:18:49.139 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:20:34.178 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:20:37.369 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:22:11.082 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:22:12.913 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:23:11.123 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:23:13.283 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:23:53.535 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:23:55.719 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:24:45.838 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:24:48.496 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:25:20.919 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:25:23.394 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:32:05.276 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:32:07.443 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:32:52.118 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:35:27.634 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:36:07.904 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:37:32.796 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:38:19.068 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:39:09.860 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:40:30.872 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:41:22.724 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:55:57.134 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:56:53.686 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:57:27.999 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:57:48.390 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+12:53:53.412 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+12:53:54.832 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+12:56:20.496 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+12:56:38.357 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:56:38.467 INFO  - PS initialization will be done as it is not done before. 
+12:56:38.467 INFO  - Running PS initialization.... 
+12:56:38.977 INFO  - ps7_init is completed. 
+12:56:39.077 INFO  - ps7_post_config is completed. 
+12:56:39.187 INFO  - PS Initialization is complete. 
+13:00:26.050 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:00:30.344 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+13:00:32.594 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+13:00:33.474 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+13:00:34.194 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+13:00:35.355 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+13:00:36.335 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+13:00:36.555 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+13:00:36.635 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+13:00:36.775 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+13:00:38.645 INFO  - Updating hardware inferred compiler options for conware. 
+13:00:39.395 INFO  - Updating hardware inferred compiler options for conware_test. 
+13:00:40.155 INFO  - Updating hardware inferred compiler options for dma_test. 
+13:00:40.165 INFO  - Clearing existing target manager status. 
+13:04:12.172 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:04:41.668 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:05:15.849 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+13:05:23.099 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:06:35.322 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:08:31.377 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:13:19.379 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:13:54.392 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:22:30.896 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+13:22:35.978 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+13:28:51.047 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:28:55.242 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+13:28:57.332 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+13:28:58.282 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+13:28:58.902 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+13:30:31.304 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+13:30:31.330 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+13:30:31.475 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+13:30:31.502 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+13:30:31.686 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+13:30:33.897 INFO  - Updating hardware inferred compiler options for conware. 
+13:30:34.655 INFO  - Updating hardware inferred compiler options for conware_test. 
+13:30:35.419 INFO  - Updating hardware inferred compiler options for dma_test. 
+13:30:35.800 INFO  - Clearing existing target manager status. 
+13:31:29.366 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+13:31:35.947 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:35:16.962 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:36:16.987 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:36:36.500 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:41:08.857 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:46:09.908 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+14:21:47.487 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+14:31:20.081 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+14:32:35.554 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+14:32:38.004 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+14:32:38.934 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+14:32:39.714 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+14:32:41.774 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+14:32:42.934 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+14:32:44.183 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+14:32:45.373 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+14:32:46.853 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+14:32:49.613 INFO  - Updating hardware inferred compiler options for conware. 
+14:32:50.363 INFO  - Updating hardware inferred compiler options for conware_test. 
+14:32:51.113 INFO  - Updating hardware inferred compiler options for dma_test. 
+14:32:51.123 INFO  - Clearing existing target manager status. 
+14:34:15.504 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+14:34:23.225 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:34:54.078 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:35:42.776 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:36:26.983 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:36:57.956 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:37:48.299 INFO  - Processor reset is completed for ps7_cortexa9_0 

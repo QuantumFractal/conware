@@ -1,6 +1,6 @@
 module conware #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 32,
+    parameter WIDTH = 8,
     parameter HEIGHT = 1
 )(
     // Color conversion signals
@@ -23,8 +23,9 @@ module conware #(
     M_AXIS_TDATA,
     M_AXIS_TLAST,
     M_AXIS_TKEEP,
-    M_AXIS_TSTRB
-    
+    M_AXIS_TSTRB,
+
+    CONWARE_BUFFER
 );
     input ACLK;
     input ARESETN;
@@ -47,10 +48,14 @@ module conware #(
     wire [WIDTH-1:0] in_states;
     wire [WIDTH-1:0] out_states;
 
+    // TODO: Delete me
+    output [WIDTH-1:0] CONWARE_BUFFER;
+
     // Signals to handle internal handshake between in-buffer and out-buffer
     wire pvalid;
     wire pready;
 
+    assign CONWARE_BUFFER = in_states;
 
     axis2buffer #(DWIDTH, WIDTH) a2b(
         .clk(ACLK),

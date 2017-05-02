@@ -3,11 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Sat Apr 29 00:15:29 2017">
+<application name="pn" timeStamp="Mon May 01 15:24:28 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="244C72C7171848E4A5EA09072A1D14BF" type="project"/>
 <property name="ProjectIteration" value="0" type="project"/>
-<property name="ProjectFile" value="C:/Users/micha/Documents/projects/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xise" type="project"/>
+<property name="ProjectFile" value="U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/devl/projnav/conware.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2017-04-06T16:43:38" type="project"/>
 </section>
 <section name="Project Statistics" visible="true">

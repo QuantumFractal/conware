@@ -105,28 +105,28 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conway.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conway.v" into library work
 Parsing module <conway>.
-Analyzing Verilog file "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v" into library work
 Parsing module <shredder>.
-Analyzing Verilog file "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v" into library work
 Parsing module <shredder_array>.
-Analyzing Verilog file "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" into library work
 Parsing module <buffer2axis>.
-Analyzing Verilog file "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" into library work
 Parsing module <axis2buffer>.
-Analyzing Verilog file "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" into library work
 Parsing module <conware>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" Line 75: Port buffer is not connected to this instance
+WARNING:HDLCompiler:1016 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" Line 75: Port buffer is not connected to this instance
 
 Elaborating module <conware>.
 
 Elaborating module <axis2buffer(DWIDTH=32,WIDTH=32)>.
-WARNING:HDLCompiler:413 - "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 90: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 90: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <shredder_array(WIDTH=32)>.
 
@@ -135,24 +135,24 @@ Elaborating module <shredder>.
 Elaborating module <conway>.
 
 Elaborating module <buffer2axis(DWIDTH=32,WIDTH=32)>.
-WARNING:HDLCompiler:413 - "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 106: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 106: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <conware>.
-    Related source file is "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v".
         DWIDTH = 32
         WIDTH = 32
         HEIGHT = 1
-INFO:Xst:3210 - "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" line 75: Output port <buffer> of the instance <b2a> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" line 75: Output port <buffer> of the instance <b2a> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <conware> synthesized.
 
 Synthesizing Unit <axis2buffer>.
-    Related source file is "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v".
         DWIDTH = 32
         WIDTH = 32
 WARNING:Xst:647 - Input <dead_color> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -202,14 +202,14 @@ WARNING:Xst:647 - Input <S_AXIS_TLAST> is never used. This port will be preserve
 Unit <axis2buffer> synthesized.
 
 Synthesizing Unit <shredder_array>.
-    Related source file is "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v".
         WIDTH = 32
     Summary:
 	no macro.
 Unit <shredder_array> synthesized.
 
 Synthesizing Unit <shredder>.
-    Related source file is "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v".
     Found 3-bit register for signal <shift_reg>.
     Found 2-bit adder for signal <n0035[1:0]> created at line 27.
     Found 3-bit adder for signal <sum_out> created at line 27.
@@ -222,13 +222,13 @@ Synthesizing Unit <shredder>.
 Unit <shredder> synthesized.
 
 Synthesizing Unit <conway>.
-    Related source file is "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conway.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conway.v".
     Summary:
 	no macro.
 Unit <conway> synthesized.
 
 Synthesizing Unit <buffer2axis>.
-    Related source file is "C:\Users\micha\Documents\projects\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v".
         DWIDTH = 32
         WIDTH = 32
     Found 1-bit register for signal <state>.
@@ -524,12 +524,12 @@ ACLK           |    2.944|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.81 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.58 secs
  
 --> 
 
-Total memory usage is 494108 kilobytes
+Total memory usage is 499272 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

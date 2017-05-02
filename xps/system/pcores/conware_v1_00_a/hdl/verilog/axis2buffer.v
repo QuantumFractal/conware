@@ -1,6 +1,6 @@
 module axis2buffer #(
     parameter DWIDTH = 32,
-    parameter WIDTH = 4
+    parameter WIDTH = 8
 )( 
     // Control signals
     clk,
@@ -50,7 +50,7 @@ module axis2buffer #(
     reg [7:0] next_counter;
 
     initial begin
-        state <= Wait;
+        state <= Read;
         out_data <= 0;
         counter <= 0;
     end

@@ -52,6 +52,7 @@ void print_desc(void * desc) {
 	}
 }
 
+#define SIZE 8
 
 int main()
 {
@@ -59,13 +60,18 @@ int main()
     init_platform();
 	xil_printf("\r\n--- Entering main() --- \r\n");
 
-	int WIDTH = 16;
-    int HEIGHT = 8;
-
-    int * grid = (int *) malloc((WIDTH*HEIGHT*sizeof(int)));
+    u32 * grid = (u32 *) malloc((SIZE*sizeof(int)));
+    u32 * grid_out = (u32 *) malloc((SIZE*sizeof(int)));
     int i, j;
 
-    memset(grid, 'X', WIDTH*HEIGHT*sizeof(int));
+    for (i = 0; i < SIZE; i++) {
+    	if (i%2) {
+    		grid[i] = 0x00000000;
+    	}
+    	else {
+    		grid[i] = 0xFFFFFFFF;
+    	}
+    }
 
     // DMA STUFF
 
@@ -185,8 +191,8 @@ int main()
 		return -1;
 	}
 
-	int rx_buf_addr = (int *) malloc((WIDTH*HEIGHT*sizeof(int)));
-	memset(rx_buf_addr, 0x00, WIDTH*HEIGHT*sizeof(int));
+	int rx_buf_addr = grid_out;
+	memset(rx_buf_addr, 0x55, SIZE*sizeof(int));
 
 	if (rx_buf_addr == NULL)
 	{
@@ -212,7 +218,7 @@ int main()
 
 
 	// Set length of buffer
-	status = XAxiDma_BdSetLength(tx_bd_ptr, WIDTH*HEIGHT*sizeof(int), tx_ring->MaxTransferLen);
+	status = XAxiDma_BdSetLength(tx_bd_ptr, SIZE*sizeof(int), tx_ring->MaxTransferLen);
 	if (status != XST_SUCCESS)
 	{
 		xil_printf("ERROR! Failed to set buffer length for this BD.\r\n");
@@ -220,7 +226,7 @@ int main()
 	}
 
 	// Set length of buffer
-	status = XAxiDma_BdSetLength(rx_bd_ptr, WIDTH*HEIGHT*sizeof(int), rx_ring->MaxTransferLen);
+	status = XAxiDma_BdSetLength(rx_bd_ptr, SIZE*sizeof(int), rx_ring->MaxTransferLen);
 	if (status != XST_SUCCESS)
 	{
 		xil_printf("ERROR! Failed to set buffer length for this BD.\r\n");
@@ -276,17 +282,32 @@ int main()
 		return -1;
 	}
 
-	sleep(1);
+	sleep(5);
 
-	int * buf = rx_buf_addr;
-	for (i = 0; i < WIDTH*HEIGHT; i++) {
-		printf("%x ", buf[i]);
+	Xil_DCacheFlush();
+
+	XAxiDma_DumpBd(tx_bd_ptr);
+	XAxiDma_DumpBd(rx_bd_ptr);
+
+	volatile unsigned int * ptr = AxiDma.RegBase;
+	printf("MM2S_DMASR: %x\r\n", ptr[1]);
+	printf("S2MM_DMASR: %x\r\n", ptr[13]);
+
+
+	for (i = 0; i < SIZE; i++) {
+		printf("%x ", grid[i]);
+	}
+
+	printf("\r\n\r\n");
+
+	for (i = 0; i < SIZE; i++) {
+		printf("%x ", grid_out[i]);
 	}
 
 	printf("\r\n");
 
 	// VIEDO STFUD
-    Xil_DCacheFlush();
+
 //
 //    XVtc Vtc;
 //	XVtc_Config *VtcCfgPtr;
