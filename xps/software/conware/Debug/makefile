@@ -35,7 +35,7 @@ all: conware.elf secondary-outputs
 conware.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM gcc linker'
-	arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp_0/ps7_cortexa9_0/lib -o "conware.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../conware_bsp/ps7_cortexa9_0/lib -o "conware.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

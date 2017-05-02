@@ -22,13 +22,12 @@
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="axi4lite_0" ROW_INDEX="0"/>
-      <VARIABLE ID="SWs_8Bits" ROW_INDEX="6"/>
-      <VARIABLE ID="LEDs_8Bits" ROW_INDEX="5"/>
+      <VARIABLE ID="SWs_8Bits" ROW_INDEX="5"/>
       <VARIABLE ID="BTNs_5Bits" ROW_INDEX="4"/>
       <VARIABLE ID="processing_system7_0" IS_EXPANDED="TRUE" ROW_INDEX="2"/>
       <VARIABLE ID="axi_dma_0" IS_EXPANDED="TRUE" ROW_INDEX="3"/>
       <VARIABLE ID="axi_interconnect_1" ROW_INDEX="1"/>
-      <VARIABLE ID="conware_0" IS_EXPANDED="TRUE" ROW_INDEX="7"/>
+      <VARIABLE ID="conware_0" IS_EXPANDED="TRUE" ROW_INDEX="6"/>
     </SEQUENCES>
   </SET>
 
@@ -92,25 +91,26 @@
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="5" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="127,1374,200" VERSION="0"/>
     <SET ID="ExternalPorts" IS_EXPANDED="TRUE"/>
     <SET ID="SWs_8Bits" IS_EXPANDED="TRUE"/>
-    <SET ID="LEDs_8Bits" IS_EXPANDED="TRUE"/>
     <SET ID="BTNs_5Bits" IS_EXPANDED="TRUE"/>
     <SET ID="axi_dma_0" IS_EXPANDED="TRUE"/>
-    <SET ID="conware_0" IS_EXPANDED="TRUE"/>
+    <SET ID="conware_0" IS_EXPANDED="TRUE">
+      <SET ID="M_AXIS" IS_EXPANDED="TRUE"/>
+      <SET ID="S_AXIS" IS_EXPANDED="TRUE"/>
+    </SET>
     <STATUS>
       <SELECTIONS>
-        <VARIABLE ID="conware_0_buffer_pin" PARENT="ExternalPorts"/>
+        <VARIABLE ID="ACLK" PARENT="conware_0"/>
       </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" IS_EXPANDED="TRUE" ROW_INDEX="0"/>
       <VARIABLE ID="axi4lite_0" ROW_INDEX="1"/>
-      <VARIABLE ID="SWs_8Bits" IS_EXPANDED="TRUE" ROW_INDEX="7"/>
-      <VARIABLE ID="LEDs_8Bits" IS_EXPANDED="TRUE" ROW_INDEX="6"/>
+      <VARIABLE ID="SWs_8Bits" IS_EXPANDED="TRUE" ROW_INDEX="6"/>
       <VARIABLE ID="BTNs_5Bits" IS_EXPANDED="TRUE" ROW_INDEX="5"/>
       <VARIABLE ID="processing_system7_0" ROW_INDEX="3"/>
       <VARIABLE ID="axi_dma_0" IS_EXPANDED="TRUE" ROW_INDEX="4"/>
       <VARIABLE ID="axi_interconnect_1" ROW_INDEX="2"/>
-      <VARIABLE ID="conware_0" IS_EXPANDED="TRUE" ROW_INDEX="8"/>
+      <VARIABLE ID="conware_0" IS_EXPANDED="TRUE" ROW_INDEX="7"/>
     </SEQUENCES>
   </SET>
 

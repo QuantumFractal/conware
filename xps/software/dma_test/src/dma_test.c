@@ -41,6 +41,9 @@
 #define ALIGN64(some_ptr) ALIGN(some_ptr, 0x40)
 #define ALIGN4(some_ptr) ALIGN(some_ptr, 0x4)
 
+typedef unsigned int u32;
+
+
 
 void print_offsets() {
 	printf("----- Register offsets -----\n");
@@ -71,7 +74,7 @@ void print_desc(PDMA_SG_DESC desc) {
 	}
 }
 
-#define SIZE 32
+#define SIZE 8
 
 
 int main() {
@@ -96,7 +99,7 @@ int main() {
     volatile uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-		arr_from[i] = 0x00FF00CC;
+		arr_from[i] = 0xFFFFFFFF;
     }
 
     memset(arr_to, 0x55, SIZE*sizeof(uint32_t));

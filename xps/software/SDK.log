@@ -513,3 +513,100 @@ If this project was a BSP referenced by other C/C++ applications, then those app
 14:36:26.983 INFO  - Processor reset is completed for ps7_cortexa9_0 
 14:36:57.956 INFO  - Processor reset is completed for ps7_cortexa9_0 
 14:37:48.299 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:56:43.449 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:56:48.753 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+15:57:19.547 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:59:51.504 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:00:06.457 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:00:06.557 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Invalid Target ID
+    Target '64' Does NOT exist in the Current System
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+16:00:48.082 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:01:38.049 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:02:44.170 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:03:28.780 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+16:07:51.183 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:07:51.283 INFO  - PS initialization will be done as it is not done before. 
+16:07:51.283 INFO  - Running PS initialization.... 
+16:07:51.793 INFO  - ps7_init is completed. 
+16:07:51.893 INFO  - ps7_post_config is completed. 
+16:07:52.003 INFO  - PS Initialization is complete. 
+16:18:38.972 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:21:39.789 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:22:34.968 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:23:44.164 ERROR - Unable to read in MSS file U:\Cpre488\conware\xps\software\conware_bsp_0\system.mss. 
+16:24:33.981 ERROR - Unable to read in MSS file U:\Cpre488\conware\xps\software\conware_bsp_0\system.mss. 
+16:24:34.011 ERROR - Unable to read in MSS file U:\Cpre488\conware\xps\software\conware_bsp_0\system.mss. 
+16:24:34.121 WARN  - Unable to determine location of documentation for OS . 
+16:24:34.141 ERROR - Unable to read in MSS file U:\Cpre488\conware\xps\software\conware_bsp_0\system.mss. 
+16:24:34.181 ERROR - Unable to read in MSS file U:\Cpre488\conware\xps\software\conware_bsp_0\system.mss. 
+16:25:14.982 INFO  - Project conware_bsp_0 was a BSP project. Please update references. 
+16:25:14.982 ERROR - SDK has detected that project conware_bsp_0 has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references. 
+16:28:51.750 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:31:17.809 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:44:25.184 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:47:32.752 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:48:15.024 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:48:54.525 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:50:29.927 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:02:06.371 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:02:56.820 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:03:35.285 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:10:26.296 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:11:51.054 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:11:53.307 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:12:26.432 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:12:47.003 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+17:13:04.677 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:13:45.297 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:14:05.847 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:14:05.957 INFO  - PS initialization will be done as it is not done before. 
+17:14:05.957 INFO  - Running PS initialization.... 
+17:14:06.467 INFO  - ps7_init is completed. 
+17:14:06.567 INFO  - ps7_post_config is completed. 
+17:14:06.667 INFO  - PS Initialization is complete. 
+17:14:47.819 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:14:54.005 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+17:15:00.174 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:17:23.388 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:19:10.747 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:19:57.637 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+17:20:05.818 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:20:05.928 INFO  - PS initialization will be done as it is not done before. 
+17:20:05.928 INFO  - Running PS initialization.... 
+17:20:06.438 INFO  - ps7_init is completed. 
+17:20:06.538 INFO  - ps7_post_config is completed. 
+17:20:06.638 INFO  - PS Initialization is complete. 
+17:21:01.454 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:23:52.803 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:24:42.282 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:25:24.553 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:25:25.883 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Failed to download ELF file
+
+UNABLE to Open File
+    : U:/Cpre488/conware/xps/software/conware_test/Debug/conware_test.elf
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+17:25:40.723 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:29:38.877 INFO  - Processor reset is completed for ps7_cortexa9_0 

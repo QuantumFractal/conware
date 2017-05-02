@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-  65292	   2264	2104476	2172032	 212480	dma_test.elf
+  65284	   2264	2104476	2172024	 212478	dma_test.elf

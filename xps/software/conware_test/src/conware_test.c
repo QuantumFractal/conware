@@ -1,109 +1,172 @@
+/*
+ * Copyright (c) 2009-2012 Xilinx, Inc.  All rights reserved.
+ *
+ * Xilinx, Inc.
+ * XILINX IS PROVIDING THIS DESIGN, CODE, OR INFORMATION "AS IS" AS A
+ * COURTESY TO YOU.  BY PROVIDING THIS DESIGN, CODE, OR INFORMATION AS
+ * ONE POSSIBLE   IMPLEMENTATION OF THIS FEATURE, APPLICATION OR
+ * STANDARD, XILINX IS MAKING NO REPRESENTATION THAT THIS IMPLEMENTATION
+ * IS FREE FROM ANY CLAIMS OF INFRINGEMENT, AND YOU ARE RESPONSIBLE
+ * FOR OBTAINING ANY RIGHTS YOU MAY REQUIRE FOR YOUR IMPLEMENTATION.
+ * XILINX EXPRESSLY DISCLAIMS ANY WARRANTY WHATSOEVER WITH RESPECT TO
+ * THE ADEQUACY OF THE IMPLEMENTATION, INCLUDING BUT NOT LIMITED TO
+ * ANY WARRANTIES OR REPRESENTATIONS THAT THIS IMPLEMENTATION IS FREE
+ * FROM CLAIMS OF INFRINGEMENT, IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ */
 
+/*
+ * helloworld.c: simple test application
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
 
 #include <stdio.h>
-#include <xparameters.h>
+#include <stdlib.h>
 #include "platform.h"
+#include "xparameters.h"
 #include "axi_dma_ftw.h"
+#include "xaxidma.h"
+//#include "xvtc.h"
+//#include "xaxivdma.h"
 
-#define OFFSET(TY,FIELD) (&((TY *) 0)->FIELD)
-#define ALIGN64(some_ptr) (int*)(some_ptr + 0x40-some_ptr%0x40)
+#define ALIGN64(some_ptr) (int*)(some_ptr + XAXIDMA_BD_MINIMUM_ALIGNMENT-some_ptr%XAXIDMA_BD_MINIMUM_ALIGNMENT);
 
-#define WIDTH 32
-#define HEIGHT 32
+static XAxiDma AxiDma;
+XAxiDma_Bd bd_template;
 
+void print_desc(void * desc) {
+	unsigned char * ptr = (unsigned char *) desc;
+	int i;
+	for (i = 0; i < 16; i++) {
+		printf("%02x %02x %02x %02x \r\n", ptr[i*4+3], ptr[i*4+2], ptr[i*4+1], ptr[i*4]);
+	}
+}
 
-int main() {
+#define SIZE 8
+
+#define XST_CHECK(stmt, errmsg) \
+	if ((stmt) != XST_SUCCESS) { \
+		xil_printf(errmsg); \
+		return -1; \
+	}
+
+int main()
+{
+	xil_printf("\r\n--- Entering main() --- \r\n");
+    init_platform();
+	xil_printf("\r\n--- Entering main() --- \r\n");
+
+    u32 * grid = (u32 *) malloc((SIZE*sizeof(int)));
+    u32 * grid_out = (u32 *) malloc((SIZE*sizeof(int)));
     int i, j;
 
-    volatile PAXI_DMA_SG_REGMAP dma_dev = (PAXI_DMA_SG_REGMAP) XPAR_AXI_DMA_0_BASEADDR;
-
-    dma_dev->mm2s_dmacr.as_uint = 0;
-    dma_dev->s2mm_dmacr.as_uint = 0;
-
-    dma_dev->mm2s_dmacr.reset = 1;
-    dma_dev->s2mm_dmacr.reset = 1;
-
-
-
-    uint32_t * life0 = (uint32_t *) malloc(WIDTH*HEIGHT*sizeof(uint32_t));
-    uint32_t * life1 = (uint32_t *) malloc(WIDTH*HEIGHT*sizeof(uint32_t));
-    uint32_t * garbage = (uint32_t *) malloc(WIDTH*sizeof(uint32_t));
-
-    // TODO: Setup the game here
-
-
-
-    // Setup Tx packet descriptor
-    volatile PDMA_SG_DESC tx0 = (PDMA_SG_DESC) malloc(sizeof(DMA_SG_DESC) + 0x40);
-    tx0 = ALIGN64((uint32_t)tx0);
-    memset(tx0, 0x00, sizeof(DMA_SG_DESC));
-
-    tx0->next_ptr = (uint32_t) tx0;
-    tx0->buffer_address = (uint32_t)arr_from;
-    tx0->control.buffer_length = SIZE*SIZE*sizeof(uint32_t);
-    tx0->control.tx_sof = 1;
-    tx0->control.tx_eof = 1;
-
-    // Setup Rx descriptor
-    volatile PDMA_SG_DESC rx0 = (PDMA_SG_DESC) malloc(sizeof(DMA_SG_DESC) + 0x40);
-    rx0 = ALIGN64((uint32_t)rx0);
-    memset(rx0, 0x00, sizeof(DMA_SG_DESC));
-
-    rx0->next_ptr = (uint32_t)rx0;
-    rx0->buffer_address = (uint32_t)arr_to;
-    rx0->control.buffer_length = SIZE*SIZE*sizeof(uint32_t);
-
-    Xil_DCacheFlushRange(tx0, 0x40);
-    Xil_DCacheFlushRange(rx0, 0x40);
-
-    // Let the DMA engine run
-    printf("Releaseing reset... \r\n");
-    dma_dev->mm2s_dmacr.reset = 0;
-    dma_dev->s2mm_dmacr.reset = 0;
-    printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-
-	// Start the RX
-	printf("Start RX... \r\n");
-	dma_dev->s2mm_curdesc = (uint32_t)rx0;
-	dma_dev->s2mm_dmacr.run_stop = 1;
-	dma_dev->s2mm_taildesc = (uint32_t)rx0;
-
-	// Start the TX
-	printf("Start TX... \r\n");
-	dma_dev->mm2s_curdesc = (uint32_t)tx0;
-	dma_dev->mm2s_dmacr.run_stop = 1;
-	dma_dev->mm2s_taildesc = (uint32_t)tx0;
-
-
-
-	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-
-    Xil_DCacheFlush();
-
-    // Wait for the DMA to complete
-    while (!dma_dev->mm2s_dmasr.idle || !dma_dev->s2mm_dmasr.idle) {
-    	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
-    }
-
-    Xil_DCacheFlush();
-
-    printf("DMA Idle! \r\n");
-    printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-    printf("Tx Status: %x \r\n", tx0->status.as_uint);
-    printf("Rx Status: %x \r\n", rx0->status.as_uint);
-
-    // Print the result
     for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            printf("%c ", (char)arr_to[i* SIZE + j]);
-        }
-        printf("\r\n");
+    	if (i%2) {
+    		grid[i] = 0x00000000;
+    	}
+    	else {
+    		grid[i] = 0xFFFFFFFF;
+    	}
     }
 
-    while(1);
+    memset(grid_out, 0x00, SIZE*sizeof(int));
 
-	return 0;
+    // Init DMA
+	XAxiDma_Config *Config;
+
+	Config = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+	if (!Config) {
+		xil_printf("No config found for %d\r\n", XPAR_AXIDMA_0_DEVICE_ID);
+		return XST_FAILURE;
+	}
+
+	XST_CHECK(XAxiDma_CfgInitialize(&AxiDma, Config), "Initialization failed %d\r\n");
+
+	XAxiDma_Reset(&AxiDma);
+	while (!XAxiDma_ResetIsDone(&AxiDma)) {}
+
+	XAxiDma_BdClear(&bd_template);
+
+	xil_printf("--- DMA Configured ---\n\r");
+
+	XAxiDma_Bd* bd_ptr;
+	XAxiDma_Bd* rx_bd_ptr;
+	XAxiDma_Bd*	tx_bd_ptr;
+
+	// TX BUFFER SHIT
+	XAxiDma_BdRing * tx_ring = XAxiDma_GetTxRing(&AxiDma);
+	int * tx_bd_mem = (int*) malloc((1+1)*XAXIDMA_BD_MINIMUM_ALIGNMENT);
+	tx_bd_mem = ALIGN64((int)tx_bd_mem);
+
+	XST_CHECK(XAxiDma_BdRingCreate(tx_ring, (int)tx_bd_mem, (int)tx_bd_mem, XAXIDMA_BD_MINIMUM_ALIGNMENT, 1), "ERROR! Failed to create Buffer.\r\n");
+	XAxiDma_UpdateBdRingCDesc(tx_ring);
+	XST_CHECK(XAxiDma_BdRingClone(tx_ring, &bd_template), "ERROR! Failed allocate buffer descriptors.\r\n");
+	XST_CHECK(XAxiDma_BdRingAlloc(tx_ring, 1, &tx_bd_ptr), "ERROR! Failed to allocate locations in the buffer descriptor ring.\r\n");
+
+
+	// RX BUFFER SHIT
+	XAxiDma_BdRing * rx_ring = XAxiDma_GetRxRing(&AxiDma);
+	int * rx_bd_mem = (int*) malloc((1+1)*XAXIDMA_BD_MINIMUM_ALIGNMENT); // +1 to account for worst case misalignment
+	rx_bd_mem = ALIGN64((int)rx_bd_mem);
+
+	XST_CHECK(XAxiDma_BdRingCreate(rx_ring, (int)rx_bd_mem, (int)rx_bd_mem, XAXIDMA_BD_MINIMUM_ALIGNMENT, 1), "ERROR! RX failed to create buffer ring\r\n");
+
+	XAxiDma_UpdateBdRingCDesc(rx_ring);
+	XST_CHECK(XAxiDma_BdRingClone(rx_ring, &bd_template), "ERROR! RX Failed allocate buffer descriptors.\r\n");
+	XST_CHECK(XAxiDma_BdRingAlloc(rx_ring, XAxiDma_BdRingGetFreeCnt(rx_ring), &rx_bd_ptr), "ERROR! Failed to allocate locations in the buffer descriptor ring.\r\n");
+
+
+	int tx_buf_addr = grid;
+	int rx_buf_addr = grid_out;
+
+	XST_CHECK(XAxiDma_BdSetBufAddr(tx_bd_ptr, tx_buf_addr), "ERROR! Failed to set source address for this BD.\r\n");
+	XST_CHECK(XAxiDma_BdSetBufAddr(rx_bd_ptr, rx_buf_addr), "ERROR! Failed to set source address for this BD.\r\n");
+
+	XST_CHECK(XAxiDma_BdSetLength(tx_bd_ptr, SIZE*sizeof(int), tx_ring->MaxTransferLen), "ERROR! Failed to set buffer length for this BD.\r\n");
+	XST_CHECK(XAxiDma_BdSetLength(rx_bd_ptr, SIZE*sizeof(int), rx_ring->MaxTransferLen), "ERROR! Failed to set buffer length for this BD.\r\n");
+
+	int cr_bits = 0;
+
+	cr_bits |= XAXIDMA_BD_CTRL_TXSOF_MASK;
+	cr_bits |= XAXIDMA_BD_CTRL_TXEOF_MASK;
+
+	XAxiDma_BdSetCtrl(tx_bd_ptr, cr_bits);
+	XAxiDma_BdSetCtrl(rx_bd_ptr, 0);
+
+	XST_CHECK(XAxiDma_BdRingToHw(tx_ring, 1, tx_bd_ptr), "ERROR! Failed to pass buffer descriptor ring to the hardware. \n\r");
+	XST_CHECK(XAxiDma_BdRingToHw(rx_ring, 1, rx_bd_ptr), "ERROR! Failed to pass buffer descriptor ring to the hardware. \n\r");
+
+	Xil_DCacheFlush();
+
+
+	for (j = 0; j < 8; j++) {
+
+		XST_CHECK(XAxiDma_BdRingStart(tx_ring), "ERROR! Failed to kick off MM2S transfer.\n\r");
+		XST_CHECK(XAxiDma_BdRingStart(rx_ring), "ERROR! Failed to kick off S2MM transfer.\n\r");
+
+		volatile unsigned int * ptr = AxiDma.RegBase;
+			printf("MM2S_DMASR: %x\r\n", ptr[1]);
+			printf("S2MM_DMASR: %x\r\n", ptr[13]);
+
+		Xil_DCacheFlush();
+
+		for (i = 0; i < SIZE; i++) {
+			printf("%d ", grid_out[i]?1:0);
+		}
+		printf("\r\n");
+	}
+
+    return 0;
+
 }
