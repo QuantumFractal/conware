@@ -37,12 +37,20 @@
 #include "xparameters.h"
 #include "axi_dma_ftw.h"
 #include "xaxidma.h"
-#include "xvtc.h"
-#include "xaxivdma.h"
+//#include "xvtc.h"
+//#include "xaxivdma.h"
 
 #define ALIGN64(some_ptr) (int*)(some_ptr + XAXIDMA_BD_MINIMUM_ALIGNMENT-some_ptr%XAXIDMA_BD_MINIMUM_ALIGNMENT);
 
 static XAxiDma AxiDma;
+
+void print_desc(void * desc) {
+	unsigned char * ptr = (unsigned char *) desc;
+	int i;
+	for (i = 0; i < 16; i++) {
+		printf("%02x %02x %02x %02x \r\n", ptr[i*4+3], ptr[i*4+2], ptr[i*4+1], ptr[i*4]);
+	}
+}
 
 
 int main()
@@ -55,7 +63,9 @@ int main()
     int HEIGHT = 8;
 
     int * grid = (int *) malloc((WIDTH*HEIGHT*sizeof(int)));
+    int i, j;
 
+    memset(grid, 'X', WIDTH*HEIGHT*sizeof(int));
 
     // DMA STUFF
 
@@ -176,7 +186,7 @@ int main()
 	}
 
 	int rx_buf_addr = (int *) malloc((WIDTH*HEIGHT*sizeof(int)));
-	memset(rx_buf_addr, '#', WIDTH*HEIGHT*sizeof(int));
+	memset(rx_buf_addr, 0x00, WIDTH*HEIGHT*sizeof(int));
 
 	if (rx_buf_addr == NULL)
 	{
@@ -233,6 +243,8 @@ int main()
 		return -1;
 	}
 
+
+
 	status = XAxiDma_BdRingToHw(rx_ring, 1, rx_bd_ptr); // This function manages cache coherency for BDs
 	if (status != XST_SUCCESS)
 	{
@@ -241,6 +253,11 @@ int main()
 	}
 
 	Xil_DCacheFlush();
+
+//	printf("TX:\r\n");
+//	print_desc(tx_bd_ptr);
+//	printf("RX:\r\n");
+//	print_desc(rx_bd_ptr);
 
 	/*
 	 * 4. SEND IT
@@ -261,68 +278,73 @@ int main()
 
 	sleep(1);
 
-	int test_image[720][1280];
+	int * buf = rx_buf_addr;
+	for (i = 0; i < WIDTH*HEIGHT; i++) {
+		printf("%x ", buf[i]);
+	}
+
+	printf("\r\n");
 
 	// VIEDO STFUD
     Xil_DCacheFlush();
-
-    XVtc Vtc;
-	XVtc_Config *VtcCfgPtr;
-
-	int i, j;
-
-	print("Hello, World!\r\n");
-
-
-	// Enable the VTC module
-	print("XVtc_LookupConfig\r\n");
-	VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
-	printf("%x\r\n", (unsigned int) VtcCfgPtr->BaseAddress);
-	print("XVtc_CfgInitialize\r\n");
-	XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
-	print("XVtc_Enable\r\n");
-	XVtc_Enable(&Vtc, XVTC_EN_GENERATOR);
-
-	print("Filling frame...\r\n");
-
-	// Initialize Test image for VDMA transfer to VGA monitor
-	for (i = 2; i < 720; i++) {
-	  for (j = 2; j < 1280; j++) {
-
-		if (j < 213) {
-		  test_image[i][j] = 0x0FFF; // red pixels
-		}
-		else if(j < 426 ) {
-		  test_image[i][j] = 0x00F0; // green pixels
-		}
-		else {
-		  test_image[i][j] = 0x0F00; // blue pixels
-		}
-
-	  }
-	}
-
-	Xil_DCacheFlush();
-
-	// Set up VDMA config registers
-	#define CHANGE_ME 0
-
-	print("Configuring VDMA...\r\n");
-
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0x03);  // Circular Mode and Start bits set, VDMA MM2S Control (p. 34)
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x00);  // VDMA MM2S Reg_Index (P. 44)
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET, 0x01);  // VDMA MM2S Number FRM_Stores (p. 45)
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, test_image);  // VDMA MM2S Start Addr 1
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 1280);  // 1280 bytes, VDMA MM2S FRM_Delay, and Stride
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 1280);  // 1280 bytes, VDMA MM2S HSIZE
-	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 480);  // 480 lines, VDMA MM2S VSIZE  (Note: Starts VDMA transaction
-
-	print("Something should be happening!\r\n");
-
-	while(1) {
-
-	}
-
-    xil_printf("---------[END]---------\n\r");
+//
+//    XVtc Vtc;
+//	XVtc_Config *VtcCfgPtr;
+//
+//	int i, j;
+//
+//	print("Hello, World!\r\n");
+//
+//
+//	// Enable the VTC module
+//	print("XVtc_LookupConfig\r\n");
+//	VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
+//	printf("%x\r\n", (unsigned int) VtcCfgPtr->BaseAddress);
+//	print("XVtc_CfgInitialize\r\n");
+//	XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
+//	print("XVtc_Enable\r\n");
+//	XVtc_Enable(&Vtc, XVTC_EN_GENERATOR);
+//
+//	print("Filling frame...\r\n");
+//
+//	// Initialize Test image for VDMA transfer to VGA monitor
+//	for (i = 2; i < 720; i++) {
+//	  for (j = 2; j < 1280; j++) {
+//
+//		if (j < 213) {
+//		  test_image[i][j] = 0x0FFF; // red pixels
+//		}
+//		else if(j < 426 ) {
+//		  test_image[i][j] = 0x00F0; // green pixels
+//		}
+//		else {
+//		  test_image[i][j] = 0x0F00; // blue pixels
+//		}
+//
+//	  }
+//	}
+//
+//	Xil_DCacheFlush();
+//
+//	// Set up VDMA config registers
+//	#define CHANGE_ME 0
+//
+//	print("Configuring VDMA...\r\n");
+//
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0x03);  // Circular Mode and Start bits set, VDMA MM2S Control (p. 34)
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x00);  // VDMA MM2S Reg_Index (P. 44)
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET, 0x01);  // VDMA MM2S Number FRM_Stores (p. 45)
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, test_image);  // VDMA MM2S Start Addr 1
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 1280);  // 1280 bytes, VDMA MM2S FRM_Delay, and Stride
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 1280);  // 1280 bytes, VDMA MM2S HSIZE
+//	XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 480);  // 480 lines, VDMA MM2S VSIZE  (Note: Starts VDMA transaction
+//
+//	print("Something should be happening!\r\n");
+//
+//	while(1) {
+//
+//	}
+//
+//    xil_printf("---------[END]---------\n\r");
     return 0;
 }

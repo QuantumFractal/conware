@@ -37,7 +37,10 @@
 #include "axi_dma_ftw.h"
 
 #define OFFSET(TY,FIELD) (&((TY *) 0)->FIELD)
-#define ALIGN64(some_ptr) (int*)(some_ptr + 0x40-some_ptr%0x40)
+#define ALIGN(some_ptr, boundary) (int*)(some_ptr + boundary-some_ptr%boundary)
+#define ALIGN64(some_ptr) ALIGN(some_ptr, 0x40)
+#define ALIGN4(some_ptr) ALIGN(some_ptr, 0x4)
+
 
 void print_offsets() {
 	printf("----- Register offsets -----\n");
@@ -88,15 +91,25 @@ int main() {
     printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
 
 
-    uint32_t * arr_from = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
-    uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
+    volatile uint32_t * arr_from = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
-    memset(arr_from, '#', SIZE*sizeof(uint32_t));
-    memset(arr_to, 'a', SIZE*sizeof(uint32_t));
+    volatile uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-		printf("%c ", (char)arr_to[i]);
+		arr_from[i] = 0x00FF00CC;
     }
+
+    memset(arr_to, 0x55, SIZE*sizeof(uint32_t));
+
+    for (i = 0; i < SIZE; i++) {
+		printf("%x ", arr_from[i]);
+    }
+
+    printf("\r\n");
+
+    for (i = 0; i < SIZE; i++) {
+		printf("%x ", arr_to[i]);
+	}
 
 	printf("\r\n");
     printf("arr_from: %x \r\n", (uint32_t) arr_from);
@@ -108,43 +121,51 @@ int main() {
     volatile PDMA_SG_DESC tx0 = (PDMA_SG_DESC) malloc(sizeof(DMA_SG_DESC) + 0x40);
     tx0 = ALIGN64((uint32_t)tx0);
     memset(tx0, 0x00, sizeof(DMA_SG_DESC));
-
     tx0->next_ptr = (uint32_t) tx0;
     tx0->buffer_address = (uint32_t)arr_from;
     tx0->control.buffer_length = SIZE*sizeof(uint32_t);
     tx0->control.tx_sof = 1;
     tx0->control.tx_eof = 1;
+    //tx0->reserved6 = 0x0104;
 
     // Setup Rx descriptor
     volatile PDMA_SG_DESC rx0 = (PDMA_SG_DESC) malloc(sizeof(DMA_SG_DESC) + 0x40);
     rx0 = ALIGN64((uint32_t)rx0);
     memset(rx0, 0x00, sizeof(DMA_SG_DESC));
-
     rx0->next_ptr = (uint32_t)rx0;
     rx0->buffer_address = (uint32_t)arr_to;
-    rx0->control.buffer_length = 1*sizeof(uint32_t);
+    rx0->control.buffer_length = SIZE*sizeof(uint32_t);
+    //rx0->reserved6 = 0x0104;
 
     Xil_DCacheFlushRange(tx0, 0x40);
     Xil_DCacheFlushRange(rx0, 0x40);
+
+    printf("TX:\r\n");
+	print_desc(tx0);
+	printf("RX:\r\n");
+	print_desc(rx0);
 
     // Let the DMA engine run
     printf("Releaseing reset... \r\n");
     dma_dev->mm2s_dmacr.reset = 0;
     dma_dev->s2mm_dmacr.reset = 0;
+    dma_dev->mm2s_dmacr.as_uint = 0;
+	dma_dev->s2mm_dmacr.as_uint = 0;
     printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
 	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
 
-	// Start the RX
-	printf("Start RX... \r\n");
-	dma_dev->s2mm_curdesc = (uint32_t)rx0;
-	dma_dev->s2mm_dmacr.run_stop = 1;
-	dma_dev->s2mm_taildesc = (uint32_t)rx0;
 
 	// Start the TX
 	printf("Start TX... \r\n");
 	dma_dev->mm2s_curdesc = (uint32_t)tx0;
 	dma_dev->mm2s_dmacr.run_stop = 1;
 	dma_dev->mm2s_taildesc = (uint32_t)tx0;
+
+	// Start the RX
+	printf("Start RX... \r\n");
+	dma_dev->s2mm_curdesc = (uint32_t)rx0;
+	dma_dev->s2mm_dmacr.run_stop = 1;
+	dma_dev->s2mm_taildesc = (uint32_t)rx0;
 
 
 
@@ -163,23 +184,31 @@ int main() {
     	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
     }
 
-    Xil_DCacheFlush();
-
-    printf("DMA Idle! \r\n");
-    printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
+	Xil_DCacheFlush();
+	Xil_DCacheInvalidateRange(arr_from, SIZE*sizeof(uint32_t));
+	Xil_DCacheInvalidateRange(arr_to, SIZE*sizeof(uint32_t));
+	sleep(2);
+	printf("----------------------------------\r\n");
+	printf("DMA Idle! \r\n");
+	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
 	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-    printf("Tx Status: %x \r\n", tx0->status.as_uint);
-    printf("Rx Status: %x \r\n", rx0->status.as_uint);
+	printf("Tx Status: %x \r\n", tx0->status.as_uint);
+	printf("Rx Status: %x \r\n", rx0->status.as_uint);
 
-    printf("%d ", arr_to[0]);
+	// Print the result
+	for (i = 0; i < SIZE; i++) {
+		printf("%x ", arr_from[i]);
+	}
 
-    // Print the result
-    for (i = 0; i < SIZE; i++) {
-        printf("%c ", (char)arr_to[i]);
-    }
+	printf("\r\n");
 
-    printf("\r\n");
-    while(1);
+	for (i = 0; i < SIZE; i++) {
+		printf("%x ", arr_to[i]);
+	}
+
+	printf("\r\n");
+
+    //while(1);
 
 	return 0;
 }

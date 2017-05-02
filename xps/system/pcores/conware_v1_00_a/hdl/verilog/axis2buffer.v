@@ -50,6 +50,7 @@ module axis2buffer #(
     reg [7:0] next_counter;
 
     initial begin
+        state <= Wait;
         out_data <= 0;
         counter <= 0;
     end

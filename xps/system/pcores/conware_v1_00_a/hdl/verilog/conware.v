@@ -21,7 +21,9 @@ module conware #(
     M_AXIS_TVALID,
     M_AXIS_TREADY,
     M_AXIS_TDATA,
-    M_AXIS_TLAST
+    M_AXIS_TLAST,
+    M_AXIS_TKEEP,
+    M_AXIS_TSTRB
     
 );
     input ACLK;
@@ -39,6 +41,8 @@ module conware #(
     output M_AXIS_TVALID;
     output M_AXIS_TLAST;
     input M_AXIS_TREADY;
+    output [3:0] M_AXIS_TKEEP; // TODO: This needs to change with DWIDTH
+    output [3:0] M_AXIS_TSTRB;
 
     wire [WIDTH-1:0] in_states;
     wire [WIDTH-1:0] out_states;
@@ -52,7 +56,7 @@ module conware #(
         .clk(ACLK),
         .rstn(ARESETN),
 
-        .alive_color('h00FFFFFF),
+        .alive_color('hFFFFFFFF),
         .dead_color('h00000000),
 
         .S_AXIS_TVALID(S_AXIS_TVALID),
@@ -65,26 +69,28 @@ module conware #(
         .out_ready(pready)
     );
 
-    shredder_array #(WIDTH) shredders(
-        .clk(ACLK),
-        .rstn(ARESETN),
-        .in_data(in_states),
-        .out_data(out_states)
-    );
+    // shredder_array #(WIDTH) shredders(
+    //     .clk(ACLK),
+    //     .rstn(ARESETN),
+    //     .in_data(in_states),
+    //     .out_data(out_states)
+    // );
 
     buffer2axis #(DWIDTH, WIDTH) b2a(
         .clk(ACLK),
         .rstn(ARESETN),
 
-        .alive_color('h00FFFFFF),
+        .alive_color('hFFFFFFFF),
         .dead_color('h00000000),
 
         .M_AXIS_TVALID(M_AXIS_TVALID),
         .M_AXIS_TREADY(M_AXIS_TREADY),
         .M_AXIS_TDATA(M_AXIS_TDATA),
         .M_AXIS_TLAST(M_AXIS_TLAST),
+        .M_AXIS_TKEEP(M_AXIS_TKEEP),
+        .M_AXIS_TSTRB(M_AXIS_TSTRB),
 
-        .in_data(out_states),
+        .in_data(in_states),
         .in_valid(pvalid),
         .in_ready(pready)
     );

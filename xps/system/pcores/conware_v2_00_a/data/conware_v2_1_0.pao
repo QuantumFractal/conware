@@ -1,7 +1,0 @@
-##############################################################################
-## Filename:          C:\Users\micha\Documents\projects\conware\xps\system\pcores/conware_v2_00_a/data/conware_v2_1_0.pao
-## Description:       Peripheral Analysis Order
-## Date:              Fri Apr 28 23:44:46 2017 (by Create and Import Peripheral Wizard)
-##############################################################################
-
-lib conware_v2_00_a conware verilog

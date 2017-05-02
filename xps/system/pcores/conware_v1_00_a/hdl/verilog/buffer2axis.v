@@ -15,6 +15,8 @@ module buffer2axis #(
     M_AXIS_TVALID,
     M_AXIS_TREADY,
     M_AXIS_TLAST,
+    M_AXIS_TKEEP,
+    M_AXIS_TSTRB,
     
     // Output to conware computation
     in_data,
@@ -35,6 +37,8 @@ module buffer2axis #(
     output reg M_AXIS_TVALID;
     output reg M_AXIS_TLAST;
     input M_AXIS_TREADY;
+    output [3:0] M_AXIS_TKEEP;
+    output [3:0] M_AXIS_TSTRB;
 
     input [WIDTH-1:0] in_data;
     input in_valid;
@@ -53,10 +57,14 @@ module buffer2axis #(
     reg [7:0] next_counter;
 
     initial begin
+        state <= Wait;
         buffer <= 0;
         counter <= 0;
     end
     
+    assign M_AXIS_TKEEP = 4'b1111;
+    assign M_AXIS_TSTRB = 4'b1111;
+
     // Combinational Logic
     always @* begin
         next_counter <= 0;
@@ -92,24 +100,21 @@ module buffer2axis #(
             M_AXIS_TVALID <= 1;
             in_ready <= 0;
 
-            if (counter == WIDTH-1) begin
-                M_AXIS_TLAST <= 1;
-            end else begin
-                M_AXIS_TLAST <= 0;
-            end
-
             if (M_AXIS_TREADY == 1) begin
                 if (counter == WIDTH-1) begin
                     next_counter <= 0;
                     next_state <= Wait;
+                    M_AXIS_TLAST <= 1;
                 end else begin
                     next_counter <= counter + 1;
                     next_state <= Write;
+                    M_AXIS_TLAST <= 0;
                 end
 
             end else begin
                 next_counter <= counter;
                 next_state <= Write;
+                M_AXIS_TLAST <= 0;
             end
         end
 
