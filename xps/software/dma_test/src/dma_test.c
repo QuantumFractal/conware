@@ -46,32 +46,32 @@ typedef unsigned int u32;
 
 
 void print_offsets() {
-	printf("----- Register offsets -----\n");
-	printf("mm2s_dmacr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_dmacr));
-	printf("mm2s_dmasr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_dmasr));
-	printf("mm2s_curdesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_curdesc));
-	printf("mm2s_taildesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_taildesc));
-	printf("sg_ctl: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, sg_ctl));
-	printf("s2mm_dmacr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_dmacr));
-	printf("s2mm_dmasr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_dmasr));
-	printf("s2mm_curdesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_curdesc));
-	printf("s2mm_taildesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_taildesc));
-	printf("----------------------------\n");
+    printf("----- Register offsets -----\n");
+    printf("mm2s_dmacr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_dmacr));
+    printf("mm2s_dmasr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_dmasr));
+    printf("mm2s_curdesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_curdesc));
+    printf("mm2s_taildesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, mm2s_taildesc));
+    printf("sg_ctl: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, sg_ctl));
+    printf("s2mm_dmacr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_dmacr));
+    printf("s2mm_dmasr: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_dmasr));
+    printf("s2mm_curdesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_curdesc));
+    printf("s2mm_taildesc: %x\n", (uint) OFFSET(AXI_DMA_SG_REGMAP, s2mm_taildesc));
+    printf("----------------------------\n");
 
-	printf("----- Descriptor offsets -----\n");
-	printf("next_ptr: %x\n", (uint) OFFSET(DMA_SG_DESC, next_ptr));
-	printf("buffer_address: %x\n", (uint) OFFSET(DMA_SG_DESC, buffer_address));
-	printf("control: %x\n", (uint) OFFSET(DMA_SG_DESC, control));
-	printf("status: %x\n", (uint) OFFSET(DMA_SG_DESC, status));
-	printf("----------------------------\n");
+    printf("----- Descriptor offsets -----\n");
+    printf("next_ptr: %x\n", (uint) OFFSET(DMA_SG_DESC, next_ptr));
+    printf("buffer_address: %x\n", (uint) OFFSET(DMA_SG_DESC, buffer_address));
+    printf("control: %x\n", (uint) OFFSET(DMA_SG_DESC, control));
+    printf("status: %x\n", (uint) OFFSET(DMA_SG_DESC, status));
+    printf("----------------------------\n");
 }
 
 void print_desc(PDMA_SG_DESC desc) {
-	unsigned char * ptr = (unsigned char *) desc;
-	int i;
-	for (i = 0; i < 16; i++) {
-		printf("%02x %02x %02x %02x \r\n", ptr[i*4+3], ptr[i*4+2], ptr[i*4+1], ptr[i*4]);
-	}
+    unsigned char * ptr = (unsigned char *) desc;
+    int i;
+    for (i = 0; i < 16; i++) {
+        printf("%02x %02x %02x %02x \r\n", ptr[i*4+3], ptr[i*4+2], ptr[i*4+1], ptr[i*4]);
+    }
 }
 
 #define SIZE 8
@@ -103,37 +103,36 @@ int main() {
 
 
     printf("mm2s_dmacr: %x \r\n", dma_dev->mm2s_dmacr.as_uint);
-	printf("s2mm_dmacr: %x \r\n", dma_dev->s2mm_dmacr.as_uint);
+    printf("s2mm_dmacr: %x \r\n", dma_dev->s2mm_dmacr.as_uint);
 
     printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
     printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
 
 
     volatile uint32_t * arr_from = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
-
     volatile uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-		arr_from[i] = 0xFF00FF00;
+        arr_from[i] = 0xFF00FF00;
     }
 
     memset(arr_to, 0x55, SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-		printf("%x ", arr_from[i]);
+        printf("%x ", arr_from[i]);
     }
 
     printf("\r\n");
 
     for (i = 0; i < SIZE; i++) {
-		printf("%x ", arr_to[i]);
-	}
+        printf("%x ", arr_to[i]);
+    }
 
-	printf("\r\n");
+    printf("\r\n");
     printf("arr_from: %x \r\n", (uint32_t) arr_from);
-	printf("arr_to: %x \r\n", (uint32_t) arr_to);
+    printf("arr_to: %x \r\n", (uint32_t) arr_to);
 
-	printf("sizeof(DMA_SG_DESC) = %d \r\n", sizeof(DMA_SG_DESC));
+    printf("sizeof(DMA_SG_DESC) = %d \r\n", sizeof(DMA_SG_DESC));
 
     // Setup Tx packet descriptor
     volatile PDMA_SG_DESC tx0 = (PDMA_SG_DESC) malloc(sizeof(DMA_SG_DESC) + 0x40);
@@ -159,72 +158,60 @@ int main() {
     Xil_DCacheFlushRange(rx0, 0x40);
 
     printf("TX:\r\n");
-	print_desc(tx0);
-	printf("\r\nRX:\r\n");
-	print_desc(rx0);
+    print_desc(tx0);
+    printf("\r\nRX:\r\n");
+    print_desc(rx0);
 
-	printf("\r\n");
+    printf("\r\n");
 
-	// Start the TX
-	printf("Start TX... \r\n");
-	dma_dev->mm2s_curdesc = (uint32_t)tx0;
-	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
-	dma_dev->mm2s_dmacr.run_stop = 1;
-	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
-	dma_dev->mm2s_taildesc = (uint32_t)tx0;
-	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
+    // Start the TX
+    printf("Start TX... \r\n");
+    dma_dev->mm2s_curdesc = (uint32_t)tx0;
+    dma_dev->mm2s_dmacr.run_stop = 1;
+    dma_dev->mm2s_taildesc = (uint32_t)tx0;
 
-	// Start the RX
-	printf("Start RX... \r\n");
-	dma_dev->s2mm_curdesc = (uint32_t)rx0;
-	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
-	dma_dev->s2mm_dmacr.run_stop = 1;
-	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
-	dma_dev->s2mm_taildesc = (uint32_t)rx0;
-	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
+    // Start the RX
+    printf("Start RX... \r\n");
+    dma_dev->s2mm_curdesc = (uint32_t)rx0;
+    dma_dev->s2mm_dmacr.run_stop = 1;
+    dma_dev->s2mm_taildesc = (uint32_t)rx0;
 
-
-
-	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-
-    Xil_DCacheFlush();
+    Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 
     // Wait for the DMA to complete
     while (!dma_dev->mm2s_dmasr.idle || !dma_dev->s2mm_dmasr.idle) {
-    	sleep(2);
-    	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-		printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-		printf("Tx Status: %x \r\n", tx0->status.as_uint);
-		printf("Rx Status: %x \r\n", rx0->status.as_uint);
-    	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
+        sleep(2);
+        printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
+        printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
+        printf("Tx Status: %x \r\n", tx0->status.as_uint);
+        printf("Rx Status: %x \r\n", rx0->status.as_uint);
+        Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
     }
 
-	Xil_DCacheFlush();
-	Xil_DCacheInvalidateRange(arr_from, SIZE*sizeof(uint32_t));
-	Xil_DCacheInvalidateRange(arr_to, SIZE*sizeof(uint32_t));
+    Xil_DCacheInvalidateRange(arr_from, SIZE*sizeof(uint32_t));
+    Xil_DCacheInvalidateRange(arr_to, SIZE*sizeof(uint32_t));
 
-	printf("----------------------------------\r\n");
-	printf("DMA Idle! \r\n");
-	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-	printf("Tx Status: %x \r\n", tx0->status.as_uint);
-	printf("Rx Status: %x \r\n", rx0->status.as_uint);
+    printf("----------------------------------\r\n");
+    printf("DMA Idle! \r\n");
+    printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
+    printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
+    printf("Tx Status: %x \r\n", tx0->status.as_uint);
+    printf("Rx Status: %x \r\n", rx0->status.as_uint);
 
-	// Print the result
-	for (i = 0; i < SIZE; i++) {
-		printf("%x ", arr_from[i]);
-	}
+    // Print the result
+    for (i = 0; i < SIZE; i++) {
+        printf("%x ", arr_from[i]);
+    }
 
-	printf("\r\n");
+    printf("\r\n");
 
-	for (i = 0; i < SIZE; i++) {
-		printf("%x ", arr_to[i]);
-	}
+    for (i = 0; i < SIZE; i++) {
+        printf("%x ", arr_to[i]);
+    }
 
-	printf("\r\n");
+    printf("\r\n");
 
     //while(1);
 
-	return 0;
+    return 0;
 }
