@@ -23,7 +23,8 @@ module buffer2axis #(
     in_valid,
     in_ready,
 
-    buffer
+    num_writes,
+    counter
 );
 
     // Port descriptions
@@ -44,6 +45,9 @@ module buffer2axis #(
     input in_valid;
     output reg in_ready;
 
+    output reg [31:0] num_writes;
+    reg next_num_writes;
+
     // State params
     reg state;
     reg next_state;
@@ -53,13 +57,14 @@ module buffer2axis #(
     // Internal values
     output reg [WIDTH - 1:0] buffer;
     reg [WIDTH - 1:0] next_buffer;
-    reg [7:0] counter;
+    output reg [7:0] counter;
     reg [7:0] next_counter;
 
     initial begin
         state <= Wait;
         buffer <= 0;
         counter <= 0;
+        num_writes <= 0;
     end
     
     assign M_AXIS_TKEEP = 4'b1111;
@@ -68,6 +73,7 @@ module buffer2axis #(
     // Combinational Logic
     always @* begin
         next_counter <= 0;
+        next_num_writes <= num_writes;
 
         if (buffer[counter]) begin
             M_AXIS_TDATA <= alive_color;
@@ -110,6 +116,7 @@ module buffer2axis #(
                 if (counter == WIDTH-1) begin
                     next_counter <= 0;
                     next_state <= Wait;
+                    next_num_writes <= num_writes + 1;
                 end else begin
                     next_counter <= counter + 1;
                     next_state <= Write;
@@ -129,10 +136,12 @@ module buffer2axis #(
         if (!rstn) begin
             counter <= 8'h00;
             state <= Wait;
+            num_writes <= 0;
         end else begin
             buffer <= next_buffer;
             state <= next_state;
             counter <= next_counter;
+            num_writes <= next_num_writes;
         end
     end
 endmodule

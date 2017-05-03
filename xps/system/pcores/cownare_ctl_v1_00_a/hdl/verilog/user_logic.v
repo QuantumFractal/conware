@@ -54,7 +54,12 @@
 module user_logic
 (
   // -- ADD USER PORTS BELOW THIS LINE ---------------
-  // --USER ports added here 
+  in_states,
+  out_states,
+  num_reads,
+  num_writes,
+  read_ctr,
+  write_ctr
   // -- ADD USER PORTS ABOVE THIS LINE ---------------
 
   // -- DO NOT EDIT BELOW THIS LINE ------------------
@@ -83,7 +88,12 @@ parameter C_SLV_DWIDTH                   = 32;
 // -- DO NOT EDIT ABOVE THIS LINE --------------------
 
 // -- ADD USER PORTS BELOW THIS LINE -----------------
-// --USER ports added here 
+input wire [WIDTH-1:0] in_states;
+input wire [WIDTH-1:0] out_states;
+input wire [31:0] num_reads;
+input wire [31:0] num_writes;
+input wire [8:0] read_ctr;
+input wire [8:0] write_ctr;
 // -- ADD USER PORTS ABOVE THIS LINE -----------------
 
 // -- DO NOT EDIT BELOW THIS LINE --------------------
@@ -430,5 +440,13 @@ assign IP2Bus_Data = (slv_read_ack == 1'b1) ? slv_ip2bus_data :  0 ;
   assign IP2Bus_WrAck = slv_write_ack;
   assign IP2Bus_RdAck = slv_read_ack;
   assign IP2Bus_Error = 0;
+
+  always @* begin
+    slv_reg1 <= {in_states, out_states, read_ctr, write_ctr};
+    slv_reg2 <= num_reads;
+    slv_reg3 <= num_writes;
+
+
+  end
 
 endmodule

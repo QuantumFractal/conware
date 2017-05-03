@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-05-02T19:23:51</DateModified>
+  <DateModified>2017-05-02T20:02:32</DateModified>
   <ModuleName>cownare_ctl</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>U:/Cpre488/conware/xps/system/pcores/cownare_ctl_v1_00_a/devl/projnav/iseconfig/cownare_ctl.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>U:/Cpre488/conware/xps/system/pcores/cownare_ctl_v1_00_a/devl/projnav</ImplementationReportsDirectory>
+  <SavedFilePath>E:/Users/micha/Documents/projects/conware/xps/system/pcores/cownare_ctl_v1_00_a/devl/projnav/iseconfig/cownare_ctl.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>E:/Users/micha/Documents/projects/conware/xps/system/pcores/cownare_ctl_v1_00_a/devl/projnav\</ImplementationReportsDirectory>
   <DateInitialized>2017-05-02T19:23:51</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

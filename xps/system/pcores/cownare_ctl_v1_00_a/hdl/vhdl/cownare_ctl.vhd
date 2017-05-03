@@ -134,7 +134,12 @@ entity cownare_ctl is
   port
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
-    --USER ports added here
+    in_states : in  std_logic_vector(7 downto 0);
+    out_states : in  std_logic_vector(7 downto 0);
+    num_reads : in  std_logic_vector(31 downto 0);
+    num_writes : in  std_logic_vector(31 downto 0);
+    read_ctr : in  std_logic_vector(7 downto 0);
+    write_ctr : in  std_logic_vector(7 downto 0);
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -248,7 +253,12 @@ architecture IMP of cownare_ctl is
     port
     (
       -- ADD USER PORTS BELOW THIS LINE ------------------
-      --USER ports added here
+      in_states : in  std_logic_vector(7 downto 0);
+      out_states : in  std_logic_vector(7 downto 0);
+      num_reads : in  std_logic_vector(31 downto 0);
+      num_writes : in  std_logic_vector(31 downto 0);
+      read_ctr : in  std_logic_vector(7 downto 0);
+      write_ctr : in  std_logic_vector(7 downto 0);
       -- ADD USER PORTS ABOVE THIS LINE ------------------
 
       -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -336,7 +346,12 @@ begin
     port map
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
-      --USER ports mapped here
+      in_states => in_states,
+      out_states => out_states,
+      num_reads => num_reads,
+      num_writes => num_writes,
+      read_ctr => read_ctr,
+      write_ctr => write_ctr,
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

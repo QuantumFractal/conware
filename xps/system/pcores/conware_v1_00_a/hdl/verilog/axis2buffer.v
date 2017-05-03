@@ -19,7 +19,10 @@ module axis2buffer #(
     // Output to conware computation
     out_data,
     out_valid,
-    out_ready
+    out_ready,
+
+    num_reads,
+    counter
 );
 
     // Port descriptions
@@ -38,6 +41,9 @@ module axis2buffer #(
     output reg out_valid;
     input out_ready;
 
+    output reg [31:0] num_reads;
+    reg next_num_reads;
+
     // State params
     reg state;
     reg next_state;
@@ -46,17 +52,19 @@ module axis2buffer #(
 
     // Internal values
     reg in_state;
-    reg [7:0] counter;
+    output reg [7:0] counter;
     reg [7:0] next_counter;
 
     initial begin
         state <= Read;
         out_data <= 0;
         counter <= 0;
+        num_reads <= 0;
     end
 
     // Combinational Logic
     always @* begin
+        next_num_reads <= num_reads;
 
         if ((state == Read) && (S_AXIS_TVALID == 1)) begin
             in_state <= (S_AXIS_TDATA == alive_color)? 1'b1 : 1'b0;
@@ -87,6 +95,7 @@ module axis2buffer #(
                 if (counter == WIDTH-1) begin
                     next_counter <= 0;
                     next_state <= Wait;
+                    next_num_reads <= num_reads + 1;
                 end else begin
                     next_counter <= counter + 1;
                 end
@@ -105,10 +114,12 @@ module axis2buffer #(
         if (!rstn) begin
             counter <= 8'h00;
             state <= Read;
+            num_reads <= 0;
         end else begin
             out_data[counter] <= in_state;
             state <= next_state;
             counter <= next_counter;
+            num_reads <= next_num_reads;
         end
     end
 
