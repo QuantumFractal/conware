@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          U:/Cpre488/conware/xps/system/pcores/cownare_ctl_v1_00_a/data/cownare_ctl_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue May 02 19:23:30 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib cownare_ctl_v1_00_a user_logic verilog
+lib cownare_ctl_v1_00_a cownare_ctl vhdl

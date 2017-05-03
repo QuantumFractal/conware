@@ -83,6 +83,10 @@
     <transform xil_pn:end_ts="1493751805" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1493751805">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../hdl/verilog/axis2buffer.v"/>
       <outfile xil_pn:name="../../hdl/verilog/buffer2axis.v"/>
       <outfile xil_pn:name="../../hdl/verilog/conware.v"/>
@@ -105,6 +109,11 @@
     <transform xil_pn:end_ts="1493751805" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1493751805">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../hdl/verilog/axis2buffer.v"/>
       <outfile xil_pn:name="../../hdl/verilog/buffer2axis.v"/>
       <outfile xil_pn:name="../../hdl/verilog/conware.v"/>
@@ -115,6 +124,11 @@
     <transform xil_pn:end_ts="1493751806" xil_pn:in_ck="4041071199250351826" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-3735012481952913813" xil_pn:start_ts="1493751805">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="conware.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>

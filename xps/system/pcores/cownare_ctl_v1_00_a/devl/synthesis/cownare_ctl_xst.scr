@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\cownare_ctl_v1_00_a\devl\synthesis\cownare_ctl_xst.prj"
+-top cownare_ctl
+-p virtex6
+-ofn "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\cownare_ctl_v1_00_a\devl\synthesis\cownare_ctl_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib cownare_ctl_v1_00_a

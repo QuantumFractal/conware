@@ -74,12 +74,12 @@ module conware #(
         .out_ready(pready)
     );
 
-    shredder_array #(WIDTH) shredders(
-        .clk(ACLK),
-        .rstn(ARESETN),
-        .in_data(in_states),
-        .out_data(out_states)
-    );
+    // shredder_array #(WIDTH) shredders(
+    //     .clk(ACLK),
+    //     .rstn(ARESETN),
+    //     .in_data(in_states),
+    //     .out_data(out_states)
+    // );
 
     buffer2axis #(DWIDTH, WIDTH) b2a(
         .clk(ACLK),
@@ -95,7 +95,7 @@ module conware #(
         .M_AXIS_TKEEP(M_AXIS_TKEEP),
         .M_AXIS_TSTRB(M_AXIS_TSTRB),
 
-        .in_data(out_states),
+        .in_data(in_states),
         .in_valid(pvalid),
         .in_ready(pready)
     );

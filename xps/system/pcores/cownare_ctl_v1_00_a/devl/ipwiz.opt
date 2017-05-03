@@ -1,0 +1,9 @@
+-batch 
+-create cownare_ctl 
+-ver 1.00.a 
+-dir "U:\Cpre488\conware\xps\system" 
+-lang verilog 
+-bus axi4lite s 
+-reg 32 
+-xps 
+-ise 

@@ -13,7 +13,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000144000000020000000000000000000000000200000064ffffffff000000810000000300000002000001440000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000127000000020000000000000000000000000200000064ffffffff000000810000000300000002000001270000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>conware (U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/hdl/verilog/conware.v)</CurrentItem>
    </ItemView>
@@ -84,13 +84,13 @@
          <ClosedNode>/shredder_array U:|Cpre488|conware|xps|system|pcores|conware_v1_00_a|hdl|verilog|shredder_array.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>b2a - buffer2axis (U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/hdl/verilog/buffer2axis.v)</SelectedItem>
+         <SelectedItem>conware (U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/hdl/verilog/conware.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000fc000000020000000000000000000000000200000064ffffffff000000810000000300000002000000fc0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>b2a - buffer2axis (U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/hdl/verilog/buffer2axis.v)</CurrentItem>
+      <CurrentItem>conware (U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/hdl/verilog/conware.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

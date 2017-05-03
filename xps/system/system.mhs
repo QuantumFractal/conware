@@ -34,12 +34,12 @@
  PORT processing_system7_0_DDR_DQS_n = processing_system7_0_DDR_DQS_n, DIR = IO, VEC = [3:0]
  PORT processing_system7_0_DDR_VRN = processing_system7_0_DDR_VRN, DIR = IO
  PORT processing_system7_0_DDR_VRP = processing_system7_0_DDR_VRP, DIR = IO
- PORT conware_0_buffer_pin = buffer, DIR = O, VEC = [7:0]
  PORT conware_0_M_AXIS_TVALID_pin = conware_0_M_AXIS_TVALID, DIR = O
  PORT conware_0_M_AXIS_TLAST_pin = conware_0_M_AXIS_TLAST, DIR = O
  PORT conware_0_M_AXIS_TREADY_pin = conware_0_M_AXIS_TREADY, DIR = O
  PORT conware_0_M_AXIS_TKEEP_pin = conware_0_M_AXIS_TKEEP, DIR = O, VEC = [3:0]
  PORT conware_0_ACLK_pin = processing_system7_0_FCLK_CLK0, DIR = O, SIGIS = CLK, CLK_FREQ = 100000000
+ PORT conware_0_CONWARE_BUFFER_pin = CONWARE_BUFFER, DIR = O, VEC = [7:0]
 
 
 BEGIN axi_interconnect

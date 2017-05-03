@@ -610,3 +610,81 @@ UNABLE to Open File
 
 17:25:40.723 INFO  - Processor reset is completed for ps7_cortexa9_0 
 17:29:38.877 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:38:59.086 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:46:04.263 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:46:56.884 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:50:03.970 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:00:29.804 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:13:03.094 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:14:17.344 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:16:00.015 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:16:12.003 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:20:10.471 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:20:39.907 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:21:05.919 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:23:03.575 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:27:50.970 INFO  - Settings changed on project conware_bsp. Triggering a rebuild... 
+18:28:10.664 INFO  - Refreshed build settings on project conware 
+18:28:10.684 INFO  - Refreshed build settings on project conware_test 
+18:28:10.704 INFO  - Refreshed build settings on project dma_test 
+18:29:40.221 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:29:54.861 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:37:11.663 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:38:11.291 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:38:56.373 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:38:58.823 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:39:38.833 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:40:03.955 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:40:43.653 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:41:45.374 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:42:30.763 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:43:20.776 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:43:58.732 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:45:37.737 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:47:18.716 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:48:07.244 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:50:27.247 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:50:54.244 INFO  - Settings changed on project conware_bsp. Triggering a rebuild... 
+18:51:09.915 INFO  - Refreshed build settings on project conware 
+18:51:09.935 INFO  - Refreshed build settings on project conware_test 
+18:51:09.955 INFO  - Refreshed build settings on project dma_test 
+18:52:26.308 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+18:53:09.279 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+18:53:37.841 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:54:29.256 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:03:14.183 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:03:58.032 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+19:04:02.168 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:04:04.415 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml. 
+19:04:05.350 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+19:04:06.130 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+19:04:07.190 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+19:04:08.190 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+19:04:08.390 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+19:04:08.520 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+19:04:08.890 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+19:04:10.790 INFO  - Updating hardware inferred compiler options for conware. 
+19:04:11.550 INFO  - Updating hardware inferred compiler options for conware_test. 
+19:04:12.300 INFO  - Updating hardware inferred compiler options for dma_test. 
+19:04:12.310 INFO  - Clearing existing target manager status. 
+19:04:31.881 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+19:05:13.204 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:05:44.283 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/xps/system/SDK/SDK_Export/hw/system.bit" 
+19:05:54.436 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:06:45.026 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:07:31.930 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:09:38.605 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:10:52.984 INFO  - Settings changed on project conware_bsp. Triggering a rebuild... 
+19:11:09.035 INFO  - Refreshed build settings on project conware 
+19:11:09.055 INFO  - Refreshed build settings on project conware_test 
+19:11:09.065 INFO  - Refreshed build settings on project dma_test 
+19:12:39.475 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:12:58.311 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:13:20.863 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:14:16.127 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:17:13.215 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:17:51.786 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:18:46.256 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:19:16.808 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:25:14.286 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

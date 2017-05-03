@@ -92,15 +92,9 @@
     <SET ID="ExternalPorts" IS_EXPANDED="TRUE"/>
     <SET ID="SWs_8Bits" IS_EXPANDED="TRUE"/>
     <SET ID="BTNs_5Bits" IS_EXPANDED="TRUE"/>
-    <SET ID="axi_dma_0" IS_EXPANDED="TRUE"/>
-    <SET ID="conware_0" IS_EXPANDED="TRUE">
-      <SET ID="M_AXIS" IS_EXPANDED="TRUE"/>
-      <SET ID="S_AXIS" IS_EXPANDED="TRUE"/>
-    </SET>
+    <SET ID="conware_0" IS_EXPANDED="TRUE"/>
     <STATUS>
-      <SELECTIONS>
-        <VARIABLE ID="ACLK" PARENT="conware_0"/>
-      </SELECTIONS>
+      <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" IS_EXPANDED="TRUE" ROW_INDEX="0"/>
@@ -108,7 +102,7 @@
       <VARIABLE ID="SWs_8Bits" IS_EXPANDED="TRUE" ROW_INDEX="6"/>
       <VARIABLE ID="BTNs_5Bits" IS_EXPANDED="TRUE" ROW_INDEX="5"/>
       <VARIABLE ID="processing_system7_0" ROW_INDEX="3"/>
-      <VARIABLE ID="axi_dma_0" IS_EXPANDED="TRUE" ROW_INDEX="4"/>
+      <VARIABLE ID="axi_dma_0" ROW_INDEX="4"/>
       <VARIABLE ID="axi_interconnect_1" ROW_INDEX="2"/>
       <VARIABLE ID="conware_0" IS_EXPANDED="TRUE" ROW_INDEX="7"/>
     </SEQUENCES>

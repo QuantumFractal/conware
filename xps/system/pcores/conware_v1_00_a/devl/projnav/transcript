@@ -81,3 +81,5 @@ force -freeze sim:/conware/S_AXIS_TDATA 32'hffffffff 0
 run 500
 run 1000
 run 1000
+# End time: 19:25:32 on May 02,2017, Elapsed time: 5:22:01
+# Errors: 0, Warnings: 2

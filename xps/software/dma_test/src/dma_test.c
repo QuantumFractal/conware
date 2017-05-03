@@ -32,7 +32,7 @@
  */
 
 #include <stdio.h>
-#include <xparameters.h>
+#include "xparameters.h"
 #include "platform.h"
 #include "axi_dma_ftw.h"
 
@@ -82,13 +82,28 @@ int main() {
 
     print_offsets();
 
-    volatile PAXI_DMA_SG_REGMAP dma_dev = (PAXI_DMA_SG_REGMAP) XPAR_AXI_DMA_0_BASEADDR;
+    volatile PAXI_DMA_SG_REGMAP dma_dev = (PAXI_DMA_SG_REGMAP) 0x40400000;
 
     dma_dev->mm2s_dmacr.as_uint = 0;
     dma_dev->s2mm_dmacr.as_uint = 0;
 
     dma_dev->mm2s_dmacr.reset = 1;
     dma_dev->s2mm_dmacr.reset = 1;
+
+    while(dma_dev->mm2s_dmacr.reset);
+    while(dma_dev->s2mm_dmacr.reset);
+
+    dma_dev->mm2s_dmacr.dly_irqen = 0;
+    dma_dev->mm2s_dmacr.err_irqen = 0;
+    dma_dev->mm2s_dmacr.ioc_irqen = 0;
+
+    dma_dev->s2mm_dmacr.dly_irqen = 0;
+    dma_dev->s2mm_dmacr.err_irqen = 0;
+    dma_dev->s2mm_dmacr.ioc_irqen = 0;
+
+
+    printf("mm2s_dmacr: %x \r\n", dma_dev->mm2s_dmacr.as_uint);
+	printf("s2mm_dmacr: %x \r\n", dma_dev->s2mm_dmacr.as_uint);
 
     printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
     printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
@@ -99,7 +114,7 @@ int main() {
     volatile uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-		arr_from[i] = 0xFFFFFFFF;
+		arr_from[i] = 0xFF00FF00;
     }
 
     memset(arr_to, 0x55, SIZE*sizeof(uint32_t));
@@ -127,9 +142,9 @@ int main() {
     tx0->next_ptr = (uint32_t) tx0;
     tx0->buffer_address = (uint32_t)arr_from;
     tx0->control.buffer_length = SIZE*sizeof(uint32_t);
-    tx0->control.tx_sof = 1;
-    tx0->control.tx_eof = 1;
-    //tx0->reserved6 = 0x0104;
+    tx0->control.tx_sof = 0;
+    tx0->control.tx_eof = 0;
+//    tx0->reserved6 = 0x0104;
 
     // Setup Rx descriptor
     volatile PDMA_SG_DESC rx0 = (PDMA_SG_DESC) malloc(sizeof(DMA_SG_DESC) + 0x40);
@@ -138,37 +153,35 @@ int main() {
     rx0->next_ptr = (uint32_t)rx0;
     rx0->buffer_address = (uint32_t)arr_to;
     rx0->control.buffer_length = SIZE*sizeof(uint32_t);
-    //rx0->reserved6 = 0x0104;
+//    rx0->reserved6 = 0x0104;
 
     Xil_DCacheFlushRange(tx0, 0x40);
     Xil_DCacheFlushRange(rx0, 0x40);
 
     printf("TX:\r\n");
 	print_desc(tx0);
-	printf("RX:\r\n");
+	printf("\r\nRX:\r\n");
 	print_desc(rx0);
 
-    // Let the DMA engine run
-    printf("Releaseing reset... \r\n");
-    dma_dev->mm2s_dmacr.reset = 0;
-    dma_dev->s2mm_dmacr.reset = 0;
-    dma_dev->mm2s_dmacr.as_uint = 0;
-	dma_dev->s2mm_dmacr.as_uint = 0;
-    printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
-	printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
-
+	printf("\r\n");
 
 	// Start the TX
 	printf("Start TX... \r\n");
 	dma_dev->mm2s_curdesc = (uint32_t)tx0;
+	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 	dma_dev->mm2s_dmacr.run_stop = 1;
+	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 	dma_dev->mm2s_taildesc = (uint32_t)tx0;
+	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 
 	// Start the RX
 	printf("Start RX... \r\n");
 	dma_dev->s2mm_curdesc = (uint32_t)rx0;
+	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 	dma_dev->s2mm_dmacr.run_stop = 1;
+	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 	dma_dev->s2mm_taildesc = (uint32_t)rx0;
+	Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 
 
 
@@ -190,7 +203,7 @@ int main() {
 	Xil_DCacheFlush();
 	Xil_DCacheInvalidateRange(arr_from, SIZE*sizeof(uint32_t));
 	Xil_DCacheInvalidateRange(arr_to, SIZE*sizeof(uint32_t));
-	sleep(2);
+
 	printf("----------------------------------\r\n");
 	printf("DMA Idle! \r\n");
 	printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
