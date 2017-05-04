@@ -1,0 +1,6 @@
+12:38:52 **** Build of project video_bsp ****
+make -k all 
+'Finished building libraries'
+
+12:38:52 Build Finished (took 141ms)
+

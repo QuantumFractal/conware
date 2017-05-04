@@ -1,0 +1,11 @@
+-batch 
+-create conware 
+-ver 1.00.a 
+-dir U:\Cpre488\conware\xps\system\ 
+-lang verilog 
+-bus axi4stream ms 
+-xps 
+-ise 
+-totalin 8
+-totalout 8
+-driver 

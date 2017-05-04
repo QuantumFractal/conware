@@ -1,0 +1,6 @@
+verilog work "../../hdl/verilog/conway.v"
+verilog work "../../hdl/verilog/shredder.v"
+verilog work "../../hdl/verilog/shredder_array.v"
+verilog work "../../hdl/verilog/buffer2axis.v"
+verilog work "../../hdl/verilog/axis2buffer.v"
+verilog work "../../hdl/verilog/conware.v"

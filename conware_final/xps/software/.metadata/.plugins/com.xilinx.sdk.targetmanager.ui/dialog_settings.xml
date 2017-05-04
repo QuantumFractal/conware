@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="" key="system_hw_platform-bmmFile"/>
+	<item value="U:\Cpre488\conware\xps\system\SDK\SDK_Export\hw\system.bit" key="system_hw_platform-bitFile"/>
+	<item value="" key="video_platform-bmmFile"/>
+	<item value="system.bit" key="video_platform-bitFile"/>
+</section>

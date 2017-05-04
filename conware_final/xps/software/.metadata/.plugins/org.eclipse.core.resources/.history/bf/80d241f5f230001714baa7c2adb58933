@@ -1,0 +1,19 @@
+/*
+ * conway.h
+ *
+ *  Created on: May 4, 2017
+ *      Author: quanta
+ */
+
+#ifndef CONWAY_H_
+#define CONWAY_H_
+
+#include <stdio.h>
+#include <xparameters.h>
+
+void raster_game(u8 game_grid[GAME_HEIGHT][GAME_WIDTH], int x, int y, int width, int height);
+void place_block(u8 game_grid[GAME_HEIGHT][GAME_WIDTH], int x, int y);
+void evolve(u8 game_grid[GAME_HEIGHT][GAME_WIDTH], int w, int h);
+
+
+#endif /* CONWAY_H_ */

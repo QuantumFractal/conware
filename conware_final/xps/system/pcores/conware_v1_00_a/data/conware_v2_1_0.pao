@@ -1,0 +1,7 @@
+##############################################################################
+## Filename:          U:\Cpre488\conware\xps\system\pcores/conware_v1_00_a/data/conware_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Apr 06 16:43:36 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib conware_v1_00_a conware verilog
