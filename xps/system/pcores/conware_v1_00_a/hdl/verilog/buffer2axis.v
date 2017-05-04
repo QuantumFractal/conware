@@ -55,7 +55,7 @@ module buffer2axis #(
     localparam Write = 1;
 
     // Internal values
-    output reg [WIDTH - 1:0] buffer;
+    reg [WIDTH - 1:0] buffer;
     reg [WIDTH - 1:0] next_buffer;
     output reg [7:0] counter;
     reg [7:0] next_counter;

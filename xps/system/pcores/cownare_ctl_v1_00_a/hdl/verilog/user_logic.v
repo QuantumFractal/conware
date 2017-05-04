@@ -59,7 +59,7 @@ module user_logic
   num_reads,
   num_writes,
   read_ctr,
-  write_ctr
+  write_ctr,
   // -- ADD USER PORTS ABOVE THIS LINE ---------------
 
   // -- DO NOT EDIT BELOW THIS LINE ------------------
@@ -88,12 +88,12 @@ parameter C_SLV_DWIDTH                   = 32;
 // -- DO NOT EDIT ABOVE THIS LINE --------------------
 
 // -- ADD USER PORTS BELOW THIS LINE -----------------
-input wire [WIDTH-1:0] in_states;
-input wire [WIDTH-1:0] out_states;
+input wire [7:0] in_states;
+input wire [7:0] out_states;
 input wire [31:0] num_reads;
 input wire [31:0] num_writes;
-input wire [8:0] read_ctr;
-input wire [8:0] write_ctr;
+input wire [7:0] read_ctr;
+input wire [7:0] write_ctr;
 // -- ADD USER PORTS ABOVE THIS LINE -----------------
 
 // -- DO NOT EDIT BELOW THIS LINE --------------------
@@ -190,9 +190,9 @@ output                                    IP2Bus_Error;
       if ( Bus2IP_Resetn == 1'b0 )
         begin
           slv_reg0 <= 0;
-          slv_reg1 <= 0;
-          slv_reg2 <= 0;
-          slv_reg3 <= 0;
+          // slv_reg1 <= 0;
+          // slv_reg2 <= 0;
+          // slv_reg3 <= 0;
           slv_reg4 <= 0;
           slv_reg5 <= 0;
           slv_reg6 <= 0;
@@ -228,18 +228,18 @@ output                                    IP2Bus_Error;
             for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
               if ( Bus2IP_BE[byte_index] == 1 )
                 slv_reg0[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
-          32'b01000000000000000000000000000000 :
-            for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
-              if ( Bus2IP_BE[byte_index] == 1 )
-                slv_reg1[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
-          32'b00100000000000000000000000000000 :
-            for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
-              if ( Bus2IP_BE[byte_index] == 1 )
-                slv_reg2[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
-          32'b00010000000000000000000000000000 :
-            for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
-              if ( Bus2IP_BE[byte_index] == 1 )
-                slv_reg3[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
+          // 32'b01000000000000000000000000000000 :
+          //   for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
+          //     if ( Bus2IP_BE[byte_index] == 1 )
+          //       slv_reg1[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
+          // 32'b00100000000000000000000000000000 :
+          //   for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
+          //     if ( Bus2IP_BE[byte_index] == 1 )
+          //       slv_reg2[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
+          // 32'b00010000000000000000000000000000 :
+          //   for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
+          //     if ( Bus2IP_BE[byte_index] == 1 )
+          //       slv_reg3[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
           32'b00001000000000000000000000000000 :
             for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
               if ( Bus2IP_BE[byte_index] == 1 )
@@ -354,9 +354,9 @@ output                                    IP2Bus_Error;
                 slv_reg31[(byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
           default : begin
             slv_reg0 <= slv_reg0;
-            slv_reg1 <= slv_reg1;
-            slv_reg2 <= slv_reg2;
-            slv_reg3 <= slv_reg3;
+            // slv_reg1 <= slv_reg1;
+            // slv_reg2 <= slv_reg2;
+            // slv_reg3 <= slv_reg3;
             slv_reg4 <= slv_reg4;
             slv_reg5 <= slv_reg5;
             slv_reg6 <= slv_reg6;

@@ -54,12 +54,15 @@ module conware #(
     output wire [WIDTH-1:0] out_states;
     output wire [31:0] num_reads;
     output wire [31:0] num_writes;
-    output wire [8:0] read_ctr;
-    output wire [8:0] write_ctr;
+    output wire [7:0] read_ctr;
+    output wire [7:0] write_ctr;
 
     // Signals to handle internal handshake between in-buffer and out-buffer
     wire pvalid;
     wire pready;
+
+    // TODO: Delete me
+    //assign out_states = in_states;
 
     axis2buffer #(DWIDTH, WIDTH) a2b(
         .clk(ACLK),
@@ -78,7 +81,7 @@ module conware #(
         .out_ready(pready),
 
         .num_reads(num_reads),
-        .counter(read_counter)
+        .counter(read_ctr)
     );
 
     shredder_array #(WIDTH) shredders(
@@ -102,12 +105,12 @@ module conware #(
         .M_AXIS_TKEEP(M_AXIS_TKEEP),
         .M_AXIS_TSTRB(M_AXIS_TSTRB),
 
-        .in_data(in_states),
+        .in_data(out_states),
         .in_valid(pvalid),
         .in_ready(pready),
 
         .num_writes(num_writes),
-        .counter(write_counter)
+        .counter(write_ctr)
     );
 
 endmodule

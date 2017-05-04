@@ -2,6 +2,10 @@
 #ifndef __AXI_DMA_FTW
 #define __AXI_DMA_FTW
 
+#define ALIGN(some_ptr, boundary) (int*)(some_ptr + boundary-some_ptr%boundary)
+#define ALIGN64(some_ptr) ALIGN(some_ptr, 0x40)
+#define ALIGN4(some_ptr) ALIGN(some_ptr, 0x4)
+
 typedef unsigned int uint32_t;
 
 // Registers from https://www.xilinx.com/support/documentation/ip_documentation/axi_dma/v6_03_a/pg021_axi_dma.pdf
@@ -123,6 +127,17 @@ typedef struct __attribute__((packed)) {
 } DMA_SG_DESC, *PDMA_SG_DESC;
 
 
+void AxiDmaReset(volatile PAXI_DMA_SG_REGMAP dma_dev);
+void AxiDmaDisableIrqs(volatile PAXI_DMA_SG_REGMAP dma_dev);
 
+volatile PDMA_SG_DESC AxiDmaAllocateDescList(uint32_t num_desc);
+void AxiDmaLinkContiguousDescList(PDMA_SG_DESC start, uint32_t length);
+
+void AxiDmaStartTx(volatile PAXI_DMA_SG_REGMAP dma_dev, PDMA_SG_DESC start, PDMA_SG_DESC end);
+void AxiDmaStartRx(volatile PAXI_DMA_SG_REGMAP dma_dev, PDMA_SG_DESC start, PDMA_SG_DESC end);
+
+void AxiDmaWaitForIdle(volatile PAXI_DMA_SG_REGMAP dma_dev);
+
+void AxiDmaDumpDescHex(PDMA_SG_DESC desc);
 
 #endif

@@ -1,8 +1,8 @@
 
 #include "axi_dma_ftw.h"
 
-#define DEBUG(msg)
-//#define DEBUG(msg) printf(msg); printf("\r\n");
+//#define DEBUG(msg)
+#define DEBUG(msg) printf(msg); printf("\r\n");
 
 
 void AxiDmaReset(volatile PAXI_DMA_SG_REGMAP dma_dev) {
@@ -43,12 +43,12 @@ void AxiDmaLinkContiguousDescList(PDMA_SG_DESC start, uint32_t length) {
 
 	int i;
 	PDMA_SG_DESC cur = start;
-	PDMA_SG_DESC next = &cur[1];
+	PDMA_SG_DESC next = start + 1;
 
 	for (i = 0; i < length-1; i++) {
 		cur->next_ptr = (uint32_t)next;
 		cur = next;
-		next = &cur[1];
+		next = cur + 1;
 	}
 
 	cur->next_ptr = (uint32_t)start;
@@ -72,6 +72,9 @@ void AxiDmaStartRx(PAXI_DMA_SG_REGMAP dma_dev, PDMA_SG_DESC start, PDMA_SG_DESC 
 void AxiDmaWaitForIdle(PAXI_DMA_SG_REGMAP dma_dev) {
 	DEBUG("AxiDmaWaitForIdle");
 	while (!dma_dev->mm2s_dmasr.idle || !dma_dev->s2mm_dmasr.idle) {
+		sleep(2);
+		printf("mm2s_dmasr: %x \r\n", dma_dev->mm2s_dmasr.as_uint);
+		printf("s2mm_dmasr: %x \r\n", dma_dev->s2mm_dmasr.as_uint);
 		Xil_DCacheFlushRange(dma_dev, sizeof(*dma_dev));
 	}
 }

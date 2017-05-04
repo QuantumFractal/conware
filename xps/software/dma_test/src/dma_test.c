@@ -81,25 +81,12 @@ int main() {
     int i, j;
 
     print_offsets();
+    Xil_DCacheDisable();
 
     volatile PAXI_DMA_SG_REGMAP dma_dev = (PAXI_DMA_SG_REGMAP) 0x40400000;
 
-    dma_dev->mm2s_dmacr.as_uint = 0;
-    dma_dev->s2mm_dmacr.as_uint = 0;
-
-    dma_dev->mm2s_dmacr.reset = 1;
-    dma_dev->s2mm_dmacr.reset = 1;
-
-    while(dma_dev->mm2s_dmacr.reset);
-    while(dma_dev->s2mm_dmacr.reset);
-
-    dma_dev->mm2s_dmacr.dly_irqen = 0;
-    dma_dev->mm2s_dmacr.err_irqen = 0;
-    dma_dev->mm2s_dmacr.ioc_irqen = 0;
-
-    dma_dev->s2mm_dmacr.dly_irqen = 0;
-    dma_dev->s2mm_dmacr.err_irqen = 0;
-    dma_dev->s2mm_dmacr.ioc_irqen = 0;
+    AxiDmaReset(dma_dev);
+    //AxiDmaDisableIrqs(dma_dev);
 
 
     printf("mm2s_dmacr: %x \r\n", dma_dev->mm2s_dmacr.as_uint);
@@ -113,7 +100,7 @@ int main() {
     volatile uint32_t * arr_to = (uint32_t *) malloc(SIZE*sizeof(uint32_t));
 
     for (i = 0; i < SIZE; i++) {
-        arr_from[i] = 0xFF00FF00;
+        arr_from[i] = 0xFFFFFFFF;
     }
 
     memset(arr_to, 0x55, SIZE*sizeof(uint32_t));

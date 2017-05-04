@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/axi_dma_ftw.c \
 ../src/dma_test.c \
 ../src/platform.c 
 
@@ -11,10 +12,12 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 OBJS += \
+./src/axi_dma_ftw.o \
 ./src/dma_test.o \
 ./src/platform.o 
 
 C_DEPS += \
+./src/axi_dma_ftw.d \
 ./src/dma_test.d \
 ./src/platform.d 
 
