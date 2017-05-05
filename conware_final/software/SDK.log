@@ -621,3 +621,62 @@ If this project was a BSP referenced by other C/C++ applications, then those app
 19:10:08.466 INFO  - ps7_init is completed. 
 19:10:08.566 INFO  - ps7_post_config is completed. 
 19:10:08.675 INFO  - PS Initialization is complete. 
+19:14:54.277 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+19:14:54.283 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+19:58:12.128 INFO  - Processing command line option -hwspec C:\tmp\conware_tom\system\SDK\SDK_Export\hw\system.xml. 
+19:58:13.948 INFO  - The hardware specification for project 'system_hw_platform' is different from C:\tmp\conware_tom\system\SDK\SDK_Export\hw\system.xml. 
+19:58:14.739 INFO  - Copied contents of C:\tmp\conware_tom\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+19:58:15.059 INFO  - Copied contents of C:\tmp\conware_tom\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+19:58:15.409 INFO  - Copied contents of C:\tmp\conware_tom\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+19:58:15.419 INFO  - Copied contents of C:\tmp\conware_tom\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+19:58:15.479 INFO  - Copied contents of C:\tmp\conware_tom\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+19:58:15.489 INFO  - Copied contents of C:\tmp\conware_tom\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+19:58:15.839 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+19:58:18.399 INFO  - Updating hardware inferred compiler options for conware_final. 
+19:58:18.399 INFO  - Clearing existing target manager status. 
+19:58:20.561 INFO  - Workspace synchronized with the new hardware specification file. Cleaning dependent projects... 
+20:01:01.543 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_final/software/system_hw_platform/system.bit" 
+20:01:08.694 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:01:52.936 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:01:54.580 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:03:19.933 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:03:21.886 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:03:49.483 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:03:51.635 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:04:22.308 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:04:24.452 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:04:42.731 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:04:44.254 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:05:21.774 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:05:23.327 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:06:26.734 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:06:28.408 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:07:43.605 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:07:45.458 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:08:53.091 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:08:54.724 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:09:51.776 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:09:56.418 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:10:15.028 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:10:17.516 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:10:56.385 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:10:58.957 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:11:16.205 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:11:17.954 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:11:43.993 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:11:46.537 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:15:15.353 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:15:16.897 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:15:39.687 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:15:41.235 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:15:59.132 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:16:01.510 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:16:41.996 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:16:43.819 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:17:18.326 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:17:20.079 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:18:47.048 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:18:48.561 INFO  - Processor reset is completed for ps7_cortexa9_0 
