@@ -1529,6 +1529,29 @@ architecture STRUCTURE of system is
     );
   end component;
 
+  component system_conware_0_wrapper is
+    port (
+      ACLK : in std_logic;
+      ARESETN : in std_logic;
+      S_AXIS_TREADY : out std_logic;
+      S_AXIS_TDATA : in std_logic_vector(31 downto 0);
+      S_AXIS_TLAST : in std_logic;
+      S_AXIS_TVALID : in std_logic;
+      M_AXIS_TVALID : out std_logic;
+      M_AXIS_TDATA : out std_logic_vector(31 downto 0);
+      M_AXIS_TLAST : out std_logic;
+      M_AXIS_TREADY : in std_logic;
+      M_AXIS_TKEEP : out std_logic_vector(3 downto 0);
+      M_AXIS_TSTRB : out std_logic_vector(3 downto 0);
+      in_states : out std_logic_vector(7 downto 0);
+      out_states : out std_logic_vector(7 downto 0);
+      num_reads : out std_logic_vector(31 downto 0);
+      num_writes : out std_logic_vector(31 downto 0);
+      read_ctr : out std_logic_vector(7 downto 0);
+      write_ctr : out std_logic_vector(7 downto 0)
+    );
+  end component;
+
   component IOBUF is
     port (
       I : in std_logic;
@@ -1604,12 +1627,8 @@ architecture STRUCTURE of system is
   signal axi4lite_0_S_WSTRB : std_logic_vector(3 downto 0);
   signal axi4lite_0_S_WVALID : std_logic_vector(0 to 0);
   signal axi_dma_0_M_AXIS_MM2S_TDATA : std_logic_vector(31 downto 0);
-  signal axi_dma_0_M_AXIS_MM2S_TDEST : std_logic_vector(4 downto 0);
-  signal axi_dma_0_M_AXIS_MM2S_TID : std_logic_vector(4 downto 0);
-  signal axi_dma_0_M_AXIS_MM2S_TKEEP : std_logic_vector(3 downto 0);
   signal axi_dma_0_M_AXIS_MM2S_TLAST : std_logic;
   signal axi_dma_0_M_AXIS_MM2S_TREADY : std_logic;
-  signal axi_dma_0_M_AXIS_MM2S_TUSER : std_logic_vector(3 downto 0);
   signal axi_dma_0_M_AXIS_MM2S_TVALID : std_logic;
   signal axi_interconnect_1_M_ARADDR : std_logic_vector(31 downto 0);
   signal axi_interconnect_1_M_ARBURST : std_logic_vector(1 downto 0);
@@ -1685,6 +1704,11 @@ architecture STRUCTURE of system is
   signal axi_vdma_0_M_AXIS_MM2S_tready : std_logic;
   signal axi_vdma_0_M_AXIS_MM2S_tuser : std_logic_vector(0 to 0);
   signal axi_vdma_0_M_AXIS_MM2S_tvalid : std_logic;
+  signal conware_0_M_AXIS_TDATA : std_logic_vector(31 downto 0);
+  signal conware_0_M_AXIS_TKEEP : std_logic_vector(3 downto 0);
+  signal conware_0_M_AXIS_TLAST : std_logic;
+  signal conware_0_M_AXIS_TREADY : std_logic;
+  signal conware_0_M_AXIS_TVALID : std_logic;
   signal net_gnd0 : std_logic;
   signal net_gnd1 : std_logic_vector(0 to 0);
   signal net_gnd2 : std_logic_vector(1 downto 0);
@@ -1731,6 +1755,7 @@ architecture STRUCTURE of system is
   attribute BOX_TYPE of system_axi_vdma_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_v_tc_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_processing_system7_0_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of system_conware_0_wrapper : component is "user_black_box";
 
 begin
 
@@ -2173,13 +2198,13 @@ begin
       m_axi_mm2s_rready => axi_interconnect_1_S_RREADY(1),
       mm2s_prmry_reset_out_n => open,
       m_axis_mm2s_tdata => axi_dma_0_M_AXIS_MM2S_TDATA,
-      m_axis_mm2s_tkeep => axi_dma_0_M_AXIS_MM2S_TKEEP,
+      m_axis_mm2s_tkeep => open,
       m_axis_mm2s_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID,
       m_axis_mm2s_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
       m_axis_mm2s_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
-      m_axis_mm2s_tuser => axi_dma_0_M_AXIS_MM2S_TUSER,
-      m_axis_mm2s_tid => axi_dma_0_M_AXIS_MM2S_TID,
-      m_axis_mm2s_tdest => axi_dma_0_M_AXIS_MM2S_TDEST,
+      m_axis_mm2s_tuser => open,
+      m_axis_mm2s_tid => open,
+      m_axis_mm2s_tdest => open,
       mm2s_cntrl_reset_out_n => open,
       m_axis_mm2s_cntrl_tdata => open,
       m_axis_mm2s_cntrl_tkeep => open,
@@ -2204,14 +2229,14 @@ begin
       m_axi_s2mm_bvalid => axi_interconnect_1_S_BVALID(2),
       m_axi_s2mm_bready => axi_interconnect_1_S_BREADY(2),
       s2mm_prmry_reset_out_n => open,
-      s_axis_s2mm_tdata => axi_dma_0_M_AXIS_MM2S_TDATA,
-      s_axis_s2mm_tkeep => axi_dma_0_M_AXIS_MM2S_TKEEP,
-      s_axis_s2mm_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID,
-      s_axis_s2mm_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
-      s_axis_s2mm_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
-      s_axis_s2mm_tuser => axi_dma_0_M_AXIS_MM2S_TUSER,
-      s_axis_s2mm_tid => axi_dma_0_M_AXIS_MM2S_TID,
-      s_axis_s2mm_tdest => axi_dma_0_M_AXIS_MM2S_TDEST,
+      s_axis_s2mm_tdata => conware_0_M_AXIS_TDATA,
+      s_axis_s2mm_tkeep => conware_0_M_AXIS_TKEEP,
+      s_axis_s2mm_tvalid => conware_0_M_AXIS_TVALID,
+      s_axis_s2mm_tready => conware_0_M_AXIS_TREADY,
+      s_axis_s2mm_tlast => conware_0_M_AXIS_TLAST,
+      s_axis_s2mm_tuser => net_gnd4,
+      s_axis_s2mm_tid => net_gnd5,
+      s_axis_s2mm_tdest => net_gnd5,
       s2mm_sts_reset_out_n => open,
       s_axis_s2mm_sts_tdata => net_gnd32,
       s_axis_s2mm_sts_tkeep => net_vcc4,
@@ -3281,6 +3306,28 @@ begin
       IRQ_P2F_SPI1 => open,
       IRQ_P2F_UART1 => open,
       IRQ_P2F_CAN1 => open
+    );
+
+  conware_0 : system_conware_0_wrapper
+    port map (
+      ACLK => pgassign1(5),
+      ARESETN => processing_system7_0_FCLK_RESET0_N,
+      S_AXIS_TREADY => axi_dma_0_M_AXIS_MM2S_TREADY,
+      S_AXIS_TDATA => axi_dma_0_M_AXIS_MM2S_TDATA,
+      S_AXIS_TLAST => axi_dma_0_M_AXIS_MM2S_TLAST,
+      S_AXIS_TVALID => axi_dma_0_M_AXIS_MM2S_TVALID,
+      M_AXIS_TVALID => conware_0_M_AXIS_TVALID,
+      M_AXIS_TDATA => conware_0_M_AXIS_TDATA,
+      M_AXIS_TLAST => conware_0_M_AXIS_TLAST,
+      M_AXIS_TREADY => conware_0_M_AXIS_TREADY,
+      M_AXIS_TKEEP => conware_0_M_AXIS_TKEEP,
+      M_AXIS_TSTRB => open,
+      in_states => open,
+      out_states => open,
+      num_reads => open,
+      num_writes => open,
+      read_ctr => open,
+      write_ctr => open
     );
 
   iobuf_0 : IOBUF

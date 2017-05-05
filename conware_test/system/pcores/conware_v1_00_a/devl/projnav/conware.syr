@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: conware.prj
 
@@ -105,83 +105,62 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conway.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\conway.v" into library work
 Parsing module <conway>.
-Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v" into library work
 Parsing module <shredder>.
-Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v" into library work
 Parsing module <shredder_array>.
-Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" into library work
 Parsing module <buffer2axis>.
-Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" into library work
 Parsing module <axis2buffer>.
-Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" into library work
 Parsing module <conware>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" Line 75: Port buffer is not connected to this instance
 
 Elaborating module <conware>.
 
-Elaborating module <axis2buffer(DWIDTH=32,WIDTH=32)>.
-WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 90: Result of 9-bit expression is truncated to fit in 8-bit target.
+Elaborating module <axis2buffer(DWIDTH=32,WIDTH=8)>.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 67: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 98: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v" Line 100: Result of 9-bit expression is truncated to fit in 8-bit target.
 
-Elaborating module <shredder_array(WIDTH=32)>.
+Elaborating module <shredder_array(WIDTH=8)>.
 
 Elaborating module <shredder>.
 
 Elaborating module <conway>.
 
-Elaborating module <buffer2axis(DWIDTH=32,WIDTH=32)>.
-WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 106: Result of 9-bit expression is truncated to fit in 8-bit target.
+Elaborating module <buffer2axis(DWIDTH=32,WIDTH=8)>.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 76: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 119: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v" Line 121: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <conware>.
-    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\conware.v".
         DWIDTH = 32
-        WIDTH = 32
+        WIDTH = 8
         HEIGHT = 1
-INFO:Xst:3210 - "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conware.v" line 75: Output port <buffer> of the instance <b2a> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <conware> synthesized.
 
 Synthesizing Unit <axis2buffer>.
-    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\axis2buffer.v".
         DWIDTH = 32
-        WIDTH = 32
+        WIDTH = 8
 WARNING:Xst:647 - Input <dead_color> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXIS_TLAST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <state>.
-    Found 1-bit register for signal <out_data<31>>.
-    Found 1-bit register for signal <out_data<30>>.
-    Found 1-bit register for signal <out_data<29>>.
-    Found 1-bit register for signal <out_data<28>>.
-    Found 1-bit register for signal <out_data<27>>.
-    Found 1-bit register for signal <out_data<26>>.
-    Found 1-bit register for signal <out_data<25>>.
-    Found 1-bit register for signal <out_data<24>>.
-    Found 1-bit register for signal <out_data<23>>.
-    Found 1-bit register for signal <out_data<22>>.
-    Found 1-bit register for signal <out_data<21>>.
-    Found 1-bit register for signal <out_data<20>>.
-    Found 1-bit register for signal <out_data<19>>.
-    Found 1-bit register for signal <out_data<18>>.
-    Found 1-bit register for signal <out_data<17>>.
-    Found 1-bit register for signal <out_data<16>>.
-    Found 1-bit register for signal <out_data<15>>.
-    Found 1-bit register for signal <out_data<14>>.
-    Found 1-bit register for signal <out_data<13>>.
-    Found 1-bit register for signal <out_data<12>>.
-    Found 1-bit register for signal <out_data<11>>.
-    Found 1-bit register for signal <out_data<10>>.
-    Found 1-bit register for signal <out_data<9>>.
-    Found 1-bit register for signal <out_data<8>>.
+    Found 32-bit register for signal <num_reads>.
     Found 1-bit register for signal <out_data<7>>.
     Found 1-bit register for signal <out_data<6>>.
     Found 1-bit register for signal <out_data<5>>.
@@ -191,25 +170,26 @@ WARNING:Xst:647 - Input <S_AXIS_TLAST> is never used. This port will be preserve
     Found 1-bit register for signal <out_data<1>>.
     Found 1-bit register for signal <out_data<0>>.
     Found 8-bit register for signal <counter>.
-    Found 8-bit adder for signal <counter[7]_GND_2_o_add_6_OUT> created at line 90.
-    Found 1-bit 32-to-1 multiplexer for signal <counter[4]_out_data[31]_Mux_3_o> created at line 63.
-    Found 8-bit comparator lessequal for signal <n0017> created at line 108
+    Found 32-bit adder for signal <n0061> created at line 98.
+    Found 8-bit adder for signal <counter[7]_GND_2_o_add_7_OUT> created at line 100.
+    Found 1-bit 8-to-1 multiplexer for signal <counter[2]_out_data[7]_Mux_3_o> created at line 72.
+    Found 8-bit comparator lessequal for signal <n0021> created at line 119
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  41 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  49 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred   5 Multiplexer(s).
+	inferred   8 Multiplexer(s).
 Unit <axis2buffer> synthesized.
 
 Synthesizing Unit <shredder_array>.
-    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v".
-        WIDTH = 32
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\shredder_array.v".
+        WIDTH = 8
     Summary:
 	no macro.
 Unit <shredder_array> synthesized.
 
 Synthesizing Unit <shredder>.
-    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\shredder.v".
     Found 3-bit register for signal <shift_reg>.
     Found 2-bit adder for signal <n0035[1:0]> created at line 27.
     Found 3-bit adder for signal <sum_out> created at line 27.
@@ -222,44 +202,47 @@ Synthesizing Unit <shredder>.
 Unit <shredder> synthesized.
 
 Synthesizing Unit <conway>.
-    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\conway.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\conway.v".
     Summary:
 	no macro.
 Unit <conway> synthesized.
 
 Synthesizing Unit <buffer2axis>.
-    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\xps\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\pcores\conware_v1_00_a\hdl\verilog\buffer2axis.v".
         DWIDTH = 32
-        WIDTH = 32
+        WIDTH = 8
     Found 1-bit register for signal <state>.
-    Found 32-bit register for signal <buffer>.
+    Found 32-bit register for signal <num_writes>.
+    Found 8-bit register for signal <buffer>.
     Found 8-bit register for signal <counter>.
-    Found 8-bit adder for signal <counter[7]_GND_6_o_add_9_OUT> created at line 106.
-    Found 1-bit 32-to-1 multiplexer for signal <counter[4]_buffer[31]_Mux_0_o> created at line 64.
+    Found 32-bit adder for signal <n0043> created at line 119.
+    Found 8-bit adder for signal <counter[7]_GND_6_o_add_12_OUT> created at line 121.
+    Found 1-bit 8-to-1 multiplexer for signal <counter[2]_buffer[7]_Mux_2_o> created at line 78.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  41 D-type flip-flop(s).
-	inferred   5 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  49 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
 Unit <buffer2axis> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 162
- 2-bit adder                                           : 32
- 3-bit adder                                           : 128
+# Adders/Subtractors                                   : 44
+ 2-bit adder                                           : 8
+ 3-bit adder                                           : 32
+ 32-bit adder                                          : 2
  8-bit adder                                           : 2
-# Registers                                            : 69
- 1-bit register                                        : 34
- 3-bit register                                        : 32
- 32-bit register                                       : 1
- 8-bit register                                        : 2
+# Registers                                            : 23
+ 1-bit register                                        : 10
+ 3-bit register                                        : 8
+ 32-bit register                                       : 2
+ 8-bit register                                        : 3
 # Comparators                                          : 1
  8-bit comparator lessequal                            : 1
-# Multiplexers                                         : 10
- 1-bit 2-to-1 multiplexer                              : 6
- 1-bit 32-to-1 multiplexer                             : 2
+# Multiplexers                                         : 16
+ 1-bit 2-to-1 multiplexer                              : 12
+ 1-bit 8-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
@@ -268,6 +251,10 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+INFO:Xst:2261 - The FF/Latch <num_reads_1> in Unit <a2b> is equivalent to the following 30 FFs/Latches, which will be removed : <num_reads_2> <num_reads_3> <num_reads_4> <num_reads_5> <num_reads_6> <num_reads_7> <num_reads_8> <num_reads_9> <num_reads_10> <num_reads_11> <num_reads_12> <num_reads_13> <num_reads_14> <num_reads_15> <num_reads_16> <num_reads_17> <num_reads_18> <num_reads_19> <num_reads_20> <num_reads_21> <num_reads_22> <num_reads_23> <num_reads_24> <num_reads_25> <num_reads_26> <num_reads_27> <num_reads_28> <num_reads_29> <num_reads_30> <num_reads_31> 
+INFO:Xst:2261 - The FF/Latch <num_writes_1> in Unit <b2a> is equivalent to the following 30 FFs/Latches, which will be removed : <num_writes_2> <num_writes_3> <num_writes_4> <num_writes_5> <num_writes_6> <num_writes_7> <num_writes_8> <num_writes_9> <num_writes_10> <num_writes_11> <num_writes_12> <num_writes_13> <num_writes_14> <num_writes_15> <num_writes_16> <num_writes_17> <num_writes_18> <num_writes_19> <num_writes_20> <num_writes_21> <num_writes_22> <num_writes_23> <num_writes_24> <num_writes_25> <num_writes_26> <num_writes_27> <num_writes_28> <num_writes_29> <num_writes_30> <num_writes_31> 
+WARNING:Xst:1293 - FF/Latch <num_reads_1> has a constant value of 0 in block <a2b>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <num_writes_1> has a constant value of 0 in block <b2a>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <axis2buffer>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
@@ -281,24 +268,87 @@ Unit <buffer2axis> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 96
- 3-bit adder                                           : 32
- 3-bit adder carry in                                  : 64
+# Adders/Subtractors                                   : 26
+ 1-bit adder                                           : 2
+ 3-bit adder                                           : 8
+ 3-bit adder carry in                                  : 16
 # Counters                                             : 2
  8-bit up counter                                      : 2
-# Registers                                            : 162
- Flip-Flops                                            : 162
+# Registers                                            : 106
+ Flip-Flops                                            : 106
 # Comparators                                          : 1
  8-bit comparator lessequal                            : 1
-# Multiplexers                                         : 8
- 1-bit 2-to-1 multiplexer                              : 6
- 1-bit 32-to-1 multiplexer                             : 2
+# Multiplexers                                         : 14
+ 1-bit 2-to-1 multiplexer                              : 12
+ 1-bit 8-to-1 multiplexer                              : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <num_reads_31> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_30> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_29> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_28> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_27> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_26> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_25> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_24> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_23> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_22> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_21> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_20> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_19> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_18> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_17> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_16> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_15> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_14> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_13> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_12> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_11> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_10> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_9> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_8> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_7> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_6> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_5> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_4> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_3> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_2> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_reads_1> has a constant value of 0 in block <axis2buffer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <num_writes_31> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_30> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_29> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_28> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_27> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_26> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_25> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_24> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_23> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_22> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_21> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_20> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_19> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_18> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_17> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_16> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_15> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_14> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_13> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_12> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_11> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_10> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_9> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_8> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_7> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_6> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_5> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_4> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_3> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_2> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <num_writes_1> has a constant value of 0 in block <buffer2axis>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <conware> ...
 
@@ -307,12 +357,16 @@ Optimizing unit <axis2buffer> ...
 Optimizing unit <shredder_array> ...
 
 Optimizing unit <buffer2axis> ...
-WARNING:Xst:1293 - FF/Latch <a2b/counter_6> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <a2b/counter_7> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a2b/counter_6> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a2b/counter_5> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a2b/counter_7> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a2b/counter_4> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a2b/counter_3> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b2a/counter_7> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b2a/counter_6> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b2a/counter_5> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b2a/counter_7> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b2a/counter_4> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b2a/counter_3> has a constant value of 0 in block <conware>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -324,8 +378,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 172
- Flip-Flops                                            : 172
+# Registers                                            : 50
+ Flip-Flops                                            : 50
 
 =========================================================================
 
@@ -348,28 +402,29 @@ Top Level Output File Name         : conware.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 267
+# BELS                             : 90
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 31
-#      LUT3                        : 39
-#      LUT4                        : 3
-#      LUT5                        : 22
-#      LUT6                        : 150
-#      MUXCY                       : 8
+#      LUT2                        : 8
+#      LUT3                        : 17
+#      LUT4                        : 2
+#      LUT5                        : 7
+#      LUT6                        : 41
+#      MUXCY                       : 4
 #      MUXF7                       : 2
-#      XORCY                       : 10
-# FlipFlops/Latches                : 172
-#      FD                          : 32
-#      FDE                         : 32
-#      FDR                         : 97
-#      FDRE                        : 10
+#      VCC                         : 1
+#      XORCY                       : 6
+# FlipFlops/Latches                : 50
+#      FD                          : 8
+#      FDE                         : 8
+#      FDR                         : 27
+#      FDRE                        : 6
 #      FDS                         : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 70
+# IO Buffers                       : 174
 #      IBUF                        : 35
-#      OBUF                        : 35
+#      OBUF                        : 139
 
 Device utilization summary:
 ---------------------------
@@ -378,20 +433,20 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             172  out of  106400     0%  
- Number of Slice LUTs:                  246  out of  53200     0%  
-    Number used as Logic:               246  out of  53200     0%  
+ Number of Slice Registers:              50  out of  106400     0%  
+ Number of Slice LUTs:                   76  out of  53200     0%  
+    Number used as Logic:                76  out of  53200     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    331
-   Number with an unused Flip Flop:     159  out of    331    48%  
-   Number with an unused LUT:            85  out of    331    25%  
-   Number of fully used LUT-FF pairs:    87  out of    331    26%  
+ Number of LUT Flip Flop pairs used:     97
+   Number with an unused Flip Flop:      47  out of     97    48%  
+   Number with an unused LUT:            21  out of     97    21%  
+   Number of fully used LUT-FF pairs:    29  out of     97    29%  
    Number of unique control sets:         5
 
 IO Utilization: 
- Number of IOs:                          72
- Number of bonded IOBs:                  71  out of    200    35%  
+ Number of IOs:                         176
+ Number of bonded IOBs:                 175  out of    200    87%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -417,7 +472,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-ACLK                               | BUFGP                  | 172   |
+ACLK                               | BUFGP                  | 50    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -428,9 +483,9 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 2.944ns (Maximum Frequency: 339.728MHz)
-   Minimum input arrival time before clock: 3.530ns
-   Maximum output required time after clock: 2.622ns
+   Minimum period: 2.491ns (Maximum Frequency: 401.445MHz)
+   Minimum input arrival time before clock: 3.300ns
+   Maximum output required time after clock: 2.885ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -439,74 +494,75 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ACLK'
-  Clock period: 2.944ns (frequency: 339.728MHz)
-  Total number of paths / destination ports: 3024 / 214
+  Clock period: 2.491ns (frequency: 401.445MHz)
+  Total number of paths / destination ports: 436 / 64
 -------------------------------------------------------------------------
-Delay:               2.944ns (Levels of Logic = 4)
-  Source:            a2b/out_data_8 (FF)
-  Destination:       a2b/out_data_31 (FF)
+Delay:               2.491ns (Levels of Logic = 4)
+  Source:            shredders/shredder_block[6].shredder_i/shift_reg_0 (FF)
+  Destination:       b2a/buffer_6 (FF)
   Source Clock:      ACLK rising
   Destination Clock: ACLK rising
 
-  Data Path: a2b/out_data_8 to a2b/out_data_31
+  Data Path: shredders/shredder_block[6].shredder_i/shift_reg_0 to b2a/buffer_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.282   0.753  a2b/out_data_8 (a2b/out_data_8)
-     LUT6:I0->O            1   0.053   0.635  a2b/Mmux_counter[4]_out_data[31]_Mux_3_o_92 (a2b/Mmux_counter[4]_out_data[31]_Mux_3_o_92)
-     LUT6:I2->O            1   0.053   0.485  a2b/Mmux_counter[4]_out_data[31]_Mux_3_o_4 (a2b/Mmux_counter[4]_out_data[31]_Mux_3_o_4)
-     LUT6:I4->O           32   0.053   0.566  a2b/Mmux_in_state18 (a2b/in_state)
-     LUT6:I5->O            1   0.053   0.000  a2b/out_data_31_rstpot (a2b/out_data_31_rstpot)
-     FD:D                      0.011          a2b/out_data_31
+     FDR:C->Q             10   0.282   0.661  shredders/shredder_block[6].shredder_i/shift_reg_0 (shredders/shredder_block[6].shredder_i/shift_reg_0)
+     LUT3:I0->O            3   0.053   0.427  shredders/shredder_block[6].shredder_i/Madd_sum_out_Madd_xor<0>11 (shredders/sums<6><0>)
+     LUT5:I4->O            1   0.053   0.485  shredders/shredder_block[7].shredder_i/Madd_nsum_cy<0>2_SW0 (N2)
+     LUT5:I3->O            1   0.053   0.413  shredders/shredder_block[7].shredder_i/Madd_nsum_cy<0>2 (shredders/shredder_block[7].shredder_i/Madd_nsum_cy<0>1)
+     LUT6:I5->O            2   0.053   0.000  shredders/shredder_block[7].shredder_i/compute_unit/next_state (out_states_6_OBUF)
+     FDE:D                     0.011          b2a/buffer_6
     ----------------------------------------
-    Total                      2.944ns (0.505ns logic, 2.439ns route)
-                                       (17.2% logic, 82.8% route)
+    Total                      2.491ns (0.505ns logic, 1.986ns route)
+                                       (20.3% logic, 79.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
-  Total number of paths / destination ports: 1272 / 184
+  Total number of paths / destination ports: 332 / 60
 -------------------------------------------------------------------------
-Offset:              3.530ns (Levels of Logic = 6)
-  Source:            S_AXIS_TDATA<3> (PAD)
-  Destination:       a2b/out_data_31 (FF)
+Offset:              3.300ns (Levels of Logic = 6)
+  Source:            S_AXIS_TDATA<7> (PAD)
+  Destination:       a2b/out_data_7 (FF)
   Destination Clock: ACLK rising
 
-  Data Path: S_AXIS_TDATA<3> to a2b/out_data_31
+  Data Path: S_AXIS_TDATA<7> to a2b/out_data_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.000   0.739  S_AXIS_TDATA_3_IBUF (S_AXIS_TDATA_3_IBUF)
-     LUT6:I0->O            1   0.053   0.725  a2b/Mmux_in_state11 (a2b/Mmux_in_state1)
-     LUT5:I0->O            1   0.053   0.485  a2b/Mmux_in_state14 (a2b/Mmux_in_state13)
-     LUT4:I2->O            1   0.053   0.739  a2b/Mmux_counter[4]_out_data[31]_Mux_3_o_2_f7_SW0 (N12)
-     LUT6:I0->O           32   0.053   0.566  a2b/Mmux_in_state18 (a2b/in_state)
-     LUT6:I5->O            1   0.053   0.000  a2b/out_data_31_rstpot (a2b/out_data_31_rstpot)
-     FD:D                      0.011          a2b/out_data_31
+     IBUF:I->O             1   0.000   0.739  S_AXIS_TDATA_7_IBUF (S_AXIS_TDATA_7_IBUF)
+     LUT6:I0->O            1   0.053   0.602  a2b/Mmux_in_state11 (a2b/Mmux_in_state1)
+     LUT5:I2->O            1   0.053   0.485  a2b/Mmux_in_state14 (a2b/Mmux_in_state13)
+     LUT4:I2->O            1   0.053   0.739  a2b/Mmux_counter[2]_out_data[7]_Mux_3_o_2_f7_SW0 (N9)
+     LUT6:I0->O            8   0.053   0.459  a2b/Mmux_in_state18 (a2b/in_state)
+     LUT6:I5->O            1   0.053   0.000  a2b/out_data_7_rstpot (a2b/out_data_7_rstpot)
+     FD:D                      0.011          a2b/out_data_7
     ----------------------------------------
-    Total                      3.530ns (0.276ns logic, 3.254ns route)
-                                       (7.8% logic, 92.2% route)
+    Total                      3.300ns (0.276ns logic, 3.024ns route)
+                                       (8.4% logic, 91.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
-  Total number of paths / destination ports: 1280 / 27
+  Total number of paths / destination ports: 610 / 59
 -------------------------------------------------------------------------
-Offset:              2.622ns (Levels of Logic = 4)
-  Source:            b2a/counter_1 (FF)
-  Destination:       M_AXIS_TDATA<23> (PAD)
+Offset:              2.885ns (Levels of Logic = 5)
+  Source:            shredders/shredder_block[6].shredder_i/shift_reg_0 (FF)
+  Destination:       out_states<6> (PAD)
   Source Clock:      ACLK rising
 
-  Data Path: b2a/counter_1 to M_AXIS_TDATA<23>
+  Data Path: shredders/shredder_block[6].shredder_i/shift_reg_0 to out_states<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            16   0.282   0.837  b2a/counter_1 (b2a/counter_1)
-     LUT6:I0->O            1   0.053   0.635  b2a/Mmux_counter[4]_buffer[31]_Mux_0_o_81 (b2a/Mmux_counter[4]_buffer[31]_Mux_0_o_81)
-     LUT6:I2->O            1   0.053   0.000  b2a/Mmux_counter[4]_buffer[31]_Mux_0_o_3 (b2a/Mmux_counter[4]_buffer[31]_Mux_0_o_3)
-     MUXF7:I1->O          24   0.217   0.545  b2a/Mmux_counter[4]_buffer[31]_Mux_0_o_2_f7 (M_AXIS_TDATA_0_OBUF)
-     OBUF:I->O                 0.000          M_AXIS_TDATA_23_OBUF (M_AXIS_TDATA<23>)
+     FDR:C->Q             10   0.282   0.661  shredders/shredder_block[6].shredder_i/shift_reg_0 (shredders/shredder_block[6].shredder_i/shift_reg_0)
+     LUT3:I0->O            3   0.053   0.427  shredders/shredder_block[6].shredder_i/Madd_sum_out_Madd_xor<0>11 (shredders/sums<6><0>)
+     LUT5:I4->O            1   0.053   0.485  shredders/shredder_block[7].shredder_i/Madd_nsum_cy<0>2_SW0 (N2)
+     LUT5:I3->O            1   0.053   0.413  shredders/shredder_block[7].shredder_i/Madd_nsum_cy<0>2 (shredders/shredder_block[7].shredder_i/Madd_nsum_cy<0>1)
+     LUT6:I5->O            2   0.053   0.405  shredders/shredder_block[7].shredder_i/compute_unit/next_state (out_states_6_OBUF)
+     OBUF:I->O                 0.000          out_states_6_OBUF (out_states<6>)
     ----------------------------------------
-    Total                      2.622ns (0.605ns logic, 2.017ns route)
-                                       (23.1% logic, 76.9% route)
+    Total                      2.885ns (0.494ns logic, 2.391ns route)
+                                       (17.1% logic, 82.9% route)
 
 =========================================================================
 
@@ -518,20 +574,20 @@ Clock to Setup on destination clock ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ACLK           |    2.944|         |         |         |
+ACLK           |    2.491|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.58 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.55 secs
  
 --> 
 
-Total memory usage is 499272 kilobytes
+Total memory usage is 493828 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :   82 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

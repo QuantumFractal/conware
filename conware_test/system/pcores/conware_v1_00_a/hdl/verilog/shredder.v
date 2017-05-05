@@ -1,6 +1,7 @@
 module shredder(
     input clk, 
     input rstn, 
+    input enable,
     input din, 
     input[2:0] nsum0, 
     input[2:0] nsum1, 
@@ -19,7 +20,9 @@ module shredder(
         if (rstn == 0) begin
             shift_reg <= 3'b000;
         end else begin
-            shift_reg <= {shift_reg[1], shift_reg[0], din};
+            if (enable) begin
+                shift_reg <= {shift_reg[1], shift_reg[0], din};
+            end
         end
     end
 

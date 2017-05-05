@@ -8,7 +8,13 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;U:/Cpre488/conware/xps/system/pcores/conware_v1_00_a/hdl/verilog/conware.v&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;U:/Cpre488/conware/conware_test/system/pcores/conware_v1_00_a/hdl/verilog/conware.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;U:/Cpre488/conware/conware_test/system/pcores/conware_v1_00_a/hdl/verilog/shredder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;U:/Cpre488/conware/conware_test/system/pcores/conware_v1_00_a/hdl/verilog/shredder_array.v&quot; into library work</arg>
 </msg>
 
 </messages>

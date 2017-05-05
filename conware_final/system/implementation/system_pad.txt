@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Apr 20 19:34:51 2017
+Thu May 04 18:42:49 2017
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -52,8 +52,8 @@ Pinout by Pin Number:
 |AA8       |                                    |IOB33S   |IO_L11N_T1_SRCC_13     |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |AA9       |                                    |IOB33M   |IO_L11P_T1_SRCC_13     |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |AA10      |                                    |         |VCCO_13                |         |                 |13            |          |         |           |         |1.80     |          |           |                |
-|AA11      |v_axi4s_vid_out_0_video_data_pin<17>|IOB      |IO_L8P_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
-|AA12      |v_axi4s_vid_out_0_video_data_pin<13>|IOB      |IO_L7P_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|AA11      |v_axi4s_vid_out_0_video_data_pin<14>|IOB      |IO_L8P_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|AA12      |v_axi4s_vid_out_0_video_data_pin<15>|IOB      |IO_L7P_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |AA13      |                                    |IOB33S   |IO_L23N_T3_33          |UNUSED   |                 |33            |          |         |           |         |         |          |           |                |
 |AA14      |                                    |IOB33S   |IO_L22N_T3_33          |UNUSED   |                 |33            |          |         |           |         |         |          |           |                |
 |AA15      |                                    |         |GND                    |         |                 |              |          |         |           |         |         |          |           |                |
@@ -72,10 +72,10 @@ Pinout by Pin Number:
 |AB6       |                                    |IOB33S   |IO_L17N_T2_13          |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |AB7       |                                    |IOB33M   |IO_L17P_T2_13          |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |AB8       |                                    |         |GND                    |         |                 |              |          |         |           |         |         |          |           |                |
-|AB9       |v_axi4s_vid_out_0_video_data_pin<14>|IOB      |IO_L9N_T1_DQS_13       |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
-|AB10      |v_axi4s_vid_out_0_video_data_pin<12>|IOB      |IO_L9P_T1_DQS_13       |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
-|AB11      |v_axi4s_vid_out_0_video_data_pin<19>|IOB      |IO_L8N_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
-|AB12      |v_axi4s_vid_out_0_video_data_pin<15>|IOB      |IO_L7N_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|AB9       |v_axi4s_vid_out_0_video_data_pin<12>|IOB      |IO_L9N_T1_DQS_13       |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|AB10      |v_axi4s_vid_out_0_video_data_pin<22>|IOB      |IO_L9P_T1_DQS_13       |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|AB11      |v_axi4s_vid_out_0_video_data_pin<18>|IOB      |IO_L8N_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|AB12      |v_axi4s_vid_out_0_video_data_pin<13>|IOB      |IO_L7N_T1_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |AB13      |                                    |         |VCCO_33                |         |                 |33            |          |         |           |         |3.30     |          |           |                |
 |AB14      |                                    |IOB33M   |IO_L24P_T3_33          |UNUSED   |                 |33            |          |         |           |         |         |          |           |                |
 |AB15      |                                    |IOB33S   |IO_L24N_T3_33          |UNUSED   |                 |33            |          |         |           |         |         |          |           |                |
@@ -424,8 +424,8 @@ Pinout by Pin Number:
 |U6        |                                    |IOB33M   |IO_L22P_T3_13          |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |U7        |                                    |IOB33    |IO_25_13               |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |U8        |                                    |         |VCCO_13                |         |                 |13            |          |         |           |         |1.80     |          |           |                |
-|U9        |v_axi4s_vid_out_0_video_data_pin<22>|IOB      |IO_L6N_T0_VREF_13      |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
-|U10       |v_axi4s_vid_out_0_video_data_pin<20>|IOB      |IO_L6P_T0_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|U9        |v_axi4s_vid_out_0_video_data_pin<17>|IOB      |IO_L6N_T0_VREF_13      |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|U10       |v_axi4s_vid_out_0_video_data_pin<19>|IOB      |IO_L6P_T0_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |U11       |v_axi4s_vid_out_0_video_data_pin<21>|IOB      |IO_L5N_T0_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |U12       |v_axi4s_vid_out_0_video_data_pin<24>|IOB      |IO_L5P_T0_13           |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |U13       |                                    |         |GND                    |         |                 |              |          |         |           |         |         |          |           |                |
@@ -491,7 +491,7 @@ Pinout by Pin Number:
 |Y7        |                                    |         |VCCO_13                |         |                 |13            |          |         |           |         |1.80     |          |           |                |
 |Y8        |                                    |IOB33S   |IO_L12N_T1_MRCC_13     |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
 |Y9        |                                    |IOB33M   |IO_L12P_T1_MRCC_13     |UNUSED   |                 |13            |          |         |           |         |         |          |           |                |
-|Y10       |v_axi4s_vid_out_0_video_data_pin<18>|IOB      |IO_L10N_T1_13          |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|Y10       |v_axi4s_vid_out_0_video_data_pin<20>|IOB      |IO_L10N_T1_13          |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |Y11       |v_axi4s_vid_out_0_video_data_pin<16>|IOB      |IO_L10P_T1_13          |OUTPUT   |LVCMOS18*        |13            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
 |Y12       |                                    |         |GND                    |         |                 |              |          |         |           |         |         |          |           |                |
 |Y13       |                                    |IOB33M   |IO_L23P_T3_33          |UNUSED   |                 |33            |          |         |           |         |         |          |           |                |

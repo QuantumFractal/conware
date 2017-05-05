@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Thu Apr 20 19:34:05 2017">
+  <application stringID="par" timeStamp="Thu May 04 18:42:04 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -39,7 +39,7 @@
         <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
       </item>
-      <item stringID="User_EnvHost" value="co2041-05"/>
+      <item stringID="User_EnvHost" value="co2041-12"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
@@ -61,23 +61,23 @@
         <item AVAILABLE="200" dataType="int" label="Number of External IOBs" stringID="PAR_EXTERNAL_IOB" value="20">
           <item AVAILABLE="20" dataType="int" label="Number of LOCed IOBs" stringID="PAR_LOC_IOB" value="0"/>
         </item>
-        <item AVAILABLE="13300" dataType="int" stringID="PAR_SLICES" value="3502"/>
-        <item AVAILABLE="106400" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="7635">
-          <item dataType="int" label="Number used as Flip Flops" stringID="PAR_FLIP_FLOPS" value="7635"/>
+        <item AVAILABLE="13300" dataType="int" stringID="PAR_SLICES" value="3365"/>
+        <item AVAILABLE="106400" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="7077">
+          <item dataType="int" label="Number used as Flip Flops" stringID="PAR_FLIP_FLOPS" value="7077"/>
           <item dataType="int" label="Number used as Latches" stringID="PAR_LATCHES" value="0"/>
           <item dataType="int" label="Number used as LatchThrus" stringID="PAR_LATCH_THRUS" value="0"/>
         </item>
-        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="6275"/>
-        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUT-Flip Flop pairs" stringID="PAR_SLICE_LUT_FLIPFLOP_PAIRS" value="8972"/>
+        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="5870"/>
+        <item AVAILABLE="53200" dataType="int" label="Number of Slice LUT-Flip Flop pairs" stringID="PAR_SLICE_LUT_FLIPFLOP_PAIRS" value="8442"/>
       </section>
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="48 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="48 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="47 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="47 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="1 mins 3 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="1 mins 1 secs "/>
         <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="51 secs "/>
       </section>
     </task>
@@ -97,9 +97,9 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGCTRL_X0Y31"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="2780.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.436000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.057000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="2662.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.439000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.058000"/>
           </row>
           <row stringID="row" value="2">
             <item label="Clock Net" stringID="CLOCK_NET" value="processing_system7_0_FCLK_CLK3"/>
@@ -107,7 +107,7 @@
             <item label="Resource" stringID="RESOURCE" value="BUFGCTRL_X0Y30"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
             <item dataType="float" label="Fanout" stringID="FANOUT" value="57.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.183000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.252000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.901000"/>
           </row>
         </table>
@@ -372,7 +372,7 @@
           </row>
           <row stringID="row" value="33">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="AA11"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;17>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;14>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L8P_T1_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -386,7 +386,7 @@
           </row>
           <row stringID="row" value="34">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="AA12"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;13>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;15>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L7P_T1_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -539,7 +539,7 @@
           </row>
           <row stringID="row" value="53">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="AB9"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;14>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;12>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L9N_T1_DQS_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -553,7 +553,7 @@
           </row>
           <row stringID="row" value="54">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="AB10"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;12>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;22>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L9P_T1_DQS_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -567,7 +567,7 @@
           </row>
           <row stringID="row" value="55">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="AB11"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;19>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;18>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L8N_T1_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -581,7 +581,7 @@
           </row>
           <row stringID="row" value="56">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="AB12"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;15>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;13>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L7N_T1_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -3069,7 +3069,7 @@
           </row>
           <row stringID="row" value="405">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="U9"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;22>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;17>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L6N_T0_VREF_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -3083,7 +3083,7 @@
           </row>
           <row stringID="row" value="406">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="U10"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;20>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;19>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L6P_T0_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -3680,7 +3680,7 @@
           </row>
           <row stringID="row" value="472">
             <item label="Pin&#xA;Number" sort="smart" stringID="Pin_Number" value="Y10"/>
-            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;18>"/>
+            <item label="Signal&#xA;Name" stringID="Signal_Name" value="v_axi4s_vid_out_0_video_data_pin&lt;20>"/>
             <item label="Pin&#xA;Usage" stringID="Pin_Usage" value="IOB"/>
             <item label="Pin&#xA;Name" sort="smart" stringID="Pin_Name" value="IO_L10N_T1_13"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -3807,7 +3807,7 @@
       <section stringID="PAR_UNROUTES_REPORT">
         <item dataType="int" stringID="PAR_UNROUTED_NETS" value="0"/>
         <item dataType="int" stringID="PAR_TOTAL_SOURCELESS_NETS" value="0"/>
-        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="7"/>
+        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="3"/>
       </section>
     </task>
   </application>

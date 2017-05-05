@@ -79,13 +79,11 @@ END ENTITY;
 ARCHITECTURE system_axi_dma_0_wrapper_fifo_generator_v9_3_1_arch OF system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb IS
  SIGNAL  status              : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
  SIGNAL  wr_clk              : STD_LOGIC;
- SIGNAL  rd_clk              : STD_LOGIC;
  SIGNAL  reset 	             : STD_LOGIC;
  SIGNAL  sim_done            : STD_LOGIC := '0';
  SIGNAL  end_of_sim          : STD_LOGIC_VECTOR(4 DOWNTO 0) := (OTHERS => '0');
  -- Write and Read clock periods
- CONSTANT wr_clk_period_by_2 : TIME := 200 ns;
- CONSTANT rd_clk_period_by_2 : TIME := 100 ns;
+ CONSTANT wr_clk_period_by_2 : TIME := 100 ns;
  -- Procedures to display strings
  PROCEDURE disp_str(CONSTANT str:IN STRING) IS
     variable dp_l : line := null;   
@@ -106,7 +104,7 @@ BEGIN
   -- Generation of clock
 
   PROCESS BEGIN
-    WAIT FOR 400 ns; -- Wait for global reset
+    WAIT FOR 200 ns; -- Wait for global reset
     WHILE 1 = 1 LOOP
       wr_clk <= '0';
       WAIT FOR wr_clk_period_by_2;
@@ -114,22 +112,12 @@ BEGIN
       WAIT FOR wr_clk_period_by_2;
     END LOOP;
   END PROCESS;
-
-  PROCESS BEGIN
-    WAIT FOR 200 ns;-- Wait for global reset
-    WHILE 1 = 1 LOOP
-      rd_clk <= '0';
-      WAIT FOR rd_clk_period_by_2;
-      rd_clk <= '1'; 
-      WAIT FOR rd_clk_period_by_2;
-    END LOOP;
-  END PROCESS;
   
   -- Generation of Reset
   
   PROCESS BEGIN
     reset <= '1';
-    WAIT FOR 4200 ns;
+    WAIT FOR 2100 ns;
     reset <= '0';
     WAIT;
   END PROCESS;
@@ -157,13 +145,6 @@ BEGIN
     IF(status(3) = '1') THEN
       assert false
        report "Almost Empty flag Mismatch/timeout"
-       severity error;
-    END IF;
-    
-    
-    IF(status(4) = '1') THEN
-      assert false
-       report "Almost Full flag Mismatch/timeout"
        severity error;
     END IF;
     
@@ -209,11 +190,10 @@ BEGIN
    GENERIC MAP(
               FREEZEON_ERROR => 0,
  	      TB_STOP_CNT    => 2,
- 	      TB_SEED        => 48 
+ 	      TB_SEED        => 42 
  	      )
   PORT MAP(
-	   WR_CLK        => wr_clk,
-	   RD_CLK        => rd_clk,
+	   CLK           => wr_clk,
 	   RESET         => reset,
 	   SIM_DONE      => sim_done,
            STATUS        => status

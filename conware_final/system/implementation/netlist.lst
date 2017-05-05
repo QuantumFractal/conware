@@ -1,12 +1,13 @@
-U:\Cpre488\conware\xps\system\implementation\system.ngc 1492734595
-U:/Cpre488/conware/xps/system/implementation/system_processing_system7_0_wrapper.ngc 1492734544
-U:/Cpre488/conware/xps/system/implementation/system_axi4lite_0_wrapper.ngc 1492734551
-U:/Cpre488/conware/xps/system/implementation/system_axi_interconnect_1_wrapper.ngc 1492734557
-U:/Cpre488/conware/xps/system/implementation/system_v_axi4s_vid_out_0_wrapper.ngc 1492734235
-U:/Cpre488/conware/xps/system/implementation/system_axi_vdma_0_wrapper.ngc 1492734562
-U:/Cpre488/conware/xps/system/implementation/system_v_tc_0_wrapper.ngc 1492734532
-U:/Cpre488/conware/xps/system/implementation/system_sws_8bits_wrapper.ngc 1492733625
-U:/Cpre488/conware/xps/system/implementation/system_leds_8bits_wrapper.ngc 1492733625
-U:/Cpre488/conware/xps/system/implementation/system_btns_5bits_wrapper.ngc 1492733625
-U:/Cpre488/conware/xps/system/implementation/system_axi_dma_0_wrapper.ngc 1492733626
+U:\Cpre488\conware\conware_final\system\implementation\system.ngc 1493941080
+U:/Cpre488/conware/conware_final/system/implementation/system_processing_system7_0_wrapper.ngc 1493941014
+U:/Cpre488/conware/conware_final/system/implementation/system_axi4lite_0_wrapper.ngc 1493941030
+U:/Cpre488/conware/conware_final/system/implementation/system_axi_interconnect_1_wrapper.ngc 1493941042
+U:/Cpre488/conware/conware_final/system/implementation/system_v_axi4s_vid_out_0_wrapper.ngc 1493940707
+U:/Cpre488/conware/conware_final/system/implementation/system_conware_0_wrapper.ngc 1493941023
+U:/Cpre488/conware/conware_final/system/implementation/system_axi_vdma_0_wrapper.ngc 1493941047
+U:/Cpre488/conware/conware_final/system/implementation/system_v_tc_0_wrapper.ngc 1493941001
+U:/Cpre488/conware/conware_final/system/implementation/system_sws_8bits_wrapper.ngc 1493939715
+U:/Cpre488/conware/conware_final/system/implementation/system_leds_8bits_wrapper.ngc 1493939726
+U:/Cpre488/conware/conware_final/system/implementation/system_btns_5bits_wrapper.ngc 1493939737
+U:/Cpre488/conware/conware_final/system/implementation/system_axi_dma_0_wrapper.ngc 1493941036
 OK

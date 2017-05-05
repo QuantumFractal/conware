@@ -56,11 +56,10 @@
 #--------------------------------------------------------------------------------
 wcfg new
 isim set radix hex
-wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/RST
-wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/WR_CLK
+wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/CLK
+wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/SRST
 wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/WR_EN
 wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/FULL
-wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/RD_CLK
 wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/RD_EN
 wave add /system_axi_dma_0_wrapper_fifo_generator_v9_3_1_tb/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_synth_inst/system_axi_dma_0_wrapper_fifo_generator_v9_3_1_inst/EMPTY
 run all

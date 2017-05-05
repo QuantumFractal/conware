@@ -14,14 +14,13 @@
       <VARIABLE COL_INDEX="6" IS_VISIBLE="FALSE" VIEWDISP="Type" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="5" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="126,1379,200" VERSION="0"/>
-    <SET ID="axi_dma_0" IS_EXPANDED="TRUE"/>
     <SET ID="v_axi4s_vid_out_0" IS_EXPANDED="TRUE"/>
     <SET ID="axi_vdma_0" IS_EXPANDED="TRUE"/>
     <SET ID="v_tc_0" IS_EXPANDED="TRUE"/>
     <SET ID="processing_system7_0" IS_EXPANDED="TRUE"/>
     <STATUS>
       <SELECTIONS>
-        <VARIABLE ID="S_AXI_HP0" PARENT="processing_system7_0"/>
+        <VARIABLE ID="axi_dma_0"/>
       </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
@@ -29,7 +28,7 @@
       <VARIABLE ID="SWs_8Bits" ROW_INDEX="6"/>
       <VARIABLE ID="LEDs_8Bits" ROW_INDEX="5"/>
       <VARIABLE ID="BTNs_5Bits" ROW_INDEX="4"/>
-      <VARIABLE ID="axi_dma_0" IS_EXPANDED="TRUE" ROW_INDEX="3"/>
+      <VARIABLE ID="axi_dma_0" ROW_INDEX="3"/>
       <VARIABLE ID="axi_interconnect_1" ROW_INDEX="1"/>
       <VARIABLE ID="v_axi4s_vid_out_0" IS_EXPANDED="TRUE" ROW_INDEX="8"/>
       <VARIABLE ID="axi_vdma_0" IS_EXPANDED="TRUE" ROW_INDEX="7"/>
@@ -188,9 +187,7 @@
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="5" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="146,1355,200" VERSION="0"/>
     <SET ID="processing_system7_0" IS_EXPANDED="TRUE"/>
     <STATUS>
-      <SELECTIONS>
-        <VARIABLE ID="processing_system7_0.processing_system7_0:C_UART1_BASEADDR:C_UART1_HIGHADDR" PARENT="processing_system7_0"/>
-      </SELECTIONS>
+      <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="processing_system7_0" IS_EXPANDED="TRUE" ROW_INDEX="0"/>

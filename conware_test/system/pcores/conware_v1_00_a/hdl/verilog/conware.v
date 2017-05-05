@@ -60,9 +60,11 @@ module conware #(
     // Signals to handle internal handshake between in-buffer and out-buffer
     wire pvalid;
     wire pready;
+    wire shredder_en;
 
-    // TODO: Delete me
-    //assign out_states = in_states;
+    // We want to pull the data into the shredders when both the in buffer and
+    // out buffer are ready to move data one step through the pipeline
+    assign shredder_en = pvalid & pready;
 
     axis2buffer #(DWIDTH, WIDTH) a2b(
         .clk(ACLK),
@@ -87,6 +89,7 @@ module conware #(
     shredder_array #(WIDTH) shredders(
         .clk(ACLK),
         .rstn(ARESETN),
+        .enable(shredder_en),
         .in_data(in_states),
         .out_data(out_states)
     );

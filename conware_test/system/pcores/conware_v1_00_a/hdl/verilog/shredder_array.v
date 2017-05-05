@@ -1,14 +1,16 @@
 module shredder_array #(
-    parameter WIDTH = 32
+    parameter WIDTH = 8
 )(
     clk, 
     rstn, 
+    enable,
     in_data, 
     out_data
 );
 
     input clk;
     input rstn;
+    input enable;
 
     input[WIDTH-1:0] in_data;
     output[WIDTH-1:0] out_data;
@@ -24,6 +26,7 @@ module shredder_array #(
             shredder shredder_i(
                 .clk(clk),
                 .rstn(rstn),
+                .enable(enable),
                 .din(in_data[i-1]),
                 .nsum0(sums[i-1]),
                 .nsum1(sums[i+1]),

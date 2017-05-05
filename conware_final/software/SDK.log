@@ -521,3 +521,103 @@ invalid command name "ps7_init"
     and start over again
 
  
+17:43:27.571 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\system.xml. 
+17:43:30.161 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\system.bit: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/system.bit' already exists. 
+17:43:30.271 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.c: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.c' already exists. 
+17:43:30.301 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.h: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.h' already exists. 
+17:43:30.351 WARN  - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.html: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.html' already exists. 
+17:43:30.371 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.tcl: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.tcl' already exists. 
+17:44:39.487 ERROR - Unable to read in MSS file U:\Cpre488\conware\conware_final\software\conware_bsp\system.mss. 
+18:49:31.181 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml. 
+18:49:33.421 INFO  - The hardware specification for project 'system_hw_platform' is different from \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml. 
+18:49:34.190 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+18:49:34.852 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+18:51:01.086 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\ps7_init.c into \system_hw_platform\ps7_init.c. 
+18:51:01.316 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\ps7_init.h into \system_hw_platform\ps7_init.h. 
+18:51:01.494 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\ps7_init.html into \system_hw_platform\ps7_init.html. 
+18:51:01.722 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\ps7_init.tcl into \system_hw_platform\ps7_init.tcl. 
+18:51:01.909 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+18:51:06.881 INFO  - Clearing existing target manager status. 
+18:51:09.571 INFO  - Workspace synchronized with the new hardware specification file. Cleaning dependent projects... 
+18:53:43.629 INFO  - Project video_bsp was a BSP project. Please update references. 
+18:53:43.631 ERROR - SDK has detected that project video_bsp has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references. 
+18:55:32.562 ERROR - SDK has detected that project video_platform has been deleted (or renamed).
+This project was referenced by a BSP project, which will now fail to compile properly.
+
+We recommend that you create a new BSP project pointing to a valid hardware project. Alternatively, you can fix the project references in the BSP, and update the path to the hardware specification file in 'libgen.options', and in ELF check options in dependant applications. 
+18:55:49.453 INFO  - Project conware_video_bsp was a BSP project. Please update references. 
+18:55:49.453 ERROR - SDK has detected that project conware_video_bsp has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references. 
+18:58:45.177 ERROR - Exception while attemping to 'diff' hardware specification files. 
+18:58:45.637 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+18:58:46.831 ERROR - Unable to save current hardware specification file in a temporary location. 
+18:58:46.837 ERROR - File does not found exception. File provided:  U:\Cpre488\conware\conware_final\software\system_hw_platform\system.xmljava.io.FileNotFoundException: U:\Cpre488\conware\conware_final\software\system_hw_platform\system.xml (The system cannot find the file specified) 
+18:58:47.025 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+18:58:48.057 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+18:58:53.989 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:59:17.696 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml. 
+18:59:27.061 ERROR - Unable to read in MSS file U:\Cpre488\conware\conware_final\software\standalone_bsp_0\unknown.mss. 
+18:59:40.414 ERROR - Exception while attemping to 'diff' hardware specification files. 
+18:59:40.905 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+18:59:40.938 ERROR - Unable to save current hardware specification file in a temporary location. 
+18:59:40.939 ERROR - File does not found exception. File provided:  U:\Cpre488\conware\conware_final\software\system_hw_platform\system.xmljava.io.FileNotFoundException: U:\Cpre488\conware\conware_final\software\system_hw_platform\system.xml (The system cannot find the file specified) 
+18:59:41.106 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml into \system_hw_platform\system.xml. 
+18:59:42.149 INFO  - Copied contents of \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.bit into \system_hw_platform\system.bit. 
+18:59:42.304 INFO  - Project standalone_bsp_0 was a BSP project. Please update references. 
+18:59:42.306 ERROR - SDK has detected that project standalone_bsp_0 has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references. 
+19:00:24.896 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\SDK\SDK_Export\hw\system.xml. 
+19:03:06.984 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:04:41.922 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:04:50.312 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+19:05:23.970 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_final/software/system_hw_platform/system.bit" 
+19:05:31.568 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:05:31.668 INFO  - PS initialization will be done as it is not done before. 
+19:05:31.668 INFO  - Running PS initialization.... 
+19:05:32.188 INFO  - ps7_init is completed. 
+19:05:32.288 INFO  - ps7_post_config is completed. 
+19:05:32.398 INFO  - PS Initialization is complete. 
+19:06:16.026 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:06:21.306 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+19:07:00.107 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_final/software/system_hw_platform/system.bit" 
+19:07:13.335 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:07:13.435 INFO  - PS initialization will be done as it is not done before. 
+19:07:13.437 INFO  - Running PS initialization.... 
+19:07:13.945 INFO  - ps7_init is completed. 
+19:07:14.045 INFO  - ps7_post_config is completed. 
+19:07:14.145 INFO  - PS Initialization is complete. 
+19:08:05.623 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:08:07.217 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:08:41.411 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:08:45.208 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(Unknown Source)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.debugApplication(Unknown Source)
+
+19:09:47.030 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_final/software/system_hw_platform/system.bit" 
+19:10:07.866 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:10:07.966 INFO  - PS initialization will be done as it is not done before. 
+19:10:07.966 INFO  - Running PS initialization.... 
+19:10:08.466 INFO  - ps7_init is completed. 
+19:10:08.566 INFO  - ps7_post_config is completed. 
+19:10:08.675 INFO  - PS Initialization is complete. 

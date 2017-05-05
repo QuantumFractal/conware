@@ -198,15 +198,15 @@ PACKAGE system_axi_dma_0_wrapper_fifo_generator_v9_3_2_pkg IS
  COMPONENT system_axi_dma_0_wrapper_fifo_generator_v9_3_2_exdes IS
    PORT (
            CLK                       : IN  std_logic;
-     	   DATA_COUNT                : OUT std_logic_vector(7-1 DOWNTO 0);
+     	   DATA_COUNT                : OUT std_logic_vector(3-1 DOWNTO 0);
            WR_ACK                    : OUT std_logic;
            VALID                     : OUT std_logic;
            ALMOST_EMPTY              : OUT std_logic;
            SRST                      : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
-           DIN                       : IN  std_logic_vector(39-1 DOWNTO 0);
-           DOUT                      : OUT std_logic_vector(39-1 DOWNTO 0);
+           DIN                       : IN  std_logic_vector(9-1 DOWNTO 0);
+           DOUT                      : OUT std_logic_vector(9-1 DOWNTO 0);
            FULL                      : OUT std_logic;
            EMPTY                     : OUT std_logic);
 

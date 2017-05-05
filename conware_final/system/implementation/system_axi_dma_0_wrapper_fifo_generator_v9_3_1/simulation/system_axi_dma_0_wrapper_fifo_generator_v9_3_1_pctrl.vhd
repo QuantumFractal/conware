@@ -134,53 +134,20 @@ ARCHITECTURE fg_pc_arch OF system_axi_dma_0_wrapper_fifo_generator_v9_3_1_pctrl 
  SIGNAL reset_ex2        : STD_LOGIC := '0';
  SIGNAL reset_ex3        : STD_LOGIC := '0';
  SIGNAL ae_chk_i         : STD_LOGIC := if_then_else(C_CH_TYPE /= 2,'1','0');
- SIGNAL af_chk_i         : STD_LOGIC := if_then_else(C_CH_TYPE /= 2,'1','0');
  SIGNAL rdw_gt_wrw       : STD_LOGIC_VECTOR(D_WIDTH_DIFF-1 DOWNTO 0) := (OTHERS => '1');
  SIGNAL wrw_gt_rdw       : STD_LOGIC_VECTOR(D_WIDTH_DIFF-1 DOWNTO 0) := (OTHERS => '1');
  SIGNAL rd_activ_cont    : STD_LOGIC_VECTOR(25 downto 0):= (OTHERS => '0');
  SIGNAL prc_we_i         : STD_LOGIC := '0';
  SIGNAL prc_re_i         : STD_LOGIC := '0';
  SIGNAL reset_en_i       : STD_LOGIC := '0';
- SIGNAL sim_done_d1      : STD_LOGIC := '0';
- SIGNAL sim_done_wr1     : STD_LOGIC := '0';
- SIGNAL sim_done_wr2     : STD_LOGIC := '0'; 
- SIGNAL empty_d1         : STD_LOGIC := '0';
- SIGNAL empty_wr_dom1    : STD_LOGIC := '0';
  SIGNAL state_d1         : STD_LOGIC := '0';
- SIGNAL state_rd_dom1    : STD_LOGIC := '0';
- SIGNAL rd_en_d1         : STD_LOGIC := '0';
- SIGNAL rd_en_wr1        : STD_LOGIC := '0';
- SIGNAL wr_en_d1         : STD_LOGIC := '0';
- SIGNAL wr_en_rd1        : STD_LOGIC := '0';
- SIGNAL full_chk_d1      : STD_LOGIC := '0';
- SIGNAL full_chk_rd1     : STD_LOGIC := '0';
- SIGNAL empty_wr_dom2    : STD_LOGIC := '0';
-
- SIGNAL state_rd_dom2    : STD_LOGIC := '0';
- SIGNAL state_rd_dom3    : STD_LOGIC := '0';
- SIGNAL rd_en_wr2        : STD_LOGIC := '0';
- SIGNAL wr_en_rd2        : STD_LOGIC := '0';
- SIGNAL full_chk_rd2     : STD_LOGIC := '0';
- SIGNAL reset_en_d1      : STD_LOGIC := '0';
- SIGNAL reset_en_rd1     : STD_LOGIC := '0';
- SIGNAL reset_en_rd2     : STD_LOGIC := '0';
-
- SIGNAL data_chk_wr_d1   : STD_LOGIC := '0';
- SIGNAL data_chk_rd1     : STD_LOGIC := '0';
- SIGNAL data_chk_rd2     : STD_LOGIC := '0';
- SIGNAL full_d1          : STD_LOGIC := '0';
- SIGNAL full_rd_dom1     : STD_LOGIC := '0';
- SIGNAL full_rd_dom2     : STD_LOGIC := '0';
- SIGNAL af_chk_d1        : STD_LOGIC := '0';
- SIGNAL af_chk_rd1       : STD_LOGIC := '0';
- SIGNAL af_chk_rd2       : STD_LOGIC := '0';
  SIGNAL post_rst_dly_wr  : STD_LOGIC_VECTOR(4 DOWNTO 0) := (OTHERS => '1');
  SIGNAL post_rst_dly_rd  : STD_LOGIC_VECTOR(4 DOWNTO 0) := (OTHERS => '1');
 BEGIN
- status_i  <= data_chk_i & full_chk_rd2 & empty_chk_i & af_chk_rd2 & ae_chk_i;
+ status_i  <= data_chk_i & full_chk_i & empty_chk_i & '0' & ae_chk_i;
  STATUS    <= status_d1_i & '0' & '0' & rd_activ_cont(rd_activ_cont'high);
 
- prc_we_i <= wr_en_i  WHEN sim_done_wr2 = '0' ELSE '0';
+ prc_we_i <= wr_en_i  WHEN sim_done_i   = '0' ELSE '0';
  prc_re_i <= rd_en_i  WHEN sim_done_i   = '0' ELSE '0';
 
  SIM_DONE   <= sim_done_i;
@@ -223,7 +190,7 @@ END PROCESS;
    PROCESS (RD_CLK)
    BEGIN
        IF (RD_CLK'event AND RD_CLK='1') THEN
-         IF(state_rd_dom2 = '0' AND state_rd_dom3 = '1') THEN
+         IF(state = '0' AND state_d1 = '1') THEN
            sim_stop_cntr <= sim_stop_cntr - "1";
          END IF;
        END IF;
@@ -290,7 +257,7 @@ END PROCESS;
       full_ds_timeout <= (OTHERS => '0');
     ELSIF(WR_CLK'event AND WR_CLK='1') THEN
       IF(state = '1') THEN
-        IF(rd_en_wr2 = '1' AND wr_en_i = '0' AND FULL = '1' AND AND_REDUCE(wrw_gt_rdw) = '1') THEN
+        IF(rd_en_i = '1' AND wr_en_i = '0' AND FULL = '1' AND AND_REDUCE(wrw_gt_rdw) = '1') THEN
           full_ds_timeout <= full_ds_timeout + '1';
         END IF;
       ELSE
@@ -307,7 +274,7 @@ END PROCESS;
       empty_ds_timeout <= (OTHERS => '0');
     ELSIF(RD_CLK'event AND RD_CLK='1') THEN
       IF(state = '0') THEN
-        IF(wr_en_rd2 = '1' AND rd_en_i = '0' AND EMPTY = '1' AND AND_REDUCE(rdw_gt_wrw) = '1') THEN
+        IF(wr_en_i = '1' AND rd_en_i = '0' AND EMPTY = '1' AND AND_REDUCE(rdw_gt_wrw) = '1') THEN
           empty_ds_timeout <= empty_ds_timeout + '1';
         END IF;
       ELSE
@@ -347,24 +314,10 @@ END PROCESS;
   END PROCESS;
 
   fifo_d_chk:IF(C_CH_TYPE /= 2) GENERATE
-    PRC_WR_EN  <= prc_we_i  AFTER 100 ns;
+    PRC_WR_EN  <= prc_we_i  AFTER 50 ns;
     PRC_RD_EN  <= prc_re_i  AFTER 50 ns;
     data_chk_i <= dout_chk;
   END GENERATE fifo_d_chk;
-
-  -- Almost full flag checks
-   PROCESS(WR_CLK,reset_ex3)
-   BEGIN
-     IF(reset_ex3 = '1') THEN
-         af_chk_i <= '0';
-     ELSIF (WR_CLK'event AND WR_CLK='1') THEN
-       IF((FULL = '1' AND ALMOST_FULL = '0') OR (empty_wr_dom2 = '1' AND ALMOST_FULL = '1' AND C_WR_PNTR_WIDTH > 4)) THEN
-         af_chk_i <= '1';
-       ELSE
-         af_chk_i <= '0';
-       END IF;
-     END IF;
-   END PROCESS;
  
   -- Almost empty flag checks
    PROCESS(RD_CLK,RESET_RD)
@@ -373,7 +326,7 @@ END PROCESS;
          ae_chk_i <= '0';
      ELSIF (RD_CLK'event AND RD_CLK='1') THEN
        IF((EMPTY = '1' AND ALMOST_EMPTY = '0') OR 
-          (state = '1' AND full_rd_dom2 = '1' AND ALMOST_EMPTY = '1')) THEN
+          (state = '1' AND FULL = '1' AND ALMOST_EMPTY = '1')) THEN
          ae_chk_i <= '1';
        ELSE
          ae_chk_i <= '0';
@@ -381,82 +334,16 @@ END PROCESS;
      END IF;
    END PROCESS;
   -----------------------------------------------------
- 
-
- -----------------------------------------------------
- -- SYNCHRONIZERS B/W WRITE AND READ DOMAINS
- -----------------------------------------------------
-   PROCESS(WR_CLK,RESET_WR)
-   BEGIN
-     IF(RESET_WR = '1') THEN
-       empty_wr_dom1  <= '1';
-       empty_wr_dom2  <= '1';
-       state_d1       <= '0';
-       wr_en_d1       <= '0';
-       rd_en_wr1      <= '0';
-       rd_en_wr2      <= '0';
-       full_chk_d1    <= '0';
-       af_chk_d1      <= '0';
-       full_d1        <= '0';
-       reset_en_d1    <= '0';
-       sim_done_wr1   <= '0';
-       sim_done_wr2   <= '0';
-     ELSIF (WR_CLK'event AND WR_CLK='1') THEN
-       sim_done_wr1   <= sim_done_d1;
-       sim_done_wr2   <= sim_done_wr1;
-       reset_en_d1    <= reset_en_i;
-       full_d1        <= FULL;
-       state_d1       <= state;
-       empty_wr_dom1  <= empty_d1;
-       empty_wr_dom2  <= empty_wr_dom1;
-       wr_en_d1       <= wr_en_i;
-       rd_en_wr1      <= rd_en_d1;
-       rd_en_wr2      <= rd_en_wr1;
-       full_chk_d1    <= full_chk_i;
-       af_chk_d1      <= af_chk_i;
-     END IF;
-   END PROCESS;
+   RESET_EN   <= reset_en_i;
 
    PROCESS(RD_CLK,RESET_RD)
    BEGIN
      IF(RESET_RD = '1') THEN
-         empty_d1       <= '1';
-         state_rd_dom1  <= '0';
-         state_rd_dom2  <= '0';
-         state_rd_dom3  <= '0';
-         wr_en_rd1      <= '0';
-         wr_en_rd2      <= '0';
-         rd_en_d1       <= '0';
-         full_chk_rd1   <= '0';
-         full_chk_rd2   <= '0';
-	 af_chk_rd1     <= '0';
-	 af_chk_rd2     <= '0';
-	 full_rd_dom1   <= '0';
-	 full_rd_dom2   <= '0';
-         reset_en_rd1   <= '0';
-         reset_en_rd2   <= '0';
-         sim_done_d1    <= '0';
+         state_d1  <= '0';
      ELSIF (RD_CLK'event AND RD_CLK='1') THEN
-         sim_done_d1    <= sim_done_i;
-         reset_en_rd1   <= reset_en_d1;
-         reset_en_rd2   <= reset_en_rd1;
-         empty_d1       <= EMPTY;
-         rd_en_d1       <= rd_en_i;
-         state_rd_dom1  <= state_d1;
-         state_rd_dom2  <= state_rd_dom1;
-         state_rd_dom3  <= state_rd_dom2;
-         wr_en_rd1      <= wr_en_d1;
-         wr_en_rd2      <= wr_en_rd1;
-         full_chk_rd1   <= full_chk_d1;
-         full_chk_rd2   <= full_chk_rd1;
-	 af_chk_rd1     <= af_chk_d1;
-	 af_chk_rd2     <= af_chk_rd1;
-	 full_rd_dom1   <= full_d1;
-	 full_rd_dom2   <= full_rd_dom1;
+         state_d1  <= state;
      END IF;
    END PROCESS;
-   
-   RESET_EN   <= reset_en_rd2;
  
 
    data_fifo_en:IF(C_CH_TYPE /= 2) GENERATE  
@@ -505,7 +392,7 @@ END PROCESS;
 	  full_as_timeout <= (OTHERS => '0');
 	ELSE
 	  wr_cntr <= (OTHERS => '0');
-	  IF(rd_en_wr2 = '0') THEN
+	  IF(rd_en_i = '0') THEN
 	    IF(wr_en_i = '1') THEN
   	      full_as_timeout <= full_as_timeout + "1";
   	    END IF;
@@ -539,7 +426,7 @@ END PROCESS;
       IF(RESET_RD = '1') THEN
 	rd_en_i    <= '0';
       ELSIF(RD_CLK'event AND RD_CLK='1') THEN
-        IF(state_rd_dom2 = '0') THEN
+        IF(state = '0') THEN
   	    rd_en_i <= rd_en_gen(1) AND rd_en_gen(5) AND rd_en_gen(3) AND rd_control AND (NOT post_rst_dly_rd(4));
         ELSE
           rd_en_i <= rd_en_gen(0) OR rd_en_gen(6);
@@ -557,14 +444,14 @@ END PROCESS;
 	rd_control <= '1';
 	empty_as_timeout <= (OTHERS => '0');
       ELSIF(RD_CLK'event AND RD_CLK='1') THEN
-	IF(state_rd_dom2 = '0') THEN
+	IF(state = '0') THEN
 	  IF(rd_en_i = '1') THEN
 	    rd_cntr <= rd_cntr + "1";
 	  END IF;
 	  empty_as_timeout <= (OTHERS => '0');
 	ELSE
 	  rd_cntr <= (OTHERS => '0');
-	  IF(wr_en_rd2 = '0') THEN
+	  IF(wr_en_i = '0') THEN
 	    IF(rd_en_i = '1') THEN
   	      empty_as_timeout <= empty_as_timeout + "1";
   	    END IF;
@@ -589,12 +476,12 @@ END PROCESS;
       ELSIF(WR_CLK'event AND WR_CLK='1') THEN
         CASE state IS
           WHEN '0' => 
-            IF(FULL = '1' AND empty_wr_dom2 = '0') THEN
+            IF(FULL = '1' AND EMPTY = '0') THEN
               state      <= '1';
 	      reset_en_i <= '0';
     	    END IF;
           WHEN '1' => 
-            IF(empty_wr_dom2 = '1' AND FULL = '0') THEN
+            IF(EMPTY = '1' AND FULL = '0') THEN
               state    	 <= '0';
 	      reset_en_i <= '1';
     	    END IF;

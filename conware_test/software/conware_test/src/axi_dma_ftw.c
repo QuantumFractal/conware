@@ -76,6 +76,15 @@ void AxiDmaWaitForIdle(PAXI_DMA_SG_REGMAP dma_dev) {
 	}
 }
 
+void AxiDmaClearContiguousDescListStatus(PDMA_SG_DESC start, uint32_t length) {
+	DEBUG("AxiDmaClearContiguousDescListStatus");
+	int i;
+
+	for (i = 0; i < length; i++) {
+		start[i].status.as_uint = 0;
+	}
+}
+
 void AxiDmaDumpDescHex(PDMA_SG_DESC desc) {
 	DEBUG("AxiDmaDumpDescHex");
 

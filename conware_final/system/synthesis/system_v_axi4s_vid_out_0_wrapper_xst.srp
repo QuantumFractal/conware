@@ -1,6 +1,6 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to U:\Cpre488\conware\xps\system\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to U:\Cpre488\conware\conware_final\system\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_v_axi4s_vid_out_0_wrapper_xst.prj"
-Verilog Include Directory          : {"U:\Cpre488\conware\xps\system\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"U:\Cpre488\conware\conware_final\system\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc7z020clg484-1
@@ -74,7 +74,7 @@ Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores
 Parsing module <v_axi4s_vid_out_v2_01_a_axi4s_vid_out_top>.
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_axi4s_vid_out_v2_01_a/hdl/verilog/v_axi4s_vid_out.v" into library v_axi4s_vid_out_v2_01_a
 Parsing module <v_axi4s_vid_out>.
-Analyzing Verilog file "\\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\system\hdl\system_v_axi4s_vid_out_0_wrapper.v" into library work
+Analyzing Verilog file "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\hdl\system_v_axi4s_vid_out_0_wrapper.v" into library work
 Parsing module <system_v_axi4s_vid_out_0_wrapper>.
 
 =========================================================================
@@ -106,7 +106,7 @@ Elaborating module <v_axi4s_vid_out_v2_01_a_vid_out_formatter(DATA_WIDTH=32)>.
 =========================================================================
 
 Synthesizing Unit <system_v_axi4s_vid_out_0_wrapper>.
-    Related source file is "\\my.files.iastate.edu\users\quanta\Cpre488\conware\xps\system\hdl\system_v_axi4s_vid_out_0_wrapper.v".
+    Related source file is "\\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_final\system\hdl\system_v_axi4s_vid_out_0_wrapper.v".
     Summary:
 	no macro.
 Unit <system_v_axi4s_vid_out_0_wrapper> synthesized.
@@ -724,11 +724,11 @@ video_out_clk  |    2.811|         |         |         |
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.30 secs
+Total CPU time to Xst completion: 7.77 secs
  
 --> 
 
-Total memory usage is 495048 kilobytes
+Total memory usage is 498948 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   15 (   0 filtered)

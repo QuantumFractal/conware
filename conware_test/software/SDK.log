@@ -801,3 +801,113 @@ UNABLE to Open File
 	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
 	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
 
+14:52:25.937 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_test/system/SDK/SDK_Export/hw/system.bit" 
+14:52:39.559 INFO  - ps7_init.tcl file does not exists in HwPlatform 
+14:52:39.669 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:52:39.769 INFO  - PS initialization will be done as it is not done before. 
+14:52:39.769 INFO  - Running PS initialization.... 
+14:52:39.889 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error while running ps7_init method.
+invalid command name "ps7_init"
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.runPs7Init(Unknown Source)
+
+14:52:57.033 INFO  - ps7_init.tcl file does not exists in HwPlatform 
+14:52:57.133 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:52:57.233 INFO  - PS initialization will be done as it is not done before. 
+14:52:57.233 INFO  - Running PS initialization.... 
+14:52:57.343 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error while running ps7_init method.
+invalid command name "ps7_init"
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.runPs7Init(Unknown Source)
+
+14:53:29.905 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_test/system/SDK/SDK_Export/hw/system.bit" 
+14:53:35.156 INFO  - ps7_init.tcl file does not exists in HwPlatform 
+14:53:35.256 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:53:35.366 INFO  - PS initialization will be done as it is not done before. 
+14:53:35.366 INFO  - Running PS initialization.... 
+14:53:35.466 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error while running ps7_init method.
+invalid command name "ps7_init"
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.runPs7Init(Unknown Source)
+
+14:53:56.628 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+14:54:39.885 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_test/system/SDK/SDK_Export/hw/system.bit" 
+14:54:48.105 INFO  - ps7_init.tcl file does not exists in HwPlatform 
+14:54:48.205 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:54:48.315 INFO  - PS initialization will be done as it is not done before. 
+14:54:48.315 INFO  - Running PS initialization.... 
+14:54:48.435 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error while running ps7_init method.
+invalid command name "ps7_init"
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.runPs7Init(Unknown Source)
+
+14:57:14.776 INFO  - ps7_init.tcl file does not exists in HwPlatform 
+14:57:14.876 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:57:14.976 INFO  - PS initialization will be done as it is not done before. 
+14:57:14.976 INFO  - Running PS initialization.... 
+14:57:15.086 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error while running ps7_init method.
+invalid command name "ps7_init"
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.runPs7Init(Unknown Source)
+
+14:58:25.137 INFO  - ps7_init.tcl file does not exists in HwPlatform 
+14:58:25.247 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:58:25.347 INFO  - PS initialization will be done as it is not done before. 
+14:58:25.347 INFO  - Running PS initialization.... 
+14:58:25.447 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Error while running ps7_init method.
+invalid command name "ps7_init"
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.runPs7Init(Unknown Source)
+
+14:59:39.668 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:02:03.525 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\system.xml. 
+15:02:05.676 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\system.bit: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/system.bit' already exists. 
+15:02:05.816 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.c: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.c' already exists. 
+15:02:05.846 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.h: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.h' already exists. 
+15:02:06.126 WARN  - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.html: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.html' already exists. 
+15:02:06.156 ERROR - Unexpected exception while copying file \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\ps7_init.tcl: org.eclipse.core.internal.resources.ResourceException: Resource '/system_hw_platform/ps7_init.tcl' already exists. 
+15:03:46.912 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:03:47.012 INFO  - PS initialization will be done as it is not done before. 
+15:03:47.012 INFO  - Running PS initialization.... 
+15:03:47.532 INFO  - ps7_init is completed. 
+15:03:47.632 INFO  - ps7_post_config is completed. 
+15:03:47.732 INFO  - PS Initialization is complete. 
+15:04:27.418 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:06:37.404 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:15:57.683 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:17:57.618 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:18:54.267 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:19:11.279 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:22:55.465 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:23:25.055 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:23:57.684 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:35:34.612 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:41:57.261 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:42:01.517 INFO  - Processing command line option -hwspec \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\system.xml. 
+16:42:15.833 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:42:52.637 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:43:14.220 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:43:39.189 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:44:08.199 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:44:27.160 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:45:50.733 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:46:13.885 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:46:50.233 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:47:21.704 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:48:13.043 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:50:12.542 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:51:04.355 INFO  - FPGA configured successfully with bitstream "U:/Cpre488/conware/conware_test/system/SDK/SDK_Export/hw/system.bit" 
+16:51:09.326 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:51:43.676 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:52:19.379 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:17:40.594 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:18:45.907 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:26:52.780 INFO  - Project system_hw_platform's source hardware specification located at \\my.files.iastate.edu\users\mdavies\Cpre488\conware\conware_test\system\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+17:32:43.913 INFO  - Project system_hw_platform's source hardware specification location will not be monitored anymore. 
+17:40:14.857 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:40:49.202 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:00:23.412 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:09:22.144 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:20:23.251 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:49:17.881 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
